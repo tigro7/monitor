@@ -21,8 +21,8 @@ Agente notturno che analizza i tuoi progetti GitHub ogni notte e ti invia un dig
 ### 1. Crea il repo
 
 ```bash
-git clone https://github.com/tuousername/project-monitor
-cd project-monitor
+git clone https://github.com/tigro7/monitor
+cd monitor
 npm install
 ```
 
