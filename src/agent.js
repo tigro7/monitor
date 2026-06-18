@@ -3,6 +3,7 @@ import { Resend } from "resend";
 import { checkGitHub } from "./analyzers/github.js";
 import { checkSite } from "./analyzers/site.js";
 import { buildEmailHtml } from "./email.js";
+import { filterNew, markAsSeen } from "./memory.js";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -87,13 +88,13 @@ ${context}`,
     ],
   });
 
-  let suggestions = [];
+  let allSuggestions = [];
   try {
     const raw = message.content[0].text.trim();
-    suggestions = JSON.parse(raw);
+    allSuggestions = JSON.parse(raw);
   } catch {
     console.error(`Failed to parse suggestions for ${project.name}`);
-    suggestions = [
+    allSuggestions = [
       {
         priority: "low",
         area: "Analysis",
@@ -103,7 +104,17 @@ ${context}`,
     ];
   }
 
-  return { project, githubData, siteData, suggestions };
+  // Deduplication: keep only suggestions not seen in the last 30 days
+  const newSuggestions = project.repo
+    ? filterNew(project.repo, allSuggestions)
+    : allSuggestions;
+
+  const skipped = allSuggestions.length - newSuggestions.length;
+  if (skipped > 0) {
+    console.log(`  ⏭️  Skipped ${skipped} already-seen suggestion(s)`);
+  }
+
+  return { project, githubData, siteData, suggestions: newSuggestions };
 }
 
 async function run() {
@@ -138,12 +149,20 @@ async function run() {
     }
   }
 
-  const html = buildEmailHtml(results, date);
+  // If nothing new across all projects, send a minimal "all clear" email
+  const totalNew = results.reduce((acc, r) => acc + r.suggestions.length, 0);
+  if (totalNew === 0) {
+    console.log("✅ No new suggestions — sending all-clear email");
+  }
+
+  const html = buildEmailHtml(results, date, totalNew === 0);
 
   const { error } = await resend.emails.send({
-    from: process.env.EMAIL_FROM, // es. "monitor@tuodominio.com"
+    from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
-    subject: `🌙 Project Report – ${date}`,
+    subject: totalNew === 0
+      ? `✅ Tutto ok – ${date}`
+      : `🌙 Project Report – ${date} (${totalNew} nuovi)`,
     html,
   });
 
@@ -152,7 +171,14 @@ async function run() {
     process.exit(1);
   }
 
-  console.log("✅ Report sent successfully!");
+  // Persist seen suggestions ONLY after successful email delivery
+  for (const { project, suggestions } of results) {
+    if (project.repo && suggestions.length > 0) {
+      markAsSeen(project.repo, suggestions);
+    }
+  }
+
+  console.log("✅ Report sent and memory updated!");
 }
 
 run();
