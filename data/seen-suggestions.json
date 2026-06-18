@@ -1,0 +1,114 @@
+{
+  "0523dc0b5765": {
+    "seenAt": "2026-06-18T13:01:31.869Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Review the project for deprecation or end-of-life risk given it has not been committed to in 429 days. Decide explicitly whether to archive it, hand it off, or resume active development.",
+    "priority": "high"
+  },
+  "780e80450eec": {
+    "seenAt": "2026-06-18T13:01:31.869Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "SEO",
+    "action": "Add og:title, og:image, and a canonical link tag to the site's HTML head section.",
+    "priority": "high"
+  },
+  "4d7a79d4199b": {
+    "seenAt": "2026-06-18T13:01:31.869Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "DX",
+    "action": "Add a .env.example file to the repository root that documents every required environment variable with placeholder values.",
+    "priority": "medium"
+  },
+  "46d701a6c32e": {
+    "seenAt": "2026-06-18T13:01:31.869Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a CHANGELOG.md file and backfill at least a brief summary of what the project does and its release history.",
+    "priority": "medium"
+  },
+  "98b4b8a9c64a": {
+    "seenAt": "2026-06-18T13:01:31.869Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Set up a lightweight automated dependency audit on a schedule, such as GitHub Dependabot or a monthly npm audit workflow, even if no outdated dependencies are detected today.",
+    "priority": "low"
+  },
+  "6b4e131ab26f": {
+    "seenAt": "2026-06-18T13:01:31.870Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security / DX",
+    "action": "Add a .env.example file to the repository listing all required environment variables with placeholder values (e.g. DATABASE_URL=, NEXTAUTH_SECRET=, API_KEY=).",
+    "priority": "high"
+  },
+  "0383e61cc44a": {
+    "seenAt": "2026-06-18T13:01:31.870Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "SEO / Discoverability",
+    "action": "Add the three missing meta tags to every page: og:title, og:image, and a canonical URL tag. For og:image, generate or designate a static 1200x630 social preview image and host it on the same domain.",
+    "priority": "high"
+  },
+  "ce4ccc22e825": {
+    "seenAt": "2026-06-18T13:01:31.870Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance / UX",
+    "action": "Investigate and reduce the 1081ms initial response time. Profile whether the delay is cold-start latency on a serverless function, a blocking API call during SSR, or an unoptimised database query. If it is a cold-start issue, consider switching the main page to static generation (SSG/ISR) or adding a Vercel Edge Function for the initial HTML shell.",
+    "priority": "high"
+  },
+  "cd67e00d905b": {
+    "seenAt": "2026-06-18T13:01:31.870Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance / DX",
+    "action": "Create a CHANGELOG.md and start logging changes under a simple Keep a Changelog format. Retroactively add the four commit groups from this week as the first entries (v0.1.0 MVP, auth flow, enrichment step, template redesign).",
+    "priority": "medium"
+  },
+  "0ae77409b010": {
+    "seenAt": "2026-06-18T13:01:31.870Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "SEO / Domain",
+    "action": "Configure the production domain thatswhoi.am as the primary domain in Vercel and set up a 301 redirect from onepagecv-theta.vercel.app to it. Then update the canonical meta tag to point to the thatswhoi.am URL.",
+    "priority": "low"
+  },
+  "e70571bda708": {
+    "seenAt": "2026-06-18T13:01:31.871Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Monitor",
+    "action": "Analysis failed — check agent logs",
+    "priority": "high"
+  },
+  "dc7ed8525920": {
+    "seenAt": "2026-06-18T13:01:31.871Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a .env.example file to the repository that documents all required environment variables without exposing real values.",
+    "priority": "high"
+  },
+  "886f5ec7ad49": {
+    "seenAt": "2026-06-18T13:01:31.871Z",
+    "repo": "tigro7/monitor",
+    "area": "DX",
+    "action": "Review and harden the nightly.yml workflow so it has explicit permissions, pinned action versions using commit SHAs, and a clear failure notification strategy.",
+    "priority": "high"
+  },
+  "9c871adcbd83": {
+    "seenAt": "2026-06-18T13:01:31.871Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a CHANGELOG.md and start logging changes from day one, even if entries are brief.",
+    "priority": "medium"
+  },
+  "e632871fd7ce": {
+    "seenAt": "2026-06-18T13:01:31.871Z",
+    "repo": "tigro7/monitor",
+    "area": "DX",
+    "action": "Replace the vague commit message 'Add files via upload' pattern by setting up a CONTRIBUTING.md with a simple commit message convention such as Conventional Commits.",
+    "priority": "medium"
+  },
+  "0291729d3b6d": {
+    "seenAt": "2026-06-18T13:01:31.871Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Define a lightweight roadmap or milestone in GitHub (even a single milestone called v0.1) to track what 'done' looks like for the initial version of Project Monitor.",
+    "priority": "low"
+  }
+}
