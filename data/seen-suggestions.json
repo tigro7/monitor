@@ -329,11 +329,11 @@
     "dismissedByUser": true
   },
   "e5558dd6f53b": {
-    "seenAt": "2026-06-19T14:34:18.095Z",
+    "seenAt": "2026-06-19T14:45:55.586Z",
+    "expiresAt": "2027-06-19T14:45:55.586Z",
     "repo": "tigro7/monitor",
-    "area": "Maintenance",
     "action": "Verify the .env.example file was actually committed and contains every environment variable the project currently needs, including any new ones added for the dismiss endpoint and issue-reading feature added in the last two days.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "53f54fc08af7": {
     "seenAt": "2026-06-19T14:34:18.095Z",
