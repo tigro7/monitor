@@ -1,0 +1,17 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [1.0.0] - 2025-06-19
+
+### Added
+- Nightly GitHub Actions workflow (cron `0 2 * * 1-5`) with manual `workflow_dispatch` trigger
+- GitHub analyzer: open issues, open PRs, days since last commit, outdated dependencies, missing common files, stale branches
+- Site analyzer: uptime check, response time, heuristic performance score, missing SEO meta tags, broken internal links, SSL validation
+- Claude Sonnet integration: generates 3–5 prioritized suggestions per project (high / medium / low) in JSON
+- Resend email digest: formatted HTML report with per-project stats and suggestion cards
+- Deduplication via SHA1 fingerprint (`repo + area + action`): seen suggestions are suppressed for 30 days and persisted in `data/seen-suggestions.json`, auto-committed after each run
+- "Crea Issue su GitHub →" button on each suggestion: pre-filled GitHub new-issue URL with title, body and priority label, no extra infrastructure required
+- All-clear email mode: minimal green-header email when no new suggestions are found
+- Covers four projects: UFNC, Thatswhoi.am, Le Nuove Espressioni, Project Monitor itself
