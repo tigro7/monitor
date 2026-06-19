@@ -215,5 +215,145 @@
     "area": "Maintenance",
     "action": "Establish a lightweight versioning and release discipline now that CHANGELOG.md exists. Tag a v0.1.0 release on GitHub to anchor the changelog, and commit to tagging each meaningful release going forward.",
     "priority": "low"
+  },
+  "b89fb0ed4c86": {
+    "seenAt": "2026-06-19T14:34:18.093Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Audit all API keys, tokens, and secrets that were active during development and rotate any that may have been exposed or are still in use.",
+    "priority": "high"
+  },
+  "34348c78a2e8": {
+    "seenAt": "2026-06-19T14:34:18.093Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Check your hosting platform (Vercel, Netlify, etc.) and any connected services for active environment variables or API integrations and remove or disable anything no longer needed.",
+    "priority": "high"
+  },
+  "cfd60f1ddf48": {
+    "seenAt": "2026-06-19T14:34:18.093Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Add a robots.txt file and a sitemap.xml to the site root, even if the site is simple or single-page.",
+    "priority": "medium"
+  },
+  "831328617a1c": {
+    "seenAt": "2026-06-19T14:34:18.093Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "DX",
+    "action": "Add a brief README.md that explains what UFNC does, how to run it locally, and how to deploy it, even if it is only 20 to 30 lines.",
+    "priority": "medium"
+  },
+  "4eacbee777ec": {
+    "seenAt": "2026-06-19T14:34:18.093Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Set up a simple uptime monitoring alert using a free tier service such as UptimeRobot or Better Uptime so you are notified automatically if the site goes down.",
+    "priority": "low"
+  },
+  "5bd74cce426c": {
+    "seenAt": "2026-06-19T14:34:18.094Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Audit all API routes and server actions to ensure authentication checks are enforced on every endpoint that reads or writes user data.",
+    "priority": "high"
+  },
+  "d0676c2ed7a4": {
+    "seenAt": "2026-06-19T14:34:18.094Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Add rate limiting to the enrichment API route (descriptions, contacts, skills) using a lightweight middleware such as Upstash Rate Limit or Vercel's edge middleware.",
+    "priority": "high"
+  },
+  "289f211d616b": {
+    "seenAt": "2026-06-19T14:34:18.094Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "DX",
+    "action": "Add a basic GitHub Actions CI workflow that runs your linter and type-checker on every push to main and on every PR.",
+    "priority": "medium"
+  },
+  "0dc324ddf92c": {
+    "seenAt": "2026-06-19T14:34:18.094Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Lazy-load the PDF export library so it is not included in the initial page bundle. Dynamically import it only when the user triggers the export action.",
+    "priority": "medium"
+  },
+  "a01527adf6c5": {
+    "seenAt": "2026-06-19T14:34:18.094Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Add a robots.txt and a sitemap.xml to the public directory, with sitemap entries for any publicly accessible CV or profile pages.",
+    "priority": "low"
+  },
+  "adab32c06bb7": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "SEO",
+    "action": "Add a canonical URL tag and an og:image meta tag to every page.",
+    "priority": "high"
+  },
+  "de989a936c61": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security / DX",
+    "action": "Add a .env.example file to the repository listing every required environment variable (with placeholder values, never real secrets).",
+    "priority": "high"
+  },
+  "424fdf50378b": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "DX / Maintenance",
+    "action": "Write a minimal README.md covering: what the project is, how to install and run it locally, and how to deploy it.",
+    "priority": "medium"
+  },
+  "3590c6ba9496": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Investigate and reduce the 849ms server response time, targeting under 400ms. Start by enabling HTTP response caching headers and checking whether the hosting tier is spinning up a cold instance.",
+    "priority": "medium"
+  },
+  "8428daf7eb7f": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a CHANGELOG.md and adopt a simple versioning habit: one bullet per meaningful change with a date, using Keep a Changelog format.",
+    "priority": "low"
+  },
+  "cfd4c6577cbb": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Audit the one-click dismiss Vercel endpoint to ensure it is protected against unauthorized calls — add a secret token or signed payload validation so anyone who guesses or intercepts the URL cannot dismiss suggestions on your behalf.",
+    "priority": "high"
+  },
+  "e5558dd6f53b": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Verify the .env.example file was actually committed and contains every environment variable the project currently needs, including any new ones added for the dismiss endpoint and issue-reading feature added in the last two days.",
+    "priority": "high"
+  },
+  "53f54fc08af7": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "tigro7/monitor",
+    "area": "DX",
+    "action": "Add a basic test or smoke-check job to the nightly workflow (or a separate PR-triggered workflow) that validates the dismiss endpoint and the issue-reading logic return expected responses, even with mocked data.",
+    "priority": "medium"
+  },
+  "e5e7deb658fd": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Populate CHANGELOG.md with the actual changes made in the last two days using the commits as source material, and establish a habit of updating it on every feature commit rather than leaving it empty after creation.",
+    "priority": "medium"
+  },
+  "db01bb15b733": {
+    "seenAt": "2026-06-19T14:34:18.095Z",
+    "repo": "tigro7/monitor",
+    "area": "DX",
+    "action": "Add a short Architecture or How It Works section to the README explaining the three moving parts — the nightly script, the Vercel endpoint, and the seen-suggestions memory mechanism — and how they interact.",
+    "priority": "low"
   }
 }
