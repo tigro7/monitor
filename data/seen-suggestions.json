@@ -70,7 +70,7 @@
     "priority": "low"
   },
   "e70571bda708": {
-    "seenAt": "2026-06-18T13:01:31.871Z",
+    "seenAt": "2026-06-19T11:59:18.067Z",
     "repo": "albertotiribelli/lenuoveespressioni",
     "area": "Monitor",
     "action": "Analysis failed — check agent logs",
@@ -109,6 +109,111 @@
     "repo": "tigro7/monitor",
     "area": "Maintenance",
     "action": "Define a lightweight roadmap or milestone in GitHub (even a single milestone called v0.1) to track what 'done' looks like for the initial version of Project Monitor.",
+    "priority": "low"
+  },
+  "8627bded87ba": {
+    "seenAt": "2026-06-19T11:59:18.065Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Triage and close or resolve the 5 open GitHub issues. Decide which are still relevant given the 430-day commit gap, close stale ones with a comment, and create a short roadmap if any are worth addressing.",
+    "priority": "high"
+  },
+  "7d441a7036ba": {
+    "seenAt": "2026-06-19T11:59:18.065Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "SEO",
+    "action": "Add og:title, og:image, and a canonical tag to the site's HTML head. Set og:title to a descriptive project name, og:image to a meaningful screenshot or logo (at least 1200x630px), and canonical to 'https://www.ufnc.xyz'.",
+    "priority": "high"
+  },
+  "58d3a53c79b3": {
+    "seenAt": "2026-06-19T11:59:18.065Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "DX",
+    "action": "Add a .env.example file to the repository root. Copy your real .env structure, replace all secret values with placeholder strings like 'your_api_key_here', and commit it.",
+    "priority": "medium"
+  },
+  "d672cfd61aa2": {
+    "seenAt": "2026-06-19T11:59:18.065Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a CHANGELOG.md using the Keep a Changelog format. Document at minimum the initial release and any significant changes. Going forward, update it with each meaningful commit.",
+    "priority": "medium"
+  },
+  "6953755b5c18": {
+    "seenAt": "2026-06-19T11:59:18.065Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Make a decision about the project's active status and reflect it in the README. If it is actively maintained, add a brief roadmap. If it is in maintenance-only mode or archived, say so clearly and consider using GitHub's built-in Archive feature.",
+    "priority": "low"
+  },
+  "2cf9ac529b0e": {
+    "seenAt": "2026-06-19T11:59:18.066Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security / DX",
+    "action": "Add a .env.example file to the repository listing all required environment variables with placeholder values, and audit the codebase to confirm no real secrets are committed.",
+    "priority": "high"
+  },
+  "00fa0a88ed5e": {
+    "seenAt": "2026-06-19T11:59:18.066Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "SEO / Marketing",
+    "action": "Add og:title, og:image, and a canonical link tag to every page. At minimum set them in the root layout so every route inherits sensible defaults, then override per-page where needed (e.g. each generated CV profile page).",
+    "priority": "high"
+  },
+  "b8ad540af3f8": {
+    "seenAt": "2026-06-19T11:59:18.066Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance / UX",
+    "action": "Investigate and reduce the 1272ms response time. Check whether the Vercel function is doing a cold database or API call on every page load that could be cached, moved to edge, or replaced with static generation (SSG/ISR) for public profile pages.",
+    "priority": "medium"
+  },
+  "d660d541c2aa": {
+    "seenAt": "2026-06-19T11:59:18.066Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance / DX",
+    "action": "Triage and close or label the 5 open issues. For any that represent known bugs or missing features from the MVP sprint, convert them into a short prioritised backlog. Add a CHANGELOG.md and start logging changes from this week's commits.",
+    "priority": "medium"
+  },
+  "c5052d08c4be": {
+    "seenAt": "2026-06-19T11:59:18.066Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "DX / Reliability",
+    "action": "Set up a minimal CI pipeline (GitHub Actions) that runs linting and any existing tests on every push, and add an uptime monitor (e.g. Better Uptime free tier or a simple Checkly check) pointing at the live URL.",
+    "priority": "low"
+  },
+  "28d50cd110c5": {
+    "seenAt": "2026-06-19T11:59:18.067Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Audit the one-click dismiss Vercel endpoint for authentication. Make sure it validates a signed token or secret before acting, so anyone who gets hold of an email link cannot dismiss alerts they shouldn't.",
+    "priority": "high"
+  },
+  "56b5b2b40013": {
+    "seenAt": "2026-06-19T11:59:18.067Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Verify that .env.example was actually committed and contains all required keys. The analysis flags it as missing — if the commit on 18/06 did not land it correctly, secrets may be undocumented or developers may fall back to insecure defaults.",
+    "priority": "high"
+  },
+  "e113aa8f4e27": {
+    "seenAt": "2026-06-19T11:59:18.067Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Triage and resolve the 4 open issues before the backlog grows. At a project this young (first commit 17/06), open issues likely represent known bugs or missing features that will compound quickly if ignored.",
+    "priority": "medium"
+  },
+  "a5e376a70c3f": {
+    "seenAt": "2026-06-19T11:59:18.067Z",
+    "repo": "tigro7/monitor",
+    "area": "DX",
+    "action": "Add a CONTRIBUTING.md or expand the README with setup steps, how to run locally, and how the nightly workflow functions. The nightly.yml was updated twice in two days, which suggests it is still unstable and others will struggle to reproduce the setup.",
+    "priority": "medium"
+  },
+  "80110a9884f3": {
+    "seenAt": "2026-06-19T11:59:18.067Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Establish a lightweight versioning and release discipline now that CHANGELOG.md exists. Tag a v0.1.0 release on GitHub to anchor the changelog, and commit to tagging each meaningful release going forward.",
     "priority": "low"
   }
 }
