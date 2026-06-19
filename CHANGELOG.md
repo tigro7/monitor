@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.0] - 2025-06-19
+ 
+### Security
+- Pinned all GitHub Actions to exact commit SHAs to prevent supply chain attacks (checkout v4.2.2, setup-node v4.4.0)
+- Added explicit `permissions` block at workflow level (`contents: read`) and per-job overrides — `run-monitor` gets `contents: write`, `notify-failure` gets `contents: none`
+### Changed
+- Failure notification extracted into a dedicated `notify-failure` job that runs only on failure, sends email via Resend curl call (no third-party action needed)
+- Removed `actions/github-script` dependency from failure path
+
 ## [1.1.1] - 2025-06-19
  
 ### Fixed
