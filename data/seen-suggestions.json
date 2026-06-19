@@ -322,11 +322,11 @@
     "priority": "low"
   },
   "cfd4c6577cbb": {
-    "seenAt": "2026-06-19T14:34:18.095Z",
+    "seenAt": "2026-06-19T14:45:44.798Z",
+    "expiresAt": "2027-06-19T14:45:44.798Z",
     "repo": "tigro7/monitor",
-    "area": "Security",
     "action": "Audit the one-click dismiss Vercel endpoint to ensure it is protected against unauthorized calls — add a secret token or signed payload validation so anyone who guesses or intercepts the URL cannot dismiss suggestions on your behalf.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "e5558dd6f53b": {
     "seenAt": "2026-06-19T14:34:18.095Z",
