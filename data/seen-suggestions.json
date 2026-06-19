@@ -343,11 +343,11 @@
     "priority": "medium"
   },
   "e5e7deb658fd": {
-    "seenAt": "2026-06-19T14:34:18.095Z",
+    "seenAt": "2026-06-19T14:46:02.123Z",
+    "expiresAt": "2027-06-19T14:46:02.123Z",
     "repo": "tigro7/monitor",
-    "area": "Maintenance",
     "action": "Populate CHANGELOG.md with the actual changes made in the last two days using the commits as source material, and establish a habit of updating it on every feature commit rather than leaving it empty after creation.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "db01bb15b733": {
     "seenAt": "2026-06-19T14:34:18.095Z",
