@@ -3,7 +3,7 @@ name: 🌙 Nightly Project Monitor
 on:
   schedule:
     # Ogni notte in settimana alle 02:00 UTC (04:00 ora italiana in estate, 03:00 in inverno)
-    - cron: "0 2 * * 0-4"
+    - cron: "0 2 * * 1-5"
   # Permette di lanciarlo manualmente dalla UI di GitHub per testarlo
   workflow_dispatch:
 
