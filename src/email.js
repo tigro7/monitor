@@ -1,4 +1,4 @@
-import { buildIssueUrl } from "./issue-url.js";
+import { buildIssueUrl, buildDismissUrl } from "./issue-url.js";
 
 const PRIORITY_COLOR = {
   high: "#ef4444",
@@ -39,17 +39,30 @@ function renderSuggestion(s, i, repo) {
         </div>
 
         ${issueUrl ? `
-        <a href="${issueUrl}" target="_blank" style="
-          display: inline-block;
-          font-size: 12px;
-          font-weight: 600;
-          color: #fff;
-          background: #1f2937;
-          padding: 5px 14px;
-          border-radius: 6px;
-          text-decoration: none;
-          letter-spacing: 0.01em;
-        ">＋ Crea Issue su GitHub →</a>
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <a href="${issueUrl}" target="_blank" style="
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            background: #1f2937;
+            padding: 5px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+          ">＋ Crea Issue →</a>
+          ${buildDismissUrl(repo, s) ? `
+          <a href="${buildDismissUrl(repo, s)}" target="_blank" style="
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 500;
+            color: #6b7280;
+            background: #f3f4f6;
+            padding: 5px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+          ">✕ Scarta</a>` : ""}
+        </div>
         ` : ""}
       </td>
     </tr>

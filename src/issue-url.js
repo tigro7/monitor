@@ -1,10 +1,13 @@
 /**
  * issue-url.js
  *
- * Costruisce URL pre-compilati per aprire una nuova issue su GitHub.
- * GitHub supporta nativamente i parametri ?title=&body=&labels=
- * → zero infrastruttura, zero API call, funziona con un semplice link.
+ * Costruisce URL pre-compilati per:
+ * - Aprire una nuova issue su GitHub (zero infrastruttura)
+ * - Scartare un suggerimento via monitor-api su Vercel
  */
+
+const DISMISS_API_URL = process.env.DISMISS_API_URL ?? "https://monitor-api.vercel.app";
+const DISMISS_TOKEN   = process.env.DISMISS_TOKEN ?? "";
 
 export function buildIssueUrl(repo, suggestion) {
   const title = `[${suggestion.area}] ${suggestion.action}`;
@@ -31,11 +34,19 @@ export function buildIssueUrl(repo, suggestion) {
     low: "priority:low",
   }[suggestion.priority] ?? "monitor";
 
+  const params = new URLSearchParams({ title, body, labels: label });
+  return `https://github.com/${repo}/issues/new?${params.toString()}`;
+}
+
+export function buildDismissUrl(repo, suggestion) {
+  if (!suggestion.id || !DISMISS_TOKEN) return null;
+
   const params = new URLSearchParams({
-    title,
-    body,
-    labels: label,
+    id: suggestion.id,
+    repo,
+    action: suggestion.action,
+    token: DISMISS_TOKEN,
   });
 
-  return `https://github.com/${repo}/issues/new?${params.toString()}`;
+  return `${DISMISS_API_URL}/api/dismiss?${params.toString()}`;
 }

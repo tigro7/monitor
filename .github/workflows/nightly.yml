@@ -12,47 +12,35 @@ jobs:
     name: Analizza progetti e invia report
     runs-on: ubuntu-latest
     timeout-minutes: 15
- 
     # Permessi necessari per committare il file di memoria
     permissions:
       contents: write
- 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           # Usa il token di default per poter fare push
           token: ${{ secrets.GITHUB_TOKEN }}
- 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
- 
       - name: Install dependencies
         run: npm ci
- 
       - name: Run agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
- 
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
 
-          REPO_UFNC: ${{ secrets.REPO_UFNC }}
-          REPO_THATSWHOIAM: ${{ secrets.REPO_THATSWHOIAM }}
-          REPO_LENUOVEESPRESSIONI: ${{ secrets.REPO_LENUOVEESPRESSIONI }}
           REPO_MONITOR: ${{ github.repository }}
-
-          URL_UFNC: ${{ secrets.URL_UFNC }}
-          URL_THATSWHOIAM: ${{ secrets.URL_THATSWHOIAM }}
-          URL_LENUOVEESPRESSIONI: ${{ secrets.URL_LENUOVEESPRESSIONI }}
+          DISMISS_API_URL: ${{ secrets.DISMISS_API_URL }}
+          DISMISS_TOKEN: ${{ secrets.DISMISS_TOKEN }}
 
         run: node src/agent.js
- 
       - name: Commit memory file
         run: |
           git config user.name "project-monitor[bot]"

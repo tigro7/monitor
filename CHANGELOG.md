@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.0] - 2025-06-19
+
+### Added
+- "✕ Scarta" button in email: one-click dismiss via `monitor-api` Vercel endpoint, suppresses suggestion for 365 days and commits `seen-suggestions.json` automatically
+- `monitor-api` companion repo: single serverless function (`/api/dismiss`) with token auth, GitHub Contents API write, and confirmation HTML page
+- `DISMISS_API_URL` and `DISMISS_TOKEN` environment variables in workflow and `.env.example`
+
 ## [1.0.0] - 2025-06-19
 
 ### Added
