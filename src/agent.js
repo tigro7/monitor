@@ -44,7 +44,7 @@ async function analyzeProject(project) {
   if (githubData) {
     contextParts.push(`
 ## GitHub Analysis for ${project.name}
-- Open issues: ${githubData.openIssues}
+- Open issues: ${githubData.openIssues}${githubData.openIssueTitles.length > 0 ? ":\n" + githubData.openIssueTitles.map(t => "  - " + t).join("\n") : ""}
 - Open PRs: ${githubData.openPRs}
 - Days since last commit: ${githubData.daysSinceLastCommit}
 - Outdated dependencies: ${githubData.outdatedDeps.length > 0 ? githubData.outdatedDeps.join(", ") : "none detected"}
@@ -81,6 +81,7 @@ Focus on: critical issues first, then quick wins, then longer-term improvements.
 Be specific and actionable. Use plain language. Return a JSON array of objects with this shape:
 { "priority": "high|medium|low", "area": "e.g. Security / DX / Performance / SEO / Maintenance", "action": "...", "why": "..." }
 
+Do NOT suggest anything that is already tracked as an open issue listed above — those are already known and being worked on.
 Return ONLY the JSON array, no markdown, no explanation.
 
 ${context}`,

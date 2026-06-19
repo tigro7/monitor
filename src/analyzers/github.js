@@ -74,8 +74,13 @@ export async function checkGitHub(repo) {
     // No package.json or not parseable — skip
   }
 
+  const openIssueList = issues
+    .filter((i) => !i.pull_request)
+    .map((i) => i.title);
+
   return {
-    openIssues: issues.filter((i) => !i.pull_request).length,
+    openIssues: openIssueList.length,
+    openIssueTitles: openIssueList,
     openPRs: prs.length,
     daysSinceLastCommit,
     recentCommits,

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.1] - 2025-06-19
+ 
+### Fixed
+- Open issue titles are now passed to Claude as context: suggestions already tracked as GitHub issues are no longer reproposed
+- `github.js` now returns `openIssueTitles[]` in addition to the issue count
+### Changed
+- Claude prompt updated with explicit instruction to skip suggestions already present as open issues
+
 ## [1.1.0] - 2025-06-19
 
 ### Added
