@@ -427,11 +427,11 @@
     "dismissedByUser": true
   },
   "0b327b79dc39": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
+    "seenAt": "2026-06-22T13:06:54.423Z",
+    "expiresAt": "2027-06-22T13:06:54.423Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Security / DX",
     "action": "Add a .env.example file to the repository root listing all required environment variables with placeholder values (e.g. DATABASE_URL=, NEXT_PUBLIC_SITE_URL=).",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "986ae2587329": {
     "seenAt": "2026-06-22T03:15:45.140Z",
