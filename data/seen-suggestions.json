@@ -355,5 +355,117 @@
     "area": "DX",
     "action": "Add a short Architecture or How It Works section to the README explaining the three moving parts — the nightly script, the Vercel endpoint, and the seen-suggestions memory mechanism — and how they interact.",
     "priority": "low"
+  },
+  "97e5dbbf851d": {
+    "seenAt": "2026-06-22T03:15:45.139Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Testing",
+    "action": "Add at least a minimal test suite covering the core user-facing flows before the codebase grows further. Start with integration or end-to-end tests using Playwright or Vitest — pick one tool, write 3–5 tests for the critical paths, and wire them into the existing CI workflow you just added.",
+    "priority": "high"
+  },
+  "c341d7efbcaf": {
+    "seenAt": "2026-06-22T03:15:45.139Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "DX / Reliability",
+    "action": "The repo reports '.env.example' as a missing file, but a recent commit says it was added. Verify the file is committed to the correct path and actually present in the repository root. Run a fresh clone in a clean directory and follow your own README setup instructions end-to-end to confirm the local setup works as documented.",
+    "priority": "high"
+  },
+  "80f105d24115": {
+    "seenAt": "2026-06-22T03:15:45.139Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Define and document a clear update/upgrade strategy to address the open 'Add more robust update' issue. Concretely: decide whether updates are manual + Dependabot PRs, or automated merges for patch versions. Write this down in CONTRIBUTING.md as a short section, and add a required CI check that blocks merges if the npm audit step reports high/critical vulnerabilities.",
+    "priority": "medium"
+  },
+  "ab66b3715d62": {
+    "seenAt": "2026-06-22T03:15:45.139Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance / SEO",
+    "action": "Lock in the current perfect Lighthouse score by adding it as a CI gate. Integrate a tool like Lighthouse CI (LHCI) into the existing CI workflow and set budget thresholds (e.g. performance >= 95, no regressions on LCP or CLS) so any future change that hurts the score fails the build before it merges.",
+    "priority": "medium"
+  },
+  "d4d1f29291b0": {
+    "seenAt": "2026-06-22T03:15:45.139Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "DX / Maintenance",
+    "action": "Add a CODEOWNERS file and a pull request template (.github/pull_request_template.md) with a short checklist: tests updated, CHANGELOG entry added, env vars documented in .env.example. Even as a solo project this builds the habit and makes the project immediately contributor-friendly.",
+    "priority": "low"
+  },
+  "d696675e6ef4": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Audit what data is stored per user and add a self-service account/data deletion flow.",
+    "priority": "high"
+  },
+  "d09693a6ca79": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Add a Content Security Policy (CSP) header and review other security headers (X-Frame-Options, Referrer-Policy, Permissions-Policy) via next.config headers block.",
+    "priority": "high"
+  },
+  "f391747ee307": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Investigate and reduce the 1385ms initial response time — check whether the ISR/cache headers are actually being served from Vercel's edge and confirm the homepage is not falling back to a full server render on every cold hit.",
+    "priority": "medium"
+  },
+  "c3096e19cdda": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "DX / Reliability",
+    "action": "Add a test stage to the CI workflow — at minimum a single Playwright or Cypress smoke test that loads the homepage and the CV render page and asserts a 200 status and key elements.",
+    "priority": "medium"
+  },
+  "5ca19c4412c6": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Pin third-party GitHub Actions versions in the workflow file to a specific commit SHA rather than a mutable tag (e.g. actions/checkout@v4 → actions/checkout@<sha>).",
+    "priority": "low"
+  },
+  "0b327b79dc39": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security / DX",
+    "action": "Add a .env.example file to the repository root listing all required environment variables with placeholder values (e.g. DATABASE_URL=, NEXT_PUBLIC_SITE_URL=).",
+    "priority": "high"
+  },
+  "986ae2587329": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Investigate and reduce the 1118ms server response time. Profile the slowest ISR or SSR routes with Next.js built-in instrumentation or a tool like Vercel Speed Insights, then confirm unstable_cache TTLs are set aggressively enough for read-heavy pages.",
+    "priority": "high"
+  },
+  "4caf10fbcbba": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "DX / Maintenance",
+    "action": "Add a SECURITY.md file describing how to privately report vulnerabilities (e.g. via a dedicated email or GitHub private vulnerability reporting), and enable GitHub's private vulnerability reporting feature in the repo settings.",
+    "priority": "medium"
+  },
+  "9afa88067841": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "SEO / Maintenance",
+    "action": "Set up automated Lighthouse or PageSpeed Insights checks inside the existing CI workflow so performance regressions are caught before they reach production, not after.",
+    "priority": "medium"
+  },
+  "b3092a8376d5": {
+    "seenAt": "2026-06-22T03:15:45.140Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Pin a Dependabot or Renovate configuration (dependabot.yml or renovate.json) to the repository so dependency updates are proposed automatically going forward.",
+    "priority": "low"
+  },
+  "56f529367ebf": {
+    "seenAt": "2026-06-22T03:15:45.141Z",
+    "repo": "tigro7/monitor",
+    "area": "Analysis",
+    "action": "Could not parse suggestions",
+    "priority": "low"
   }
 }
