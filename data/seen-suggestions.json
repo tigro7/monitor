@@ -420,11 +420,11 @@
     "priority": "medium"
   },
   "5ca19c4412c6": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
+    "seenAt": "2026-06-22T13:06:44.948Z",
+    "expiresAt": "2027-06-22T13:06:44.948Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Maintenance",
     "action": "Pin third-party GitHub Actions versions in the workflow file to a specific commit SHA rather than a mutable tag (e.g. actions/checkout@v4 → actions/checkout@<sha>).",
-    "priority": "low"
+    "dismissedByUser": true
   },
   "0b327b79dc39": {
     "seenAt": "2026-06-22T03:15:45.140Z",
