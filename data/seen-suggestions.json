@@ -385,8 +385,8 @@
     "dismissedByUser": true
   },
   "d4d1f29291b0": {
-    "seenAt": "2026-06-22T07:40:01.292Z",
-    "expiresAt": "2027-06-22T07:40:01.292Z",
+    "seenAt": "2026-06-22T13:04:47.139Z",
+    "expiresAt": "2027-06-22T13:04:47.139Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
     "action": "Add a CODEOWNERS file and a pull request template (.github/pull_request_template.md) with a short checklist: tests updated, CHANGELOG entry added, env vars documented in .env.example. Even as a solo project this builds the habit and makes the project immediately contributor-friendly.",
     "dismissedByUser": true
