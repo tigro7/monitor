@@ -385,11 +385,11 @@
     "priority": "medium"
   },
   "d4d1f29291b0": {
-    "seenAt": "2026-06-22T03:15:45.139Z",
+    "seenAt": "2026-06-22T07:34:47.300Z",
+    "expiresAt": "2027-06-22T07:34:47.300Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "DX / Maintenance",
     "action": "Add a CODEOWNERS file and a pull request template (.github/pull_request_template.md) with a short checklist: tests updated, CHANGELOG entry added, env vars documented in .env.example. Even as a solo project this builds the habit and makes the project immediately contributor-friendly.",
-    "priority": "low"
+    "dismissedByUser": true
   },
   "d696675e6ef4": {
     "seenAt": "2026-06-22T03:15:45.140Z",
