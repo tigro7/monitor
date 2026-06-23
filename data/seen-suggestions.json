@@ -518,11 +518,11 @@
     "priority": "high"
   },
   "0057a024e8c3": {
-    "seenAt": "2026-06-23T03:11:44.533Z",
+    "seenAt": "2026-06-23T07:18:56.272Z",
+    "expiresAt": "2027-06-23T07:18:56.272Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "DX / Reliability",
     "action": "Add a CHANGELOG-driven release tagging convention: cut a Git tag (e.g. v0.4.1) after each meaningful batch of commits and link it from the README.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "41096bf7605f": {
     "seenAt": "2026-06-23T03:11:44.533Z",
