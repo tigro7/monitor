@@ -476,11 +476,11 @@
     "priority": "high"
   },
   "3de02dd4dd70": {
-    "seenAt": "2026-06-23T03:11:44.531Z",
+    "seenAt": "2026-06-23T05:06:13.211Z",
+    "expiresAt": "2027-06-23T05:06:13.211Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "DX / Reliability",
     "action": "Add a GitHub Actions step that posts a deployment summary (URL, build time, environment) to a Slack channel or GitHub deployment environment so you have a clear audit trail of what went live and when.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "b3267833ee30": {
     "seenAt": "2026-06-23T03:11:44.531Z",
