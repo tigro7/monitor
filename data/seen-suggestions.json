@@ -567,8 +567,8 @@
     "dismissedByUser": true
   },
   "7d1103ac381e": {
-    "seenAt": "2026-06-23T05:07:30.769Z",
-    "expiresAt": "2027-06-23T05:07:30.769Z",
+    "seenAt": "2026-06-23T05:07:32.615Z",
+    "expiresAt": "2027-06-23T05:07:32.615Z",
     "repo": "albertotiribelli/lenuoveespressioni",
     "action": "Add a basic contributing quick-start script or Makefile target (e.g. make dev) that copies .env.example to .env.local, installs dependencies, and starts the dev server in one command.",
     "dismissedByUser": true
