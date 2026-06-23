@@ -602,10 +602,10 @@
     "priority": "medium"
   },
   "81a8820fbb17": {
-    "seenAt": "2026-06-23T03:11:44.534Z",
+    "seenAt": "2026-06-23T07:13:41.339Z",
+    "expiresAt": "2027-06-23T07:13:41.339Z",
     "repo": "tigro7/monitor",
-    "area": "Maintenance / Observability",
     "action": "Add a brief summary step at the end of the nightly workflow that prints a structured log line — e.g. 'Run complete: X suggestions fetched, Y new, Z dismissed, N parse errors' — and fails the job if parse errors exceed zero.",
-    "priority": "low"
+    "dismissedByUser": true
   }
 }
