@@ -595,11 +595,11 @@
     "priority": "high"
   },
   "963fd5b68950": {
-    "seenAt": "2026-06-23T03:11:44.534Z",
+    "seenAt": "2026-06-23T07:13:44.709Z",
+    "expiresAt": "2027-06-23T07:13:44.709Z",
     "repo": "tigro7/monitor",
-    "area": "Security",
     "action": "Document what the 'addressed security issue' commit (19 Jun) actually fixed — add a short note in CHANGELOG.md or a commit body — and verify the Vercel dismiss endpoint requires authentication on every call, not just in some code paths.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "81a8820fbb17": {
     "seenAt": "2026-06-23T07:13:41.339Z",
