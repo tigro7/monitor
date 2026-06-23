@@ -539,11 +539,11 @@
     "priority": "low"
   },
   "7e16a5ff03e2": {
-    "seenAt": "2026-06-23T03:11:44.534Z",
+    "seenAt": "2026-06-23T05:07:05.259Z",
+    "expiresAt": "2027-06-23T05:07:05.259Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Security / DX",
     "action": "Add a .env.example file to the repository listing every environment variable the project needs, with placeholder values and a short comment explaining each one.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "d090fca4bf03": {
     "seenAt": "2026-06-23T03:11:44.534Z",
