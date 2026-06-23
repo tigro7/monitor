@@ -588,8 +588,8 @@
     "dismissedByUser": true
   },
   "ed5746a5be33": {
-    "seenAt": "2026-06-23T07:13:54.889Z",
-    "expiresAt": "2027-06-23T07:13:54.889Z",
+    "seenAt": "2026-06-23T07:14:06.731Z",
+    "expiresAt": "2027-06-23T07:14:06.731Z",
     "repo": "tigro7/monitor",
     "action": "Deduplicate the dismiss-suggestion logic. At least five suggestions were dismissed twice each in the same day (same commit message repeated back-to-back). Find where the deduplication check happens and ensure a suggestion ID is written to the seen-suggestions store before — not after — the dismiss action is retried.",
     "dismissedByUser": true
