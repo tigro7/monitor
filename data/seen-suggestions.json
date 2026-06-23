@@ -539,8 +539,8 @@
     "priority": "low"
   },
   "7e16a5ff03e2": {
-    "seenAt": "2026-06-23T05:07:05.259Z",
-    "expiresAt": "2027-06-23T05:07:05.259Z",
+    "seenAt": "2026-06-23T05:07:12.752Z",
+    "expiresAt": "2027-06-23T05:07:12.752Z",
     "repo": "albertotiribelli/lenuoveespressioni",
     "action": "Add a .env.example file to the repository listing every environment variable the project needs, with placeholder values and a short comment explaining each one.",
     "dismissedByUser": true
