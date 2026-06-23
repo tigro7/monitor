@@ -490,8 +490,8 @@
     "priority": "medium"
   },
   "38fed408ec9e": {
-    "seenAt": "2026-06-23T05:06:25.228Z",
-    "expiresAt": "2027-06-23T05:06:25.228Z",
+    "seenAt": "2026-06-23T05:06:32.370Z",
+    "expiresAt": "2027-06-23T05:06:32.370Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
     "action": "Add a CODEOWNERS file mapping the top-level directories to your GitHub username. Even for a solo project this forces GitHub to request your review on any future collaborator PRs and keeps the ownership model explicit.",
     "dismissedByUser": true
