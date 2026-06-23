@@ -467,5 +467,145 @@
     "area": "Analysis",
     "action": "Could not parse suggestions",
     "priority": "low"
+  },
+  "fe91ac40dd34": {
+    "seenAt": "2026-06-23T03:11:44.531Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Enable branch protection on your main branch: require at least one passing CI check (the type-check/lint/build workflow you just added) before any push or merge is allowed.",
+    "priority": "high"
+  },
+  "3de02dd4dd70": {
+    "seenAt": "2026-06-23T03:11:44.531Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "DX / Reliability",
+    "action": "Add a GitHub Actions step that posts a deployment summary (URL, build time, environment) to a Slack channel or GitHub deployment environment so you have a clear audit trail of what went live and when.",
+    "priority": "high"
+  },
+  "b3267833ee30": {
+    "seenAt": "2026-06-23T03:11:44.531Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance / Resilience",
+    "action": "Add a Content Security Policy (CSP) header via your hosting platform config (e.g. vercel.json headers block). Start with a report-only policy to baseline what third-party scripts or frames are actually being loaded, then tighten it.",
+    "priority": "medium"
+  },
+  "38fed408ec9e": {
+    "seenAt": "2026-06-23T03:11:44.531Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a CODEOWNERS file mapping the top-level directories to your GitHub username. Even for a solo project this forces GitHub to request your review on any future collaborator PRs and keeps the ownership model explicit.",
+    "priority": "medium"
+  },
+  "f2de55ee5760": {
+    "seenAt": "2026-06-23T03:11:44.531Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "SEO / Maintenance",
+    "action": "Wire up Google Search Console (or an open alternative like Plausible) and add the verification meta tag or DNS record now, while the sitemap and robots.txt are freshly fixed. Set a recurring monthly reminder to check crawl errors.",
+    "priority": "low"
+  },
+  "576a86303860": {
+    "seenAt": "2026-06-23T03:11:44.533Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Add rate limiting to all auth routes (sign-in, sign-up, password reset), not just AI routes.",
+    "priority": "high"
+  },
+  "6a9ac5790d35": {
+    "seenAt": "2026-06-23T03:11:44.533Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Error Monitoring",
+    "action": "Integrate a runtime error tracking tool (Sentry free tier is sufficient) and wire up both server-side and client-side error boundaries to it.",
+    "priority": "high"
+  },
+  "0057a024e8c3": {
+    "seenAt": "2026-06-23T03:11:44.533Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "DX / Reliability",
+    "action": "Add a CHANGELOG-driven release tagging convention: cut a Git tag (e.g. v0.4.1) after each meaningful batch of commits and link it from the README.",
+    "priority": "medium"
+  },
+  "41096bf7605f": {
+    "seenAt": "2026-06-23T03:11:44.533Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Set up a Lighthouse CI step in your GitHub Actions workflow that fails the build if the performance score drops below 85.",
+    "priority": "medium"
+  },
+  "1fc3dd706ab7": {
+    "seenAt": "2026-06-23T03:11:44.533Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Enable Dependabot (or Renovate) with a weekly schedule and auto-merge for patch-level updates on non-breaking packages.",
+    "priority": "low"
+  },
+  "7e16a5ff03e2": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security / DX",
+    "action": "Add a .env.example file to the repository listing every environment variable the project needs, with placeholder values and a short comment explaining each one.",
+    "priority": "high"
+  },
+  "d090fca4bf03": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Audit and fix the real-world response time gap: the live site is hitting 1617ms, which is significantly worse than the 1118ms already flagged internally. Check whether Vercel cold starts, uncached ISR pages, or heavy third-party scripts are responsible. As a first concrete step, enable Vercel Speed Insights in production and confirm that every high-traffic route is being served from the edge cache rather than re-rendered on each request.",
+    "priority": "high"
+  },
+  "d223366d20be": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance / SEO",
+    "action": "Identify and address the specific factors pulling the Lighthouse performance score from 75 to 100. Run a local Lighthouse audit in CI (not just against the live URL) to get a stable baseline, then target the top two or three failing metrics — typically Largest Contentful Paint and Total Blocking Time — by lazy-loading below-the-fold images, deferring non-critical scripts, and ensuring the og:image added recently is properly sized.",
+    "priority": "medium"
+  },
+  "d811732c630c": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "DX / Maintenance",
+    "action": "Add a CHANGELOG entry and a git tag for the work done this week, then establish a lightweight release convention (e.g. CalVer or SemVer tags on main) so the project history stays navigable as it grows.",
+    "priority": "medium"
+  },
+  "7d1103ac381e": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "DX / Maintenance",
+    "action": "Add a basic contributing quick-start script or Makefile target (e.g. make dev) that copies .env.example to .env.local, installs dependencies, and starts the dev server in one command.",
+    "priority": "low"
+  },
+  "5e8b51aeacd6": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "tigro7/monitor",
+    "area": "DX / Onboarding",
+    "action": "Add a .env.example file to the repository listing every environment variable the project needs, with placeholder values and a short comment explaining each one.",
+    "priority": "high"
+  },
+  "b96dd47f62ae": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "tigro7/monitor",
+    "area": "Reliability / Bug",
+    "action": "Investigate and fix the root cause of the '[Analysis] Could not parse suggestions' failure. Add explicit error logging that captures the raw response from the AI/analysis step so you can see exactly what malformed output triggered the parse error.",
+    "priority": "high"
+  },
+  "ed5746a5be33": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "tigro7/monitor",
+    "area": "Reliability",
+    "action": "Deduplicate the dismiss-suggestion logic. At least five suggestions were dismissed twice each in the same day (same commit message repeated back-to-back). Find where the deduplication check happens and ensure a suggestion ID is written to the seen-suggestions store before — not after — the dismiss action is retried.",
+    "priority": "high"
+  },
+  "963fd5b68950": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Document what the 'addressed security issue' commit (19 Jun) actually fixed — add a short note in CHANGELOG.md or a commit body — and verify the Vercel dismiss endpoint requires authentication on every call, not just in some code paths.",
+    "priority": "medium"
+  },
+  "81a8820fbb17": {
+    "seenAt": "2026-06-23T03:11:44.534Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance / Observability",
+    "action": "Add a brief summary step at the end of the nightly workflow that prints a structured log line — e.g. 'Run complete: X suggestions fetched, Y new, Z dismissed, N parse errors' — and fails the job if parse errors exceed zero.",
+    "priority": "low"
   }
 }
