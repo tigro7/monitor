@@ -4,6 +4,7 @@ import { checkGitHub } from "./analyzers/github.js";
 import { checkSite } from "./analyzers/site.js";
 import { buildEmailHtml } from "./email.js";
 import { filterNew, markAsSeen } from "./memory.js";
+import { getTodayRotation } from "./rotation.js";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -31,36 +32,63 @@ const PROJECTS = [
   },
 ];
 
-async function analyzeProject(project) {
-  console.log(`\n🔍 Analyzing ${project.name}...`);
+const MAX_SUGGESTIONS = 2;
 
-  const [githubData, siteData] = await Promise.all([
+// Fetch MONITOR.md from a repo if it exists — optional product context file
+async function fetchMonitorContext(repo) {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/contents/MONITOR.md`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    return Buffer.from(data.content, "base64").toString("utf8");
+  } catch {
+    return null;
+  }
+}
+
+async function analyzeProject(project, rotation) {
+  console.log(`\n🔍 Analyzing ${project.name} [${rotation.area}]...`);
+
+  const [githubData, siteData, monitorContext] = await Promise.all([
     project.repo ? checkGitHub(project.repo) : Promise.resolve(null),
     project.url ? checkSite(project.url) : Promise.resolve(null),
+    project.repo ? fetchMonitorContext(project.repo) : Promise.resolve(null),
   ]);
 
   const contextParts = [];
 
+  if (monitorContext) {
+    contextParts.push(`## Product Context (from MONITOR.md)\n${monitorContext}`);
+  }
+
   if (githubData) {
     contextParts.push(`
-## GitHub Analysis for ${project.name}
+## GitHub Analysis
 - Open issues: ${githubData.openIssues}${githubData.openIssueTitles.length > 0 ? ":\n" + githubData.openIssueTitles.map(t => "  - " + t).join("\n") : ""}
 - Open PRs: ${githubData.openPRs}
 - Days since last commit: ${githubData.daysSinceLastCommit}
-- Outdated dependencies: ${githubData.outdatedDeps.length > 0 ? githubData.outdatedDeps.join(", ") : "none detected"}
+- Outdated dependencies: ${githubData.outdatedDeps.length > 0 ? githubData.outdatedDeps.join(", ") : "none"}
 - Recent commits (last 7 days): ${githubData.recentCommits.map((c) => `"${c.message}" (${c.date})`).join("; ") || "none"}
-- Stale branches (>30 days inactive): ${githubData.staleBranches.join(", ") || "none"}
 - Missing files: ${githubData.missingFiles.join(", ") || "none"}
     `);
   }
 
   if (siteData) {
     contextParts.push(`
-## Live Site Analysis for ${project.name} (${project.url})
+## Live Site Analysis (${project.url})
 - Status: ${siteData.status} (HTTP ${siteData.statusCode})
 - Response time: ${siteData.responseTimeMs}ms
 - Performance score: ${siteData.lighthouseScore ?? "n/a"}/100
-- Broken links found: ${siteData.brokenLinks.length}
+- Broken links: ${siteData.brokenLinks.length}
 - Missing meta tags: ${siteData.missingMeta.join(", ") || "none"}
 - SSL valid: ${siteData.sslValid ? "yes" : "NO ⚠️"}
     `);
@@ -70,18 +98,24 @@ async function analyzeProject(project) {
 
   const message = await anthropic.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 1000,
+    max_tokens: 800,
     messages: [
       {
         role: "user",
-        content: `You are a senior software consultant reviewing a developer's personal projects overnight.
-        
-Analyze the following data for the project "${project.name}" and provide 3–5 concrete, prioritized action items.
-Focus on: critical issues first, then quick wins, then longer-term improvements.
-Be specific and actionable. Use plain language. Return a JSON array of objects with this shape:
-{ "priority": "high|medium|low", "area": "e.g. Security / DX / Performance / SEO / Maintenance", "action": "...", "why": "..." }
+        content: `You are a senior software consultant doing a focused nightly review of "${project.name}".
 
-Do NOT suggest anything that is already tracked as an open issue listed above — those are already known and being worked on.
+Today's focus: ${rotation.label}
+
+${rotation.instructions}
+
+Return EXACTLY ${MAX_SUGGESTIONS} suggestions — no more, no less.
+Only include a suggestion if it is genuinely actionable and specific to this project.
+Do NOT suggest anything already tracked as an open issue.
+Do NOT pad with generic best-practice advice if there is nothing concrete to say — if you can only find 1 real suggestion, return 1 item and set the other's priority to "skip".
+
+Return a JSON array of objects:
+{ "priority": "high|medium|low|skip", "area": "${rotation.area}", "action": "...", "why": "..." }
+
 Return ONLY the JSON array, no markdown, no explanation.
 
 ${context}`,
@@ -92,14 +126,16 @@ ${context}`,
   let allSuggestions = [];
   try {
     const raw = message.content[0].text.trim();
-    allSuggestions = JSON.parse(raw);
+    allSuggestions = JSON.parse(raw)
+      .filter((s) => s.priority !== "skip") // remove padding items
+      .slice(0, MAX_SUGGESTIONS);
   } catch {
     console.error(`Failed to parse suggestions for ${project.name}`);
     allSuggestions = [
       {
         priority: "low",
-        area: "Analysis",
-        action: "Could not parse suggestions",
+        area: rotation.area,
+        action: "Could not parse suggestions — check agent logs",
         why: message.content[0].text,
       },
     ];
@@ -119,7 +155,9 @@ ${context}`,
 }
 
 async function run() {
-  console.log("🌙 Project Monitor starting...");
+  const rotation = getTodayRotation();
+  console.log(`🌙 Project Monitor starting — focus: ${rotation.label}`);
+
   const date = new Date().toLocaleDateString("it-IT", {
     weekday: "long",
     year: "numeric",
@@ -130,7 +168,7 @@ async function run() {
   const results = [];
   for (const project of PROJECTS) {
     try {
-      const result = await analyzeProject(project);
+      const result = await analyzeProject(project, rotation);
       results.push(result);
     } catch (err) {
       console.error(`Error analyzing ${project.name}:`, err.message);
@@ -150,20 +188,16 @@ async function run() {
     }
   }
 
-  // If nothing new across all projects, send a minimal "all clear" email
   const totalNew = results.reduce((acc, r) => acc + r.suggestions.length, 0);
-  if (totalNew === 0) {
-    console.log("✅ No new suggestions — sending all-clear email");
-  }
 
-  const html = buildEmailHtml(results, date, totalNew === 0);
+  const html = buildEmailHtml(results, date, rotation, totalNew === 0);
 
   const { error } = await resend.emails.send({
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
     subject: totalNew === 0
       ? `✅ Tutto ok – ${date}`
-      : `🌙 Project Report – ${date} (${totalNew} nuovi)`,
+      : `${rotation.label} – ${date} (${totalNew} suggerimenti)`,
     html,
   });
 
@@ -172,7 +206,6 @@ async function run() {
     process.exit(1);
   }
 
-  // Persist seen suggestions ONLY after successful email delivery
   for (const { project, suggestions } of results) {
     if (project.repo && suggestions.length > 0) {
       markAsSeen(project.repo, suggestions);

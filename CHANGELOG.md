@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.3.0] - 2025-06-23
+ 
+### Added
+- Weekly rotation system (`src/rotation.js`): Mon=Features, Tue=UX, Wed=Performance, Thu=Security, Fri=Maintenance — Claude focuses exclusively on one area per day
+- `MONITOR.md` support: optional product context file in each repo, fetched nightly and injected into Claude's prompt to enable feature-level suggestions
+- `MONITOR.md.template` in this repo: ready-to-copy template with sections for status, roadmap, pain points, and out-of-scope items
+- Rotation label shown in email header and subject line
+
 ## [1.2.1] - 2025-06-19
  
 ### Docs

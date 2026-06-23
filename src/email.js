@@ -144,7 +144,7 @@ function statPill(label, value, color = "#6b7280") {
   `;
 }
 
-export function buildEmailHtml(results, date, allClear = false) {
+export function buildEmailHtml(results, date, rotation, allClear = false) {
   const totalSuggestions = results.reduce(
     (acc, r) => acc + r.suggestions.length,
     0
@@ -180,15 +180,18 @@ export function buildEmailHtml(results, date, allClear = false) {
       <div style="font-size: 12px; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">
         Project Monitor · ${date}
       </div>
+      <div style="font-size: 12px; font-weight: 600; color: #6b7280; margin-bottom: 8px; letter-spacing: 0.05em;">
+        ${allClear ? "" : rotation.label}
+      </div>
       <h1 style="font-size: 24px; font-weight: 700; margin: 0 0 16px 0; color: white;">
-        ${allClear ? "✅ Tutto ok" : "🌙 Report notturno"}
+        ${allClear ? "✅ Tutto ok" : "Report notturno"}
       </h1>
       ${allClear
         ? `<p style="margin: 0; color: #86efac; font-size: 14px;">Nessun suggerimento nuovo oggi. I tuoi progetti stanno girando bene.</p>`
         : `<div style="display: flex; gap: 24px;">
             <div>
               <span style="font-size: 28px; font-weight: 800; color: white;">${totalSuggestions}</span>
-              <span style="font-size: 13px; color: #aaa; margin-left: 6px;">nuovi suggerimenti </span>
+              <span style="font-size: 13px; color: #aaa; margin-left: 6px;">nuovi suggerimenti</span>
             </div>
             ${highPriority > 0
               ? `<div>
