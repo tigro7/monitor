@@ -581,11 +581,11 @@
     "priority": "high"
   },
   "b96dd47f62ae": {
-    "seenAt": "2026-06-23T03:11:44.534Z",
+    "seenAt": "2026-06-23T07:14:00.134Z",
+    "expiresAt": "2027-06-23T07:14:00.134Z",
     "repo": "tigro7/monitor",
-    "area": "Reliability / Bug",
     "action": "Investigate and fix the root cause of the '[Analysis] Could not parse suggestions' failure. Add explicit error logging that captures the raw response from the AI/analysis step so you can see exactly what malformed output triggered the parse error.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "ed5746a5be33": {
     "seenAt": "2026-06-23T07:13:54.889Z",
