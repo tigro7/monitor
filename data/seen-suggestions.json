@@ -560,11 +560,11 @@
     "priority": "medium"
   },
   "d811732c630c": {
-    "seenAt": "2026-06-23T03:11:44.534Z",
+    "seenAt": "2026-06-23T05:07:23.733Z",
+    "expiresAt": "2027-06-23T05:07:23.733Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "DX / Maintenance",
     "action": "Add a CHANGELOG entry and a git tag for the work done this week, then establish a lightweight release convention (e.g. CalVer or SemVer tags on main) so the project history stays navigable as it grows.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "7d1103ac381e": {
     "seenAt": "2026-06-23T03:11:44.534Z",
