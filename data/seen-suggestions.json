@@ -607,5 +607,47 @@
     "repo": "tigro7/monitor",
     "action": "Add a brief summary step at the end of the nightly workflow that prints a structured log line — e.g. 'Run complete: X suggestions fetched, Y new, Z dismissed, N parse errors' — and fails the job if parse errors exceed zero.",
     "dismissedByUser": true
+  },
+  "36f01aa8410d": {
+    "seenAt": "2026-06-24T03:11:36.838Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Pre-generate the sitemap at build time using `generateSitemaps` or a build script that writes a static `public/sitemap.xml`, rather than serving it via a runtime API route. Seed it with known static paths (home, league pages) so it is never empty on a cold deploy.",
+    "priority": "medium"
+  },
+  "b1d3409d1502": {
+    "seenAt": "2026-06-24T03:11:36.839Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Resolve the persistent ~1347ms initial response time by verifying the homepage ISR cache is actually being hit at Vercel's edge. Check the 'x-vercel-cache' response header on the live site — if it reads MISS or BYPASS instead of HIT on repeat requests, the static/ISR output is not being served from edge cache. Confirm that no dynamic per-request logic (e.g. reading auth cookies, calling getServerSideProps, or middleware rewriting the homepage route) is forcing a full server render and invalidating the cache. The recent 'perf: cut initial response time' commit addressed this but the live response time of 1347ms suggests it has not fully resolved — the open issue tracks investigation but a concrete next step is to curl -I https://thatswhoi.am/ twice in succession and confirm the second request returns x-vercel-cache: HIT.",
+    "priority": "high"
+  },
+  "e30275a62977": {
+    "seenAt": "2026-06-24T03:11:36.839Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "The open SEO/Domain issue notes that thatswhoi.am is not yet configured as the primary domain in Vercel and no 301 redirect exists from onepagecv-theta.vercel.app to thatswhoi.am. Until this is done, Google will index both origins separately, splitting PageRank and potentially causing duplicate-content penalties. Add the canonical domain in the Vercel project dashboard under 'Domains', set onepagecv-theta.vercel.app to redirect 301 to https://thatswhoi.am, and update the canonical meta tag value (already present per recent commits) to use the thatswhoi.am URL explicitly. The og:image absolute URL should also be updated to the canonical domain so social crawlers do not follow a redirect chain when fetching the preview image.",
+    "priority": "medium"
+  },
+  "86208f4a6ceb": {
+    "seenAt": "2026-06-24T03:11:36.841Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Replace the logo fallback `/logo.png` used as `og:image` on static pages with a properly sized 1200×630 Open Graph image. The MONITOR.md explicitly flags this as a known gap. A correctly sized OG image also removes any potential CLS or render-blocking penalty that social crawlers and link-preview bots incur when they fetch and scale an unoptimised logo asset.",
+    "priority": "high"
+  },
+  "7cb1ac45d6f3": {
+    "seenAt": "2026-06-24T03:11:36.841Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Audit all `<Image>` usages in the play catalogue and member grid to confirm every image has an explicit `width`, `height`, and a meaningful `sizes` attribute matching its rendered breakpoints. Also verify that hero or above-the-fold images use `priority={true}` to trigger `<link rel=preload>` in the HTML, eliminating LCP-blocking network round trips.",
+    "priority": "medium"
+  },
+  "7a35ea74a106": {
+    "seenAt": "2026-06-24T03:11:36.842Z",
+    "repo": "tigro7/monitor",
+    "area": "Performance",
+    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the nightly GitHub Actions workflow using `treosh/lighthouse-ci-action`. Output the Core Web Vitals scores (LCP, CLS, TBT) as structured JSON artifacts so the monitor agent can consume real numbers instead of estimates.",
+    "priority": "medium"
   }
 }
