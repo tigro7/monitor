@@ -623,11 +623,11 @@
     "priority": "high"
   },
   "e30275a62977": {
-    "seenAt": "2026-06-24T03:11:36.839Z",
+    "seenAt": "2026-06-24T05:41:58.877Z",
+    "expiresAt": "2027-06-24T05:41:58.877Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Performance",
     "action": "The open SEO/Domain issue notes that thatswhoi.am is not yet configured as the primary domain in Vercel and no 301 redirect exists from onepagecv-theta.vercel.app to thatswhoi.am. Until this is done, Google will index both origins separately, splitting PageRank and potentially causing duplicate-content penalties. Add the canonical domain in the Vercel project dashboard under 'Domains', set onepagecv-theta.vercel.app to redirect 301 to https://thatswhoi.am, and update the canonical meta tag value (already present per recent commits) to use the thatswhoi.am URL explicitly. The og:image absolute URL should also be updated to the canonical domain so social crawlers do not follow a redirect chain when fetching the preview image.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "86208f4a6ceb": {
     "seenAt": "2026-06-24T03:11:36.841Z",
