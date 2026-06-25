@@ -649,5 +649,61 @@
     "area": "Performance",
     "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the nightly GitHub Actions workflow using `treosh/lighthouse-ci-action`. Output the Core Web Vitals scores (LCP, CLS, TBT) as structured JSON artifacts so the monitor agent can consume real numbers instead of estimates.",
     "priority": "medium"
+  },
+  "43972390a3ad": {
+    "seenAt": "2026-06-25T03:11:56.931Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Audit and harden the admin match-entry API routes to confirm they enforce authentication server-side on every request. Specifically, verify that all Next.js API routes or Server Actions that write match data (add, edit, recalculate stats) call `getServerSession` (or equivalent NextAuth server-side check) and return a 401/403 immediately if the session is absent or not admin — not just relying on the UI hiding the form.",
+    "priority": "high"
+  },
+  "2bb1dccbd439": {
+    "seenAt": "2026-06-25T03:11:56.931Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Add server-side input validation to the match-entry form handler (API route or Server Action) using a schema validation library such as Zod. At minimum, validate that team names match known league teams, the match date is a valid past date, and scores are non-negative integers within a plausible range before any DB write or statsCalc invocation.",
+    "priority": "medium"
+  },
+  "eb30d8f18852": {
+    "seenAt": "2026-06-25T03:11:56.933Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Add a Content Security Policy (CSP) header and the supporting security headers (X-Frame-Options, Referrer-Policy, Permissions-Policy) via the `headers()` block in next.config.js. At minimum, set a strict-origin-when-cross-origin Referrer-Policy, DENY or SAMEORIGIN for X-Frame-Options, and a CSP that whitelists only known script/style/connect sources (Vercel Analytics endpoint, your own origin, any AI API host). Test with https://securityheaders.com after deploying.",
+    "priority": "high"
+  },
+  "19331dd58c37": {
+    "seenAt": "2026-06-25T03:11:56.933Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Audit every server action and API route that accepts user-supplied string input (CV text fields, profile fields, any free-text prompt passed to the AI) and add explicit length caps and basic sanitisation before the data is persisted or forwarded. Concretely: define a shared Zod schema with `.max()` constraints that mirrors your DB column limits, apply it at the route boundary, and return a structured 400 with a safe error message on violation. This is separate from the existing Upstash rate-limiting which only throttles frequency, not payload content.",
+    "priority": "medium"
+  },
+  "0263dfa7a564": {
+    "seenAt": "2026-06-25T03:11:56.934Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Add a `.env.example` file to the repository documenting all required environment variables (e.g. `NEXT_PUBLIC_SITE_URL`, Supabase URL and anon key, any service-role key) with placeholder values and clear comments indicating which are public vs secret.",
+    "priority": "high"
+  },
+  "12e4043cf96b": {
+    "seenAt": "2026-06-25T03:11:56.934Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Audit all Supabase queries that read or write data and verify that Row-Level Security (RLS) policies are enabled and correctly scoped on every table (plays, members, dates, etc.), given that the site uses the public anon key exposed client-side via `NEXT_PUBLIC_*`.",
+    "priority": "medium"
+  },
+  "b8f01980b935": {
+    "seenAt": "2026-06-25T03:11:56.934Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a secret-based auth check to the dismiss endpoint on Vercel. Right now any caller who can guess or observe a suggestion ID (which are short hashes visible in commit history) can dismiss suggestions on your behalf. Add a shared secret — stored as a Vercel env var — that the one-click link must include as a query param or header, and reject requests that omit or mismatch it.",
+    "priority": "high"
+  },
+  "22aca6b9ce25": {
+    "seenAt": "2026-06-25T03:11:56.934Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add `.env.example` to the repository (it is currently flagged as missing) and audit which secrets are actually required at runtime — `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `GITHUB_TOKEN`, any Vercel-side secrets. Document the minimum required scopes for each token so that a compromised key has the smallest possible blast radius, and ensure none of these values are referenced as plain strings anywhere in committed code or workflow files.",
+    "priority": "medium"
   }
 }
