@@ -705,5 +705,54 @@
     "area": "Security",
     "action": "Add `.env.example` to the repository (it is currently flagged as missing) and audit which secrets are actually required at runtime — `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `GITHUB_TOKEN`, any Vercel-side secrets. Document the minimum required scopes for each token so that a compromised key has the smallest possible blast radius, and ensure none of these values are referenced as plain strings anywhere in committed code or workflow files.",
     "priority": "medium"
+  },
+  "0dd9a71059b5": {
+    "seenAt": "2026-06-26T03:12:09.804Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a unit test suite for `statsCalc.tsx` using Vitest. Start with 3–5 tests covering the core championship-passing logic: a team winning the title from the current holder, a draw (title does not transfer), and edge cases like the first match in a new league initialising the title holder. Wire Vitest into the existing CI workflow as a `test` step alongside the current type-check, lint, and build steps.",
+    "priority": "high"
+  },
+  "0ef1569bf9f4": {
+    "seenAt": "2026-06-26T03:12:09.804Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Audit and remove the `.env.example` entry from the 'Missing files' list in GitHub Analysis — the file was added in commit `chore: add .env.example` on 20/06/2026 and is confirmed present. More concretely: cross-check every variable in `.env.example` against actual usage in the codebase (e.g. with a grep/search across `process.env.*`) to identify any variables that are documented but no longer referenced, or referenced in code but missing from the example file. Remove or annotate stale entries to prevent future confusion during onboarding or environment setup.",
+    "priority": "medium"
+  },
+  "6f16708c0242": {
+    "seenAt": "2026-06-26T03:12:09.806Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Expand the CI workflow to include a `test` stage with at minimum one Playwright smoke test covering the homepage and CV render page — assert HTTP 200 and presence of key DOM elements. The existing workflow only runs type-check and build, meaning regressions in rendered output are invisible until production.",
+    "priority": "medium"
+  },
+  "b0bee3627077": {
+    "seenAt": "2026-06-26T03:12:09.806Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Audit the codebase for any remaining references to the old Vercel preview domain (`onepagecv-theta.vercel.app`) hardcoded in source files — e.g. in `next.config.js` `images.domains`, `NEXTAUTH_URL` fallback values, sitemap generation logic, or inline constants — and replace them with an environment variable or the canonical `thatswhoi.am` domain so config stays consistent as the domain migration completes.",
+    "priority": "low"
+  },
+  "42d495e7136c": {
+    "seenAt": "2026-06-26T03:12:09.807Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file to the repository documenting all required environment variables, specifically `NEXT_PUBLIC_SITE_URL`, the Supabase URL, and the Supabase anon key.",
+    "priority": "high"
+  },
+  "d3ea59629f2a": {
+    "seenAt": "2026-06-26T03:12:09.808Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file listing all required environment variables (e.g. Anthropic API key, Resend key, GitHub token, Vercel endpoint URL) with placeholder values and a brief inline comment for each.",
+    "priority": "high"
+  },
+  "b64e84ca76b4": {
+    "seenAt": "2026-06-26T03:12:09.808Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Investigate and fix the duplicate dismiss commits: the git log shows the same suggestion hash being committed twice in rapid succession (e.g. `e30275a62977` dismissed twice on 24/06, `7d1103ac381e` three times on 23/06). Add an idempotency check in the dismiss handler so that writing to `seen-suggestions.json` is skipped — and no commit is triggered — if the hash is already present.",
+    "priority": "medium"
   }
 }
