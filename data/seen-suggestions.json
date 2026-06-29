@@ -754,5 +754,61 @@
     "area": "Maintenance",
     "action": "Investigate and fix the duplicate dismiss commits: the git log shows the same suggestion hash being committed twice in rapid succession (e.g. `e30275a62977` dismissed twice on 24/06, `7d1103ac381e` three times on 23/06). Add an idempotency check in the dismiss handler so that writing to `seen-suggestions.json` is skipped — and no commit is triggered — if the hash is already present.",
     "priority": "medium"
+  },
+  "c98c9b243341": {
+    "seenAt": "2026-06-29T03:13:52.955Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add La Liga or Bundesliga as the next tracked league, leveraging the groundwork already laid for multi-league support. Create the league record, seed historical champion data, and surface it in the UI alongside Serie A and Premier League.",
+    "priority": "high"
+  },
+  "c24d1b7a4f37": {
+    "seenAt": "2026-06-29T03:13:52.955Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a 'Title history timeline' visualisation to each league page — a simple horizontal or vertical chronological view showing which team held the belt and for how long, with match dates as markers. This should be buildable from data already present in the database.",
+    "priority": "medium"
+  },
+  "0cc277d15f09": {
+    "seenAt": "2026-06-29T03:13:52.956Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a self-service account and data deletion flow accessible from user account settings — a 'Delete my account' page that clearly lists what data will be removed (profile, CV data, AI usage history), requires a confirmation step, and permanently purges the user's records on submission.",
+    "priority": "high"
+  },
+  "7951242f02ca": {
+    "seenAt": "2026-06-29T03:13:52.956Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a shareable public CV URL per user (e.g. /cv/[username] or /cv/[slug]) so that a generated one-page CV can be viewed by anyone without requiring sign-in — with a toggle in the dashboard to make it public or private.",
+    "priority": "medium"
+  },
+  "6570c4ea53f8": {
+    "seenAt": "2026-06-29T03:13:52.957Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Build the /news page as a simple list of announcements and post-show recaps, backed by a new Supabase table (e.g. `posts` with fields: title, slug, body, published_at, category). Each entry should render as a static page under /news/[slug] with ISR, matching the existing play-page pattern. Start with 2–3 real past recaps to validate the layout before expanding.",
+    "priority": "high"
+  },
+  "76add9f3fc48": {
+    "seenAt": "2026-06-29T03:13:52.957Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Create a proper 1200×630 Open Graph image for the site's static pages (homepage, /spettacoli, /compagnia) using Next.js built-in `ImageResponse` via a `/api/og` route. The image should include the company name, logo, and a short tagline. Replace the current `/logo.png` fallback in the root `layout.tsx` metadata with this dynamic URL so social previews on Facebook/WhatsApp show a compelling card instead of a raw logo.",
+    "priority": "medium"
+  },
+  "6794490c86d9": {
+    "seenAt": "2026-06-29T03:13:52.959Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add a weekly summary email on Fridays that recaps all suggestions surfaced during the week, grouped by repo and area, with counts of how many were dismissed vs. filed as issues.",
+    "priority": "high"
+  },
+  "5ac6cbbe1989": {
+    "seenAt": "2026-06-29T03:13:52.959Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Populate MONITOR.md files in the three other monitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at least minimal product context — what the project is, current status, and out-of-scope items.",
+    "priority": "medium"
   }
 }
