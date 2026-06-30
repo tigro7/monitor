@@ -810,5 +810,61 @@
     "area": "Features",
     "action": "Populate MONITOR.md files in the three other monitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at least minimal product context — what the project is, current status, and out-of-scope items.",
     "priority": "medium"
+  },
+  "3284b5357fd8": {
+    "seenAt": "2026-06-30T03:11:56.634Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an explicit empty state and onboarding message for new leagues before any matches are entered. When a league has zero matches recorded, show a clear message like 'No matches recorded yet — the championship begins when the first match is added' rather than rendering a blank or broken-looking page. Since new leagues (La Liga, Bundesliga) are actively planned, this state will be hit regularly during setup.",
+    "priority": "high"
+  },
+  "88189a58825e": {
+    "seenAt": "2026-06-30T03:11:56.634Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add visible loading feedback to the admin add-match form submission. Currently if the form takes time to process (stat recalculation via statsCalc.tsx can be non-trivial), there is no indication the action is in progress. Disable the submit button and show a spinner or inline 'Saving…' label while the request is pending, and display a clear success or error message on completion.",
+    "priority": "medium"
+  },
+  "573e8126996a": {
+    "seenAt": "2026-06-30T03:11:56.636Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add visible loading and empty states to the CV render/editor flow. When the AI is generating content, show a skeleton or progress indicator with copy like 'Building your CV…' rather than a blank or static screen. If a user has no CV data yet, show a clear empty state with a prompt to get started rather than rendering an empty template.",
+    "priority": "high"
+  },
+  "f97f74b54c67": {
+    "seenAt": "2026-06-30T03:11:56.636Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Audit all interactive controls (the CV editor fields, action buttons, navigation links) for keyboard accessibility and focus visibility. Specifically: ensure every focusable element has a clearly visible focus ring (not just the browser default which is often suppressed by CSS resets), and that modal dialogs or slide-over panels trap focus correctly and return focus to the trigger element on close.",
+    "priority": "medium"
+  },
+  "a1e2f37e03ad": {
+    "seenAt": "2026-06-30T03:11:56.638Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible empty-state UI on alumni profile pages when both photo and bio are missing, rather than silently rendering a sparse page. Show a friendly placeholder (e.g., a silhouette avatar with the text 'Biografia in arrivo' or similar in Italian) so visitors understand the absence of content is intentional and temporary, not a broken page.",
+    "priority": "high"
+  },
+  "0c0588b00211": {
+    "seenAt": "2026-06-30T03:11:56.638Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "On play pages that have an upcoming date with no tickets_url yet (e.g., the October 2026 show), replace any blank or hidden ticket CTA with an explicit disabled button or inline note such as 'Biglietti disponibili a breve' instead of omitting the action entirely. The button should be visually present but non-interactive, so users know ticketing is coming rather than wondering whether the show is bookable.",
+    "priority": "medium"
+  },
+  "1626d29fde09": {
+    "seenAt": "2026-06-30T03:11:56.639Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a clear, human-readable explanation to the daily email when the '[Analysis] Could not parse suggestions' error occurs — instead of silently failing or showing a raw error label, include a sentence like 'The AI response couldn't be parsed tonight. No suggestions to show — it will retry tomorrow.' so the reader knows the system is alive but had a hiccup.",
+    "priority": "high"
+  },
+  "5cd9fa3c590b": {
+    "seenAt": "2026-06-30T03:11:56.639Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a small confirmation signal to the one-click dismiss flow — for example, the dismiss URL response page (served by the Vercel endpoint) should render a minimal success message like 'Got it — this suggestion has been dismissed and won't appear again' rather than a raw JSON response or blank page, so the user knows the action registered.",
+    "priority": "medium"
   }
 }
