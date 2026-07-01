@@ -866,5 +866,47 @@
     "area": "UX",
     "action": "Add a small confirmation signal to the one-click dismiss flow — for example, the dismiss URL response page (served by the Vercel endpoint) should render a minimal success message like 'Got it — this suggestion has been dismissed and won't appear again' rather than a raw JSON response or blank page, so the user knows the action registered.",
     "priority": "medium"
+  },
+  "275301cce224": {
+    "seenAt": "2026-07-01T03:13:04.009Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Investigate and fix the known issue where the sitemap is empty at build time due to runtime API calls failing during the Vercel build phase. Switch sitemap generation to use direct database queries (via the Vercel Postgres client) rather than internal HTTP API calls, so the sitemap is fully populated in the static output at deploy time rather than only after the app is live.",
+    "priority": "medium"
+  },
+  "e4116d222cd9": {
+    "seenAt": "2026-07-01T03:13:04.011Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Investigate why the homepage response time is 887ms on a Vercel-hosted Next.js app and confirm ISR/edge caching is actually being hit. Check the response headers for 'x-vercel-cache: HIT' — if it shows MISS or BYPASS on repeat requests, the page is falling back to a full server render every time. Fix by ensuring the page exports 'revalidate' correctly and is not opting out of caching via dynamic cookies/headers reads at the top level.",
+    "priority": "high"
+  },
+  "750887bbc24e": {
+    "seenAt": "2026-07-01T03:13:04.011Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Configure the canonical URL to point to thatswhoi.am and set up a 301 redirect from onepagecv-theta.vercel.app to it in Vercel project settings. Until this is done, Google may index both origins separately, splitting any link equity and causing duplicate-content penalties that suppress ranking for both URLs.",
+    "priority": "high"
+  },
+  "89fb7bc3664a": {
+    "seenAt": "2026-07-01T03:13:04.012Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Investigate the response time regression from 1617ms to 2832ms observed in tonight's live site check — a 75% increase over the already-flagged baseline. Specifically: (1) run `next build` locally and compare ISR revalidation logs to identify which routes are being re-fetched on cold hits, (2) check Vercel Function logs for the homepage and any play-catalogue routes to see if `unstable_cache` TTLs have expired or been bypassed, (3) confirm that the `revalidate` value on ISR routes is not set too aggressively short (e.g. under 60s), which would cause near-constant regeneration under low traffic, and (4) verify no new unoptimized Supabase query was introduced in the last deploy cycle even though no commits landed in 7 days (check for a deploy triggered by a dependency update or Vercel config change).",
+    "priority": "high"
+  },
+  "c1d192f07d15": {
+    "seenAt": "2026-07-01T03:13:04.012Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Replace the `/logo.png` fallback used as `og:image` on static pages with a purpose-built 1200×630 PNG/WebP share image, and serve it via Vercel's built-in CDN with a long `Cache-Control` header (`public, max-age=31536000, immutable`). The image should be placed in `/public/og-default.png`, referenced in the root `layout.tsx` metadata object, and compressed to under 200 KB (use Squoosh or `sharp` in a one-off build script). This is already listed on the roadmap but has a direct performance angle: the current logo file is almost certainly not sized or compressed for social crawlers, causing slower unfurl times and a missing opportunity to control how the site appears when shared — which affects click-through and thus organic discoverability.",
+    "priority": "medium"
+  },
+  "9066e23292d3": {
+    "seenAt": "2026-07-01T03:13:04.014Z",
+    "repo": "tigro7/monitor",
+    "area": "Performance",
+    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the GitHub Actions workflow, even on a scheduled weekly basis rather than nightly.",
+    "priority": "medium"
   }
 }
