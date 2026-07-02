@@ -908,5 +908,61 @@
     "area": "Performance",
     "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the GitHub Actions workflow, even on a scheduled weekly basis rather than nightly.",
     "priority": "medium"
+  },
+  "06663bcae6e6": {
+    "seenAt": "2026-07-02T03:10:04.103Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Audit every Next.js API route and server action that mutates data (e.g., add-match, stats recalculation triggers) to confirm they check the NextAuth session server-side and return a 401/403 immediately if the user is not the authenticated admin — do not rely solely on UI hiding the form.",
+    "priority": "high"
+  },
+  "1f427ea1a721": {
+    "seenAt": "2026-07-02T03:10:04.103Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Add rate limiting to the admin API routes (add-match and any stats recalculation endpoints) using Vercel's Edge Middleware or an in-process solution such as `upstash/ratelimit`. Even a simple limit of 10–20 requests per minute per IP is sufficient.",
+    "priority": "medium"
+  },
+  "6b3e8f4a137d": {
+    "seenAt": "2026-07-02T03:10:04.105Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Implement Content Security Policy and missing security headers in next.config.js. At minimum add: Content-Security-Policy (restrict script-src, style-src, img-src, connect-src to known origins), X-Frame-Options: DENY, Referrer-Policy: strict-origin-when-cross-origin, and Permissions-Policy disabling unused browser features (camera, microphone, geolocation). Use the Next.js headers() block so these are applied at the edge on every response.",
+    "priority": "high"
+  },
+  "b0f294d3ad0f": {
+    "seenAt": "2026-07-02T03:10:04.105Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Add a self-service account and data deletion endpoint. Specifically: (1) create a DELETE /api/account route protected by the existing auth session, (2) have it hard-delete the user row and cascade-delete associated CV data in the database, (3) surface a 'Delete my account' button in account settings that calls this endpoint and then signs the user out. Confirm via database query logs that no orphaned rows remain post-deletion.",
+    "priority": "medium"
+  },
+  "28317d4e9b26": {
+    "seenAt": "2026-07-02T03:10:04.107Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Add a `.env.example` file to the repository documenting all required environment variables (e.g. `NEXT_PUBLIC_SITE_URL`, Supabase URL, Supabase anon key) with placeholder values and comments. The GitHub analysis explicitly flags this file as missing.",
+    "priority": "high"
+  },
+  "2b01d6b49aff": {
+    "seenAt": "2026-07-02T03:10:04.107Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Audit all Supabase client calls to confirm the public anon key is never used server-side for writes or privileged reads, and that Row Level Security (RLS) is enabled on every table that holds content (plays, members, dates, etc.). Verify in the Supabase dashboard that each table has at least a restrictive default policy, so a misconfigured or leaked anon key cannot be used to mutate production data.",
+    "priority": "medium"
+  },
+  "76fac2d70d3f": {
+    "seenAt": "2026-07-02T03:10:04.108Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a .env.example file documenting required secrets (e.g. ANTHROPIC_API_KEY, RESEND_API_KEY, GitHub tokens) and audit the nightly workflow YAML to confirm none of these values are echoed in logs or embedded in commit messages.",
+    "priority": "high"
+  },
+  "da573ccb524f": {
+    "seenAt": "2026-07-02T03:10:04.108Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add authentication to the monitor-api dismiss endpoint on Vercel — at minimum a shared secret checked via a request header (e.g. X-Dismiss-Token) — so that arbitrary actors cannot blindly mark suggestions as seen by replaying or guessing URLs.",
+    "priority": "high"
   }
 }
