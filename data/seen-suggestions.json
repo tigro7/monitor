@@ -964,5 +964,54 @@
     "area": "Security",
     "action": "Add authentication to the monitor-api dismiss endpoint on Vercel — at minimum a shared secret checked via a request header (e.g. X-Dismiss-Token) — so that arbitrary actors cannot blindly mark suggestions as seen by replaying or guessing URLs.",
     "priority": "high"
+  },
+  "e9ebcf7442ae": {
+    "seenAt": "2026-07-03T05:53:17.693Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a minimal unit test suite for `statsCalc.tsx` using Vitest. Write at least 5 tests covering: correct champion propagation when a challenger wins, no title change on a draw or champion win, streak calculation, longest reign tracking, and edge cases like the first match in a new league. Wire Vitest into the CI pipeline so these run on every push.",
+    "priority": "high"
+  },
+  "40fed8ba3a7d": {
+    "seenAt": "2026-07-03T05:53:17.693Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file to the repository root. It is listed as missing in the repo analysis. Populate it with all environment variable keys used across the project (Vercel Postgres connection strings, NextAuth secret and URL, any OAuth provider keys) with placeholder values and inline comments explaining each one. Reference it explicitly in CONTRIBUTING.md and CLAUDE.md.",
+    "priority": "medium"
+  },
+  "874df1ce3c72": {
+    "seenAt": "2026-07-03T05:53:17.695Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Audit and remove dead code accumulated since the last commit 11 days ago — specifically, do a pass through the codebase for any unused React components, orphaned utility functions, and unreferenced CSS/Tailwind classes. Use Next.js bundle analysis (`ANALYZE=true next build`) to identify modules being bundled but never imported at runtime, and remove or consolidate them.",
+    "priority": "medium"
+  },
+  "fa89957df08f": {
+    "seenAt": "2026-07-03T05:53:17.697Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file to the repository root listing all required environment variables with placeholder values (e.g. `NEXT_PUBLIC_SITE_URL=https://www.lenuoveespressioni.it`, `NEXT_PUBLIC_SUPABASE_URL=`, `NEXT_PUBLIC_SUPABASE_ANON_KEY=`, and any server-side Supabase service role key). The file was flagged as missing in the repo scan.",
+    "priority": "high"
+  },
+  "f13b5b54d5e9": {
+    "seenAt": "2026-07-03T05:53:17.697Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `CONTRIBUTING.md` or an inline comment block at the top of the ISR/cache layer (wherever `unstable_cache` calls are centralised) documenting the TTL strategy: which routes use ISR, what revalidation intervals are set, and why. If there is no single cache module, create one and consolidate the `unstable_cache` wrappers there.",
+    "priority": "medium"
+  },
+  "9f832e0ee171": {
+    "seenAt": "2026-07-03T05:53:17.699Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file listing all required environment variables (e.g. ANTHROPIC_API_KEY, RESEND_API_KEY, GITHUB_TOKEN, VERCEL endpoint URL) with placeholder values and a brief inline comment for each.",
+    "priority": "medium"
+  },
+  "c56f90913fca": {
+    "seenAt": "2026-07-03T05:53:17.699Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a bootstrap check or clear error message in the nightly script that detects when `data/seen-suggestions.json` does not exist and either creates it with an empty array or exits with an actionable log message, rather than silently failing.",
+    "priority": "low"
   }
 }
