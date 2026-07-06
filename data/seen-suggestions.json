@@ -1013,5 +1013,61 @@
     "area": "Maintenance",
     "action": "Add a bootstrap check or clear error message in the nightly script that detects when `data/seen-suggestions.json` does not exist and either creates it with an empty array or exits with an actionable log message, rather than silently failing.",
     "priority": "low"
+  },
+  "618b00f6d3c4": {
+    "seenAt": "2026-07-06T06:28:16.560Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add La Liga or Bundesliga as a third tracked league, following the groundwork already laid for multi-league support.",
+    "priority": "high"
+  },
+  "297e20c5888b": {
+    "seenAt": "2026-07-06T06:28:16.560Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a 'title timeline' visualisation on each league page — a horizontal chart showing which team held the championship and for how long across the full match history.",
+    "priority": "medium"
+  },
+  "12c28674846f": {
+    "seenAt": "2026-07-06T06:28:16.562Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a self-service account and data deletion flow accessible from user account settings — a dedicated page where users can view what data is stored against their account and trigger permanent deletion of their profile, CV data, and any AI-generated content.",
+    "priority": "high"
+  },
+  "055c1c340088": {
+    "seenAt": "2026-07-06T06:28:16.562Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a shareable public profile URL for each user (e.g. thatswhoi.am/[username]) that renders their one-page CV as a standalone, publicly accessible page — no login required for the viewer — with a 'Copy link' button on the dashboard so users can distribute it.",
+    "priority": "medium"
+  },
+  "7fef22b9f06b": {
+    "seenAt": "2026-07-06T06:28:16.564Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Build the `/news` page as a simple chronological list sourced from a new `news` Supabase table with columns: `id`, `title`, `slug`, `body` (markdown or plain text), `published_at`, `category` (enum: announcement | press | recap). Each entry gets its own `/news/[slug]` detail page. Add a link in the main nav. This is the single most visible content gap on the site — a theatre company without any news or announcements feed looks inactive to visitors arriving after a show or a press mention.",
+    "priority": "high"
+  },
+  "d24ebb148149": {
+    "seenAt": "2026-07-06T06:28:16.564Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Create a proper 1200×630 Open Graph image for static pages (homepage, company page, archive) using Next.js built-in `ImageResponse` via an `/api/og` route. Pass `title` and optionally a background from the play's poster or a branded theatre image. Replace the current `/logo.png` fallback in all `generateMetadata` calls that currently set `og:image` to the logo. This is a one-file addition (`app/api/og/route.tsx`) that immediately improves every social share card across the site.",
+    "priority": "medium"
+  },
+  "b412b356151f": {
+    "seenAt": "2026-07-06T06:28:16.565Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Populate MONITOR.md files in the three other monitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) with their product context, current status, and known pain points — mirroring the structure already working in Project Monitor.",
+    "priority": "high"
+  },
+  "66afd7068909": {
+    "seenAt": "2026-07-06T06:28:16.565Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add a Friday weekly summary email mode that aggregates the week's top suggestions across all five focus areas into a single digest, as an alternative to the standard Friday rotation slot.",
+    "priority": "medium"
   }
 }
