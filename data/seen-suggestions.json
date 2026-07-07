@@ -1069,5 +1069,61 @@
     "area": "Features",
     "action": "Add a Friday weekly summary email mode that aggregates the week's top suggestions across all five focus areas into a single digest, as an alternative to the standard Friday rotation slot.",
     "priority": "medium"
+  },
+  "278ee9c140f6": {
+    "seenAt": "2026-07-07T06:07:27.345Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an empty state with explanatory copy on the match history or standings pages for any newly added league that has no matches yet. When La Liga or Bundesliga gets wired up, users landing on that league's page will see a blank table or list with no context. Add a message such as 'No matches recorded yet — check back soon' alongside a brief one-line explanation of how the championship works, so new visitors immediately understand the concept rather than assuming the page is broken.",
+    "priority": "high"
+  },
+  "15442c1fa580": {
+    "seenAt": "2026-07-07T06:07:27.345Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add visible loading feedback to the admin add-match form submission. Currently, if the form posts and the server takes a moment to recalculate stats via statsCalc.tsx, there is no spinner, disabled state, or progress indicator — the button remains active and clickable. Disable the submit button immediately on click and show a brief inline label such as 'Saving…' until the response returns, then surface a clear success or error message in-page rather than relying solely on a redirect or silent failure.",
+    "priority": "medium"
+  },
+  "a031d04ec956": {
+    "seenAt": "2026-07-07T06:07:27.347Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add visible loading and empty states to the CV render page — when the AI is generating content, show a skeleton or progress indicator with copy like 'Building your CV…' rather than a blank or static screen, and if the user has no data yet, show an empty state with a clear call-to-action prompt to get started.",
+    "priority": "high"
+  },
+  "eacf3be22cc5": {
+    "seenAt": "2026-07-07T06:07:27.347Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add a minimal first-run onboarding prompt for new authenticated users — specifically a single contextual tooltip or highlighted empty state on the main dashboard that explains what 'Thatswhoi.am' produces and what the user should do first (e.g. 'Fill in your details and we'll generate a one-page CV you can share anywhere'). Currently there is no open issue tracking this.",
+    "priority": "medium"
+  },
+  "b66eb951ca19": {
+    "seenAt": "2026-07-07T06:07:27.349Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible placeholder state (avatar silhouette + italic 'bio not yet available' message) to alumni member profile pages where bio and photo_url are null, instead of letting the page render with blank sections.",
+    "priority": "high"
+  },
+  "38a9ca6d9f81": {
+    "seenAt": "2026-07-07T06:07:27.349Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Replace the plain logo fallback used as og:image with a properly sized 1200×630 static share image that includes the company name and a representative visual, and verify it renders correctly when the site is shared on WhatsApp and Facebook.",
+    "priority": "medium"
+  },
+  "68f674d8799f": {
+    "seenAt": "2026-07-07T06:07:27.350Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a clear, human-readable subject line and preview text to the nightly email that communicates the focus area and repo count upfront — e.g. '🎨 UX Review: 3 suggestions across 2 repos' — so the digest is scannable before opening.",
+    "priority": "high"
+  },
+  "ccb6ffe9a1d4": {
+    "seenAt": "2026-07-07T06:07:27.350Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a visible fallback message in the email body for repos that have no MONITOR.md yet — something like 'ℹ️ No context file found for [repo] — suggestions are based on code analysis only. Add a MONITOR.md to improve relevance.' — rather than silently generating suggestions with missing context.",
+    "priority": "medium"
   }
 }
