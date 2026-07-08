@@ -1125,5 +1125,47 @@
     "area": "UX",
     "action": "Add a visible fallback message in the email body for repos that have no MONITOR.md yet — something like 'ℹ️ No context file found for [repo] — suggestions are based on code analysis only. Add a MONITOR.md to improve relevance.' — rather than silently generating suggestions with missing context.",
     "priority": "medium"
+  },
+  "f39f6a9addeb": {
+    "seenAt": "2026-07-08T05:21:02.129Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Switch the sitemap from a runtime API-based generation to a static build-time generation using Next.js 15's native `sitemap.ts` file convention, pulling league/match slugs directly from the database during `next build` rather than via HTTP calls.",
+    "priority": "medium"
+  },
+  "22bf288a3936": {
+    "seenAt": "2026-07-08T05:21:02.131Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Investigate why the homepage is returning a 1234ms response time despite being a Next.js app on Vercel — confirm ISR cache headers (x-vercel-cache: HIT) are present on repeated requests, and if not, ensure the page exports `revalidate` correctly and is not opted out of caching by dynamic data fetching (e.g. cookies(), headers(), or uncached DB calls at the page level). A cached edge response should be under 100ms.",
+    "priority": "high"
+  },
+  "6cd888d3aecf": {
+    "seenAt": "2026-07-08T05:21:02.131Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Configure thatswhoi.am as the canonical primary domain in Vercel, add a 301 redirect from onepagecv-theta.vercel.app to thatswhoi.am, and update the canonical <link> meta tag to reflect the production URL. This is currently unresolved per the open SEO/Domain issue and the live site is still serving from the .vercel.app subdomain.",
+    "priority": "high"
+  },
+  "a48990722f58": {
+    "seenAt": "2026-07-08T05:21:02.133Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Replace the logo fallback used as og:image (/logo.png) with a properly sized 1200×630 Open Graph image for all static pages (homepage, /spettacoli, /compagnia, etc.). The current logo is almost certainly not 1200×630 and will render poorly or be cropped when shared on Facebook, WhatsApp, or LinkedIn, reducing click-through on social shares. Generate a single static OG image (e.g., a branded scene photo at exactly 1200×630, under 300 KB, served as WebP or optimised JPEG) and update the default metadata object in app/layout.tsx to point to it. This is already noted as a roadmap item so the path is clear — execute it.",
+    "priority": "high"
+  },
+  "687013d7284d": {
+    "seenAt": "2026-07-08T05:21:02.133Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Add structured data (JSON-LD) of type 'TheaterEvent' (or 'Event') to each individual upcoming-date page. Right now the site has per-page metadata and Open Graph, but no machine-readable event markup, so Google cannot surface rich results (date, venue, ticket link) in search for upcoming shows. For each date row already in Supabase (startDate, location, tickets_url), emit a <script type='application/ld+json'> block in the page's <head> using Next.js's built-in metadata or a manual script tag, following schema.org/Event with 'name', 'startDate', 'location' (PostalAddress), 'performer' (PerformingGroup), and 'offers' (once tickets_url is populated). This is zero-dependency and requires no new data — the fields already exist.",
+    "priority": "medium"
+  },
+  "f6475ab879d1": {
+    "seenAt": "2026-07-08T05:21:02.134Z",
+    "repo": "tigro7/monitor",
+    "area": "Performance",
+    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the nightly GitHub Actions workflow using `treosh/lighthouse-ci-action`. Output the score to the email digest so performance regressions are caught automatically.",
+    "priority": "low"
   }
 }
