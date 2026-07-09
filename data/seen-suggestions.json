@@ -1167,5 +1167,54 @@
     "area": "Performance",
     "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the nightly GitHub Actions workflow using `treosh/lighthouse-ci-action`. Output the score to the email digest so performance regressions are caught automatically.",
     "priority": "low"
+  },
+  "faba2d79f6b9": {
+    "seenAt": "2026-07-09T06:04:26.698Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Audit and harden the admin match-entry API routes to confirm they are protected by NextAuth session checks on every endpoint — not just the UI. Specifically, verify that the route handlers under your add-match flow (e.g. any `/api/matches` POST or stats recalculation endpoints) call `getServerSession` and return a 401 if the session is absent or the user is not an admin. A missing server-side auth check here means anyone who discovers the endpoint URL can insert or corrupt match data directly.",
+    "priority": "high"
+  },
+  "48cf8cf820a4": {
+    "seenAt": "2026-07-09T06:04:26.698Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Add rate limiting to any unauthenticated API routes (e.g. the sitemap API endpoint and any public data-fetch routes) using Vercel's Edge middleware or a lightweight package such as `@upstash/ratelimit` with the free Upstash Redis tier. Set a conservative limit (e.g. 60 requests/minute per IP) and return a 429 with a `Retry-After` header on breach.",
+    "priority": "medium"
+  },
+  "0d58f89f89bd": {
+    "seenAt": "2026-07-09T06:04:26.700Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Implement Content Security Policy and missing security headers in next.config.js headers block. At minimum: Content-Security-Policy (restrict script-src, connect-src, img-src to known origins), X-Frame-Options: DENY, Referrer-Policy: strict-origin-when-cross-origin, and Permissions-Policy disabling camera/microphone/geolocation. Use next/headers or the headers() config array so these are applied at the edge on every response.",
+    "priority": "high"
+  },
+  "39b0d7c16a54": {
+    "seenAt": "2026-07-09T06:04:26.701Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Add a .env.example file to the repository documenting all required environment variables (e.g. NEXT_PUBLIC_SITE_URL, Supabase URL and anon key, any service-role keys) with placeholder values and no real secrets.",
+    "priority": "high"
+  },
+  "f056813153fb": {
+    "seenAt": "2026-07-09T06:04:26.701Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Audit all Supabase queries that accept URL-derived input (route params like play slugs, member IDs, date filters) and confirm Row Level Security (RLS) is enabled on every public-facing table, with read-only policies for unauthenticated roles.",
+    "priority": "medium"
+  },
+  "b73050fb5195": {
+    "seenAt": "2026-07-09T06:04:26.702Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a .env.example file documenting all required secrets (e.g. ANTHROPIC_API_KEY, RESEND_API_KEY, GitHub token, any Vercel secrets), and audit the dismiss endpoint on Vercel to confirm it requires a secret token before writing to the repo — if it accepts unauthenticated POST requests, anyone who discovers the URL can arbitrarily manipulate seen-suggestions.json.",
+    "priority": "high"
+  },
+  "a2562dd7059b": {
+    "seenAt": "2026-07-09T06:04:26.702Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add explicit error handling and alerting around the nightly GitHub Actions workflow for the case where the Claude API call fails silently — specifically, ensure any non-2xx response or thrown exception causes the workflow step to exit with a non-zero code and triggers a GitHub Actions failure notification, rather than producing an empty or malformed email digest.",
+    "priority": "medium"
   }
 }
