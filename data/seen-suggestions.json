@@ -1216,5 +1216,61 @@
     "area": "Security",
     "action": "Add explicit error handling and alerting around the nightly GitHub Actions workflow for the case where the Claude API call fails silently — specifically, ensure any non-2xx response or thrown exception causes the workflow step to exit with a non-zero code and triggers a GitHub Actions failure notification, rather than producing an empty or malformed email digest.",
     "priority": "medium"
+  },
+  "d789ef298d10": {
+    "seenAt": "2026-07-10T06:03:36.318Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Write unit tests for `statsCalc.tsx` using Vitest. Start with at least 3–5 tests covering: (1) correct title holder assignment after a win, (2) title retention after a draw/loss, (3) streak calculation across multiple matches, and (4) edge cases like the opening match of a league. Wire Vitest into the CI pipeline so these run on every push.",
+    "priority": "high"
+  },
+  "5ce3ef019da0": {
+    "seenAt": "2026-07-10T06:03:36.318Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "The `.env.example` file is flagged as missing in the repo. Create it with placeholder values for every environment variable the app requires (database URL, NextAuth secret, OAuth credentials, etc.), and add a setup step to CONTRIBUTING.md referencing it. Cross-check against actual usage in the codebase to ensure nothing is omitted.",
+    "priority": "medium"
+  },
+  "be4439d38d13": {
+    "seenAt": "2026-07-10T06:03:36.320Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Add a minimal test stage to the existing CI workflow: write a single Playwright smoke test that navigates to the homepage and the CV render page, asserts HTTP 200, and checks for at least one key landmark element (e.g. the CV container or nav). Wire this into the GitHub Actions pipeline as a required check before any merge.",
+    "priority": "high"
+  },
+  "adcce8c3f2c8": {
+    "seenAt": "2026-07-10T06:03:36.320Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Audit the codebase for dead or unreferenced files: specifically check for any unused API route handlers, orphaned React components not imported anywhere, and leftover environment variable keys in .env.example that no longer correspond to active code references. Remove confirmed dead files and update .env.example to match only what the current codebase actually consumes.",
+    "priority": "medium"
+  },
+  "5c7bfb285d31": {
+    "seenAt": "2026-07-10T06:03:36.322Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file to the repository root documenting all required environment variables (at minimum `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and any server-side Supabase keys). Each entry should include a short inline comment explaining what it controls and whether it is required or optional.",
+    "priority": "high"
+  },
+  "a742bf9a6e47": {
+    "seenAt": "2026-07-10T06:03:36.322Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add at least one integration test covering the ISR/cache path for a critical dynamic route (e.g. a play detail page and the sitemap endpoint). Use `vitest` or Jest with `msw` to mock the Supabase client and assert that the page renders required SEO fields (`title`, `canonical`, `og:image`) and that a missing slug returns a 404, not a silent empty render.",
+    "priority": "medium"
+  },
+  "65d83b5148a4": {
+    "seenAt": "2026-07-10T06:03:36.323Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file listing all required environment variables (e.g. ANTHROPIC_API_KEY, RESEND_API_KEY, GITHUB_TOKEN, VERCEL endpoint URL) with placeholder values and a brief comment for each.",
+    "priority": "high"
+  },
+  "c42f61d130f0": {
+    "seenAt": "2026-07-10T06:03:36.323Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a one-time bootstrap check in the nightly workflow (or a setup script) that creates `data/seen-suggestions.json` with an empty array `[]` if the file does not already exist, rather than relying on it being pre-committed.",
+    "priority": "medium"
   }
 }
