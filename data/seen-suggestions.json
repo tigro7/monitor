@@ -1323,10 +1323,10 @@
     "dismissedByUser": true
   },
   "84b2b86f227a": {
-    "seenAt": "2026-07-13T05:36:55.768Z",
+    "seenAt": "2026-07-13T07:06:08.316Z",
+    "expiresAt": "2027-07-13T07:06:08.316Z",
     "repo": "tigro7/monitor",
-    "area": "Features",
     "action": "Implement the Friday weekly summary email as a distinct template that recaps the week's suggestions by focus area (Mon–Fri rotation) and highlights any that were dismissed vs. still open.",
-    "priority": "medium"
+    "dismissedByUser": true
   }
 }
