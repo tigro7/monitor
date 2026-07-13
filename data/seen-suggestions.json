@@ -1274,11 +1274,11 @@
     "priority": "medium"
   },
   "875689813367": {
-    "seenAt": "2026-07-13T05:36:55.762Z",
+    "seenAt": "2026-07-13T07:05:14.854Z",
+    "expiresAt": "2027-07-13T07:05:14.854Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Features",
     "action": "Add La Liga or Bundesliga as a third tracked league, leveraging the groundwork already laid for multi-league support.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "367fe04ef8d7": {
     "seenAt": "2026-07-13T05:36:55.762Z",
