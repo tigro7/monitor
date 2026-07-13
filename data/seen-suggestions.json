@@ -1295,11 +1295,11 @@
     "priority": "high"
   },
   "1d5140154c45": {
-    "seenAt": "2026-07-13T05:36:55.764Z",
+    "seenAt": "2026-07-13T07:05:38.208Z",
+    "expiresAt": "2027-07-13T07:05:38.208Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Features",
     "action": "Add a shareable public CV link feature: generate a unique, stable slug (e.g. thatswhoi.am/cv/username) for each user's CV that they can copy and share, with a toggle to make it public or private. Include a simple Open Graph preview so the link renders a card when shared on LinkedIn or via messaging apps.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "a6a8b661542c": {
     "seenAt": "2026-07-13T05:36:55.766Z",
