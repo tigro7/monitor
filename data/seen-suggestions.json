@@ -1328,5 +1328,61 @@
     "repo": "tigro7/monitor",
     "action": "Implement the Friday weekly summary email as a distinct template that recaps the week's suggestions by focus area (Mon–Fri rotation) and highlights any that were dismissed vs. still open.",
     "dismissedByUser": true
+  },
+  "eaf28761ad2c": {
+    "seenAt": "2026-07-14T04:50:56.856Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an empty state with explanatory copy on each league page for when no matches have been entered yet — something like 'No matches recorded yet. The championship begins with the first match of the season.' with a clear visual treatment rather than a blank or broken layout.",
+    "priority": "high"
+  },
+  "f02539759aad": {
+    "seenAt": "2026-07-14T04:50:56.856Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add a brief 'How it works' explainer — 2–3 sentences or a small info block — near the top of each league page or on a dedicated About section, explaining the boxing-title mechanic: one team holds the title, it passes to whoever beats them, draws leave it unchanged.",
+    "priority": "medium"
+  },
+  "58f237bab84c": {
+    "seenAt": "2026-07-14T04:50:56.858Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add visible loading and empty states to the CV generation flow. When the AI is generating output, show a progress indicator or skeleton screen with a message like 'Building your CV…' rather than leaving the UI silent. If a user has no CV data entered yet, show a prompt such as 'Add your first experience to see your CV come to life' instead of a blank or partially rendered page.",
+    "priority": "high"
+  },
+  "b25d358e25c5": {
+    "seenAt": "2026-07-14T04:50:56.858Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add a minimal first-time user onboarding hint — specifically a short inline tooltip or callout on the main input area that explains what the product does and what the user should do first (e.g. 'Paste your work history below and we'll turn it into a polished one-page CV'). This should only appear when the user's CV data is empty and should be dismissible.",
+    "priority": "medium"
+  },
+  "95ef899aedf0": {
+    "seenAt": "2026-07-14T04:50:56.861Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible placeholder state on alumni member profile pages that have no bio or photo, rather than silently rendering a sparse/empty page. Display a friendly message such as 'Profilo in aggiornamento — torna presto!' with the member's name and role prominently shown, so visitors understand the page is intentionally incomplete rather than broken.",
+    "priority": "high"
+  },
+  "54b69a9eceb8": {
+    "seenAt": "2026-07-14T04:50:56.861Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "On play date cards where tickets_url is null (e.g. the October 2026 date), replace any invisible or absent ticket CTA with a clearly disabled button labelled 'Biglietti disponibili a breve' that is visually distinct (muted style, cursor-not-allowed) and includes an aria-disabled='true' attribute, so keyboard and screen-reader users also perceive it as unavailable.",
+    "priority": "medium"
+  },
+  "9b3a608e0a2d": {
+    "seenAt": "2026-07-14T04:50:56.862Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a deduplication guard on the dismiss button so repeated taps/clicks don't fire multiple requests. The commit history shows the same suggestion IDs being dismissed 2–3 times in a row (e.g. 3e5965cf44a7 dismissed four times, 875689813367 twice) within the same day, suggesting the one-click dismiss flow gives no visual confirmation that the action succeeded, prompting the user to retry. After the dismiss request is sent, immediately disable or hide the button and show a brief inline confirmation ('Dismissed ✓') so the user knows it worked.",
+    "priority": "high"
+  },
+  "47a9c46ced87": {
+    "seenAt": "2026-07-14T04:50:56.862Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a plain-language explanation of the focus area rotation to the email digest itself — something like a one-line header such as 'Today's focus: UX & Content (Mon = Performance, Tue = Security, …)' — so the reader immediately understands why today's suggestions are scoped the way they are and doesn't wonder why infrastructure issues aren't mentioned.",
+    "priority": "medium"
   }
 }
