@@ -1384,5 +1384,47 @@
     "area": "UX",
     "action": "Add a plain-language explanation of the focus area rotation to the email digest itself — something like a one-line header such as 'Today's focus: UX & Content (Mon = Performance, Tue = Security, …)' — so the reader immediately understands why today's suggestions are scoped the way they are and doesn't wonder why infrastructure issues aren't mentioned.",
     "priority": "medium"
+  },
+  "ee8127c8e8e3": {
+    "seenAt": "2026-07-15T04:51:26.071Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Implement a build-time or ISR-based sitemap generation strategy to replace the current runtime API-call approach. Use Next.js 15's built-in `sitemap.ts` file convention (app directory) to generate the sitemap from direct database queries rather than HTTP calls, so the sitemap is populated correctly at build time and revalidated on a schedule (e.g. revalidate every 24 hours via ISR).",
+    "priority": "medium"
+  },
+  "3351288ef5c3": {
+    "seenAt": "2026-07-15T04:51:26.074Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Investigate why the homepage response time is ~1000ms and confirm ISR cache headers are being served from Vercel's edge. Check the 'x-vercel-cache' response header — if it returns MISS or BYPASS on repeated cold hits, the page is falling back to a full server render. Set an explicit revalidate value (e.g. export const revalidate = 3600 in the route segment) and verify the Cache-Control header reads 's-maxage=3600, stale-while-revalidate=86400' in production. Also confirm the canonical domain thatswhoi.am is set as the primary domain in Vercel so edge caching is not split across two origins.",
+    "priority": "high"
+  },
+  "23bc19a3cd23": {
+    "seenAt": "2026-07-15T04:51:26.074Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Add structured data (JSON-LD) to the homepage — at minimum an Organization or WebSite schema block with 'name', 'url', and 'description' fields, plus a SearchAction if the site supports any search or filtering. Inject it via a Next.js Script tag with strategy='beforeInteractive' inside the root layout so it is present on every page without client-side delay.",
+    "priority": "medium"
+  },
+  "b7f352c25601": {
+    "seenAt": "2026-07-15T04:51:26.076Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Consolidate the two open response-time issues (#Performance issues tracking 1617ms and 1118ms gaps) into a single focused investigation: run `next build --profile` locally and compare ISR revalidation TTLs against actual Supabase query times using Vercel Speed Insights traces. The live site is now at 768ms — meaningfully better than both filed benchmarks — but the variance between measurements suggests cold-start sensitivity. Confirm that all high-traffic routes (homepage, play index, individual play pages) have `revalidate` values ≤ 60s and that `unstable_cache` TTLs are not set so short that they defeat the cache under low traffic, forcing frequent cold Supabase roundtrips.",
+    "priority": "high"
+  },
+  "8963724834d7": {
+    "seenAt": "2026-07-15T04:51:26.076Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Replace the `/logo.png` fallback used as `og:image` on static pages (homepage, company page, archive) with a proper 1200×630 image using the Next.js `opengraph-image.tsx` App Router convention and `ImageResponse`. This is already tracked as a feature issue but has a direct SEO impact: social crawlers (Facebook, Twitter/X, WhatsApp) render a preview sized for 1200×630 and will either letterbox or refuse to display a logo-shaped image, reducing click-through from shared links.",
+    "priority": "medium"
+  },
+  "daf739a74097": {
+    "seenAt": "2026-07-15T04:51:26.077Z",
+    "repo": "tigro7/monitor",
+    "area": "Performance",
+    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run inside the nightly GitHub Actions workflow using `treosh/lighthouse-ci-action`. Output the Core Web Vitals scores (LCP, CLS, INP) to a JSON artifact and feed the actual score into the monitor's analysis instead of the estimate.",
+    "priority": "high"
   }
 }
