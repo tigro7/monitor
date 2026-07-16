@@ -1426,5 +1426,54 @@
     "area": "Performance",
     "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run inside the nightly GitHub Actions workflow using `treosh/lighthouse-ci-action`. Output the Core Web Vitals scores (LCP, CLS, INP) to a JSON artifact and feed the actual score into the monitor's analysis instead of the estimate.",
     "priority": "high"
+  },
+  "91161e9bd218": {
+    "seenAt": "2026-07-16T04:59:37.400Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Audit every route handler under the add-match flow (e.g. any POST/DELETE/PATCH under `/api/matches` or equivalent) and confirm each one independently validates a NextAuth server-side session using `getServerSession()` — not just the UI guard. Add a middleware or shared auth helper so no route can accidentally be added in future without protection.",
+    "priority": "high"
+  },
+  "d18bd25199a4": {
+    "seenAt": "2026-07-16T04:59:37.400Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Add server-side input validation (e.g. with Zod) to the match-entry API route handler, specifically enforcing that team names exist in the known league dataset, the match date is a valid past date, and the score fields are non-negative integers within a plausible range before any database write or `statsCalc` recalculation is triggered.",
+    "priority": "medium"
+  },
+  "119ff67151c9": {
+    "seenAt": "2026-07-16T04:59:37.403Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Implement a Content Security Policy (CSP) header and the full suite of security headers (X-Frame-Options, Referrer-Policy, Permissions-Policy) via the `headers()` block in next.config.js. At minimum, the CSP should restrict script-src to self and your known CDN origins, frame-ancestors should be set to none, and Referrer-Policy should be set to strict-origin-when-cross-origin.",
+    "priority": "high"
+  },
+  "a5ed501e0c81": {
+    "seenAt": "2026-07-16T04:59:37.405Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Add a .env.example file to the repository documenting all required environment variables (e.g. NEXT_PUBLIC_SITE_URL, Supabase URL, Supabase anon key) with placeholder values and no real secrets.",
+    "priority": "high"
+  },
+  "fda1b636a30c": {
+    "seenAt": "2026-07-16T04:59:37.405Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Add a Content Security Policy (CSP) header in next.config.js (or via Vercel headers config) restricting script-src, frame-src, and connect-src to known origins (self, the Supabase project URL, and any trailer embed domains such as youtube.com).",
+    "priority": "medium"
+  },
+  "adc17063f0dd": {
+    "seenAt": "2026-07-16T04:59:37.406Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a secret token to the dismiss endpoint and validate it on every request. Currently the Vercel endpoint appears to accept dismiss calls without authentication, meaning anyone who can guess or observe a suggestion ID from an email can dismiss suggestions on your behalf. Add a shared secret (e.g. DISMISS_SECRET env var) that must be included as a header or query param, and reject requests that omit or mismatch it.",
+    "priority": "high"
+  },
+  "b0c8d9dec673": {
+    "seenAt": "2026-07-16T04:59:37.406Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a .env.example file to the repository listing all required environment variables (Anthropic API key, Resend key, GitHub token, any Vercel secrets). The GitHub Analysis flags this file as missing. Without it, a misconfigured deployment will fail silently or — worse — fall back to undefined values and potentially call external APIs with no credentials, leaking that the key is absent in error logs.",
+    "priority": "medium"
   }
 }
