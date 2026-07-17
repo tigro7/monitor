@@ -1475,5 +1475,61 @@
     "area": "Security",
     "action": "Add a .env.example file to the repository listing all required environment variables (Anthropic API key, Resend key, GitHub token, any Vercel secrets). The GitHub Analysis flags this file as missing. Without it, a misconfigured deployment will fail silently or — worse — fall back to undefined values and potentially call external APIs with no credentials, leaking that the key is absent in error logs.",
     "priority": "medium"
+  },
+  "82fd6c77fba0": {
+    "seenAt": "2026-07-17T05:13:39.288Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a unit test suite for `statsCalc.tsx` using Vitest. Write at least 5 tests covering: correct champion succession when a new team wins, no-change when the champion wins, handling of the first match in a league (no prior champion), longest reign calculation, and total defences count. Wire Vitest into the CI pipeline so these run on every push.",
+    "priority": "high"
+  },
+  "a9c23241873a": {
+    "seenAt": "2026-07-17T05:13:39.288Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Remove or replace the `.env.example` file that the GitHub analysis flags as missing. Audit the repo root and any deployment config for any other stale or placeholder files (e.g. unused `next.config` options, commented-out environment variables, orphaned migration scripts) and either delete them or add a comment explaining why they exist.",
+    "priority": "medium"
+  },
+  "939bdb857dbe": {
+    "seenAt": "2026-07-17T05:13:39.290Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Investigate and fix the 7341ms live response time — audit whether Next.js ISR/static caching is correctly configured in next.config.js and that cache-control headers from Vercel edge are being returned (look for 'x-vercel-cache: HIT' in response headers). Check if any server-side data fetching on the homepage (e.g. getServerSideProps or uncached fetch calls) is forcing a full server render on every request, and convert eligible pages to static generation or add explicit revalidate values.",
+    "priority": "high"
+  },
+  "73e6ebea92f5": {
+    "seenAt": "2026-07-17T05:13:39.290Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "Add a .github/dependabot.yml config file to the repository with a weekly schedule targeting the npm ecosystem and auto-merge enabled for patch-level updates. Example minimal config: ecosystem 'npm', directory '/', schedule interval 'weekly', open-pull-requests-limit 5. This is a one-file addition and directly resolves the open Dependabot issue without requiring any third-party tooling beyond what GitHub already provides free.",
+    "priority": "medium"
+  },
+  "bb774a7fc34b": {
+    "seenAt": "2026-07-17T05:13:39.294Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file to the repository root listing all required environment variables (at minimum `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SUPABASE_URL`, and `NEXT_PUBLIC_SUPABASE_ANON_KEY`) with placeholder values and inline comments explaining their purpose.",
+    "priority": "high"
+  },
+  "6bb704e1cc33": {
+    "seenAt": "2026-07-17T05:13:39.294Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `dependabot.yml` (or `renovate.json`) to `.github/` to automate dependency update PRs for the `npm` ecosystem on a weekly schedule, targeting the `main` branch.",
+    "priority": "medium"
+  },
+  "bdea6649de13": {
+    "seenAt": "2026-07-17T05:13:39.296Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file listing all required environment variables (e.g. Anthropic API key, Resend API key, GitHub token, repo names) with placeholder values and inline comments explaining each one.",
+    "priority": "high"
+  },
+  "d3fd9ed11284": {
+    "seenAt": "2026-07-17T05:13:39.296Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Investigate and fix the duplicate dismiss commits on 13/07 — the same suggestion IDs (e.g. `3e5965cf44a7`, `875689813367`, `84b2b86f227a`) each triggered multiple `chore: dismiss` commits. Add an idempotency check in the dismiss handler so that writing to `seen-suggestions.json` is skipped if the ID is already present, preventing redundant commits and keeping the git history clean.",
+    "priority": "medium"
   }
 }
