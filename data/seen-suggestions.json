@@ -1230,5 +1230,61 @@
     "area": "Features",
     "action": "Add a Friday weekly summary variant to the nightly email that recaps the week: how many suggestions were generated per focus area, how many were dismissed, and which open issues were filed — pulling from seen-suggestions.json and the GitHub issues list. This replaces the standard rotation email on Fridays.",
     "priority": "medium"
+  },
+  "74f0ea8a0dfd": {
+    "seenAt": "2026-07-21T05:20:18.694Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an empty state with explanatory copy on each league page for when no matches have been entered yet, and consider adding a 'last updated' timestamp near the current champion display so visitors understand how fresh the data is.",
+    "priority": "high"
+  },
+  "582b8536beef": {
+    "seenAt": "2026-07-21T05:20:18.694Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add a brief 'How it works' explanation — two or three sentences or a small info block — near the top of each league page or on a dedicated About section, explaining the boxing-title format (one team holds the title, it passes only on a defeat).",
+    "priority": "medium"
+  },
+  "5abf144cba5a": {
+    "seenAt": "2026-07-21T05:20:18.697Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add visible loading and empty states to the CV generation flow. When the AI is generating output, show a progress indicator with a brief, friendly message (e.g. 'Crafting your one-pager…') rather than leaving the user staring at a static UI. Similarly, if a user lands on their dashboard with no CV data yet, show an explicit empty state with a clear call-to-action prompt (e.g. 'You haven't built your CV yet — let's fix that') instead of a blank or skeleton-only view.",
+    "priority": "high"
+  },
+  "05e02f08c158": {
+    "seenAt": "2026-07-21T05:20:18.697Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Audit all interactive controls (form inputs, buttons, navigation links) for keyboard focus visibility and add explicit focus-visible styles where the browser default has been suppressed. Specifically check whether any global CSS reset or Tailwind base layer includes 'outline: none' or 'focus:outline-none' without a replacement focus indicator, and replace it with a high-contrast ring (e.g. Tailwind's focus-visible:ring-2 utility) on every actionable element.",
+    "priority": "medium"
+  },
+  "e3b8b162a6f7": {
+    "seenAt": "2026-07-21T05:20:18.698Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible empty-state message and fallback UI on alumni profile pages where bio and photo are missing, rather than silently rendering a near-blank page. For example: a placeholder avatar with a caption like 'Biografia non ancora disponibile' and a short contextual note ('Stiamo raccogliendo i ricordi di tutti i nostri collaboratori — torna presto!') so visitors understand the page is intentionally sparse, not broken.",
+    "priority": "high"
+  },
+  "81ab148ed06e": {
+    "seenAt": "2026-07-21T05:20:18.698Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible ticket-availability indicator on upcoming date cards: when tickets_url is null, show a disabled button or label such as 'Biglietti in arrivo' instead of omitting any call-to-action entirely. When the URL is populated (as will happen for the October 2026 date), the same component should upgrade automatically to a live 'Acquista biglietti' link with a clear external-link affordance (e.g. an arrow-out icon and aria-label='Acquista biglietti su [teatro] (link esterno)').",
+    "priority": "medium"
+  },
+  "d7603771f5bb": {
+    "seenAt": "2026-07-21T05:20:18.700Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a clear, human-readable explanation inside the email digest for what happens when a suggestion is dismissed — specifically, confirm that the one-click dismiss marks it as seen permanently and won't resurface it. Right now a user clicking 'dismiss' has no feedback loop: no confirmation message, no indication the action succeeded or what it means for future emails.",
+    "priority": "high"
+  },
+  "1e5c6ab1a945": {
+    "seenAt": "2026-07-21T05:20:18.700Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a short onboarding note to the first email sent to a new recipient explaining the weekly focus rotation (Mon–Fri areas like UX, DX, Security, etc.) so they understand why Monday's email looks different from Tuesday's. This could be a single italicised line at the top: e.g. 'Each day focuses on a different area — today's lens is 🎨 UX & Content.'",
+    "priority": "medium"
   }
 }
