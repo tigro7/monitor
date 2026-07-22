@@ -1,24 +1,10 @@
 {
-  "97e5dbbf851d": {
-    "seenAt": "2026-06-22T03:15:45.139Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Testing",
-    "action": "Add at least a minimal test suite covering the core user-facing flows before the codebase grows further. Start with integration or end-to-end tests using Playwright or Vitest — pick one tool, write 3–5 tests for the critical paths, and wire them into the existing CI workflow you just added.",
-    "priority": "high"
-  },
   "c341d7efbcaf": {
     "seenAt": "2026-06-22T13:03:44.305Z",
     "expiresAt": "2027-06-22T13:03:44.305Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
     "action": "The repo reports '.env.example' as a missing file, but a recent commit says it was added. Verify the file is committed to the correct path and actually present in the repository root. Run a fresh clone in a clean directory and follow your own README setup instructions end-to-end to confirm the local setup works as documented.",
     "dismissedByUser": true
-  },
-  "80f105d24115": {
-    "seenAt": "2026-06-22T03:15:45.139Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Maintenance",
-    "action": "Define and document a clear update/upgrade strategy to address the open 'Add more robust update' issue. Concretely: decide whether updates are manual + Dependabot PRs, or automated merges for patch versions. Write this down in CONTRIBUTING.md as a short section, and add a required CI check that blocks merges if the npm audit step reports high/critical vulnerabilities.",
-    "priority": "medium"
   },
   "ab66b3715d62": {
     "seenAt": "2026-06-22T13:04:41.298Z",
@@ -34,34 +20,6 @@
     "action": "Add a CODEOWNERS file and a pull request template (.github/pull_request_template.md) with a short checklist: tests updated, CHANGELOG entry added, env vars documented in .env.example. Even as a solo project this builds the habit and makes the project immediately contributor-friendly.",
     "dismissedByUser": true
   },
-  "d696675e6ef4": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
-    "action": "Audit what data is stored per user and add a self-service account/data deletion flow.",
-    "priority": "high"
-  },
-  "d09693a6ca79": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
-    "action": "Add a Content Security Policy (CSP) header and review other security headers (X-Frame-Options, Referrer-Policy, Permissions-Policy) via next.config headers block.",
-    "priority": "high"
-  },
-  "f391747ee307": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Performance",
-    "action": "Investigate and reduce the 1385ms initial response time — check whether the ISR/cache headers are actually being served from Vercel's edge and confirm the homepage is not falling back to a full server render on every cold hit.",
-    "priority": "medium"
-  },
-  "c3096e19cdda": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "DX / Reliability",
-    "action": "Add a test stage to the CI workflow — at minimum a single Playwright or Cypress smoke test that loads the homepage and the CV render page and asserts a 200 status and key elements.",
-    "priority": "medium"
-  },
   "5ca19c4412c6": {
     "seenAt": "2026-06-22T13:06:50.829Z",
     "expiresAt": "2027-06-22T13:06:50.829Z",
@@ -75,41 +33,6 @@
     "repo": "albertotiribelli/lenuoveespressioni",
     "action": "Add a .env.example file to the repository root listing all required environment variables with placeholder values (e.g. DATABASE_URL=, NEXT_PUBLIC_SITE_URL=).",
     "dismissedByUser": true
-  },
-  "986ae2587329": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Performance",
-    "action": "Investigate and reduce the 1118ms server response time. Profile the slowest ISR or SSR routes with Next.js built-in instrumentation or a tool like Vercel Speed Insights, then confirm unstable_cache TTLs are set aggressively enough for read-heavy pages.",
-    "priority": "high"
-  },
-  "4caf10fbcbba": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "DX / Maintenance",
-    "action": "Add a SECURITY.md file describing how to privately report vulnerabilities (e.g. via a dedicated email or GitHub private vulnerability reporting), and enable GitHub's private vulnerability reporting feature in the repo settings.",
-    "priority": "medium"
-  },
-  "9afa88067841": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "SEO / Maintenance",
-    "action": "Set up automated Lighthouse or PageSpeed Insights checks inside the existing CI workflow so performance regressions are caught before they reach production, not after.",
-    "priority": "medium"
-  },
-  "b3092a8376d5": {
-    "seenAt": "2026-06-22T03:15:45.140Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Maintenance",
-    "action": "Pin a Dependabot or Renovate configuration (dependabot.yml or renovate.json) to the repository so dependency updates are proposed automatically going forward.",
-    "priority": "low"
-  },
-  "56f529367ebf": {
-    "seenAt": "2026-06-22T03:15:45.141Z",
-    "repo": "tigro7/monitor",
-    "area": "Analysis",
-    "action": "Could not parse suggestions",
-    "priority": "low"
   },
   "fe91ac40dd34": {
     "seenAt": "2026-06-23T03:11:44.531Z",
@@ -1285,6 +1208,55 @@
     "repo": "tigro7/monitor",
     "area": "UX",
     "action": "Add a short onboarding note to the first email sent to a new recipient explaining the weekly focus rotation (Mon–Fri areas like UX, DX, Security, etc.) so they understand why Monday's email looks different from Tuesday's. This could be a single italicised line at the top: e.g. 'Each day focuses on a different area — today's lens is 🎨 UX & Content.'",
+    "priority": "medium"
+  },
+  "446d3a0b87bd": {
+    "seenAt": "2026-07-22T05:19:14.985Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Investigate and resolve the known issue where the sitemap is generated at runtime via API calls that fail during build, resulting in an empty sitemap until the app is fully live. Convert the sitemap to use Next.js 15's static `sitemap.ts` export (returning a hardcoded or build-time-safe list of routes) so Vercel can generate and serve it at build time rather than relying on live DB calls. At minimum, seed it with the stable known routes (home, /serie-a, /premier-league) that do not require DB access.",
+    "priority": "high"
+  },
+  "c4b4337eedf3": {
+    "seenAt": "2026-07-22T05:19:14.985Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Add structured data (JSON-LD) to the per-league pages using the Schema.org `SportsEvent` or `Dataset` type to describe the championship title-holder and recent matches. At minimum, add a `WebPage` + `BreadcrumbList` JSON-LD block to league and match detail pages so Google can generate rich results and sitelinks. This is a one-time addition to the layout or page components and requires no external service.",
+    "priority": "medium"
+  },
+  "284c426edfc9": {
+    "seenAt": "2026-07-22T05:19:14.987Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Investigate why the homepage response time is 818ms and confirm ISR/edge caching is actually active. Check Vercel dashboard response headers for 'x-vercel-cache: HIT' — if missing, the route is likely rendering server-side on every request. Ensure the homepage uses `export const revalidate = N` (Next.js App Router) or `getStaticProps` with a revalidate interval (Pages Router), and that no uncached dynamic data fetch is forcing a full SSR on every cold hit.",
+    "priority": "high"
+  },
+  "b3b5e8ed93c2": {
+    "seenAt": "2026-07-22T05:19:14.987Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Configure the production domain thatswhoi.am as the primary domain in Vercel, add a 301 redirect from onepagecv-theta.vercel.app to thatswhoi.am, and update the canonical meta tag to reflect the thatswhoi.am URL. This is a concrete one-step fix in the Vercel project settings under 'Domains', plus a one-line change to the canonical tag in the root layout.",
+    "priority": "high"
+  },
+  "cf2f48f1bdec": {
+    "seenAt": "2026-07-22T05:19:14.989Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Consolidate the three open performance issues (#response-time, #ISR-cache, #Lighthouse) into a single focused audit: run `next build && next start` locally with Lighthouse CI to get a cold-start-free baseline, then check that every `unstable_cache` call on dynamic routes (play pages, member pages) has an explicit `revalidate` TTL of at least 3600s, and verify Vercel Speed Insights confirms ISR cache hits (X-Vercel-Cache: HIT) on the highest-traffic routes. The live site improved from 1617ms to 944ms, but the Lighthouse score sitting at 90 with open issues suggests at least one route is still bypassing cache on first hit.",
+    "priority": "high"
+  },
+  "784260d88ac7": {
+    "seenAt": "2026-07-22T05:19:14.989Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Replace the `/logo.png` Open Graph fallback with a proper 1200×630 `opengraph-image.tsx` using Next.js `ImageResponse` for the homepage, `/spettacoli`, and `/compagnia` routes. This is already tracked as a feature issue, but the concrete performance angle is that social crawlers (Facebook, WhatsApp, Telegram) currently fetch and scale `/logo.png` at crawl time — an incorrectly sized image causes extra work and degrades link-preview quality. The `opengraph-image.tsx` convention generates a statically cached `.png` at build time with zero runtime cost.",
+    "priority": "medium"
+  },
+  "f4934a85f820": {
+    "seenAt": "2026-07-22T05:19:14.991Z",
+    "repo": "tigro7/monitor",
+    "area": "Performance",
+    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the GitHub Actions workflow. Use `treosh/lighthouse-ci-action` on a scheduled or push trigger to produce actual Core Web Vitals data (LCP, CLS, INP) rather than an estimate.",
     "priority": "medium"
   }
 }
