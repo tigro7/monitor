@@ -1,88 +1,4 @@
 {
-  "c341d7efbcaf": {
-    "seenAt": "2026-06-22T13:03:44.305Z",
-    "expiresAt": "2027-06-22T13:03:44.305Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "action": "The repo reports '.env.example' as a missing file, but a recent commit says it was added. Verify the file is committed to the correct path and actually present in the repository root. Run a fresh clone in a clean directory and follow your own README setup instructions end-to-end to confirm the local setup works as documented.",
-    "dismissedByUser": true
-  },
-  "ab66b3715d62": {
-    "seenAt": "2026-06-22T13:04:41.298Z",
-    "expiresAt": "2027-06-22T13:04:41.298Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "action": "Lock in the current perfect Lighthouse score by adding it as a CI gate. Integrate a tool like Lighthouse CI (LHCI) into the existing CI workflow and set budget thresholds (e.g. performance >= 95, no regressions on LCP or CLS) so any future change that hurts the score fails the build before it merges.",
-    "dismissedByUser": true
-  },
-  "d4d1f29291b0": {
-    "seenAt": "2026-06-22T13:04:47.139Z",
-    "expiresAt": "2027-06-22T13:04:47.139Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "action": "Add a CODEOWNERS file and a pull request template (.github/pull_request_template.md) with a short checklist: tests updated, CHANGELOG entry added, env vars documented in .env.example. Even as a solo project this builds the habit and makes the project immediately contributor-friendly.",
-    "dismissedByUser": true
-  },
-  "5ca19c4412c6": {
-    "seenAt": "2026-06-22T13:06:50.829Z",
-    "expiresAt": "2027-06-22T13:06:50.829Z",
-    "repo": "tigro7/thatswhoi-am",
-    "action": "Pin third-party GitHub Actions versions in the workflow file to a specific commit SHA rather than a mutable tag (e.g. actions/checkout@v4 → actions/checkout@<sha>).",
-    "dismissedByUser": true
-  },
-  "0b327b79dc39": {
-    "seenAt": "2026-06-22T13:07:01.604Z",
-    "expiresAt": "2027-06-22T13:07:01.604Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "action": "Add a .env.example file to the repository root listing all required environment variables with placeholder values (e.g. DATABASE_URL=, NEXT_PUBLIC_SITE_URL=).",
-    "dismissedByUser": true
-  },
-  "fe91ac40dd34": {
-    "seenAt": "2026-06-23T03:11:44.531Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Security",
-    "action": "Enable branch protection on your main branch: require at least one passing CI check (the type-check/lint/build workflow you just added) before any push or merge is allowed.",
-    "priority": "high"
-  },
-  "3de02dd4dd70": {
-    "seenAt": "2026-06-23T05:06:21.789Z",
-    "expiresAt": "2027-06-23T05:06:21.789Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "action": "Add a GitHub Actions step that posts a deployment summary (URL, build time, environment) to a Slack channel or GitHub deployment environment so you have a clear audit trail of what went live and when.",
-    "dismissedByUser": true
-  },
-  "b3267833ee30": {
-    "seenAt": "2026-06-23T03:11:44.531Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Performance / Resilience",
-    "action": "Add a Content Security Policy (CSP) header via your hosting platform config (e.g. vercel.json headers block). Start with a report-only policy to baseline what third-party scripts or frames are actually being loaded, then tighten it.",
-    "priority": "medium"
-  },
-  "38fed408ec9e": {
-    "seenAt": "2026-06-23T05:06:32.370Z",
-    "expiresAt": "2027-06-23T05:06:32.370Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "action": "Add a CODEOWNERS file mapping the top-level directories to your GitHub username. Even for a solo project this forces GitHub to request your review on any future collaborator PRs and keeps the ownership model explicit.",
-    "dismissedByUser": true
-  },
-  "f2de55ee5760": {
-    "seenAt": "2026-06-23T03:11:44.531Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "SEO / Maintenance",
-    "action": "Wire up Google Search Console (or an open alternative like Plausible) and add the verification meta tag or DNS record now, while the sitemap and robots.txt are freshly fixed. Set a recurring monthly reminder to check crawl errors.",
-    "priority": "low"
-  },
-  "576a86303860": {
-    "seenAt": "2026-06-23T03:11:44.533Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
-    "action": "Add rate limiting to all auth routes (sign-in, sign-up, password reset), not just AI routes.",
-    "priority": "high"
-  },
-  "6a9ac5790d35": {
-    "seenAt": "2026-06-23T03:11:44.533Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Error Monitoring",
-    "action": "Integrate a runtime error tracking tool (Sentry free tier is sufficient) and wire up both server-side and client-side error boundaries to it.",
-    "priority": "high"
-  },
   "0057a024e8c3": {
     "seenAt": "2026-06-23T07:19:02.826Z",
     "expiresAt": "2027-06-23T07:19:02.826Z",
@@ -90,46 +6,11 @@
     "action": "Add a CHANGELOG-driven release tagging convention: cut a Git tag (e.g. v0.4.1) after each meaningful batch of commits and link it from the README.",
     "dismissedByUser": true
   },
-  "41096bf7605f": {
-    "seenAt": "2026-06-23T03:11:44.533Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Performance",
-    "action": "Set up a Lighthouse CI step in your GitHub Actions workflow that fails the build if the performance score drops below 85.",
-    "priority": "medium"
-  },
-  "1fc3dd706ab7": {
-    "seenAt": "2026-06-23T03:11:44.533Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Maintenance",
-    "action": "Enable Dependabot (or Renovate) with a weekly schedule and auto-merge for patch-level updates on non-breaking packages.",
-    "priority": "low"
-  },
   "7e16a5ff03e2": {
     "seenAt": "2026-06-23T07:15:38.486Z",
     "expiresAt": "2027-06-23T07:15:38.486Z",
     "repo": "albertotiribelli/lenuoveespressioni",
     "action": "Add a .env.example file to the repository listing every environment variable the project needs, with placeholder values and a short comment explaining each one.",
-    "dismissedByUser": true
-  },
-  "d090fca4bf03": {
-    "seenAt": "2026-06-23T03:11:44.534Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Performance",
-    "action": "Audit and fix the real-world response time gap: the live site is hitting 1617ms, which is significantly worse than the 1118ms already flagged internally. Check whether Vercel cold starts, uncached ISR pages, or heavy third-party scripts are responsible. As a first concrete step, enable Vercel Speed Insights in production and confirm that every high-traffic route is being served from the edge cache rather than re-rendered on each request.",
-    "priority": "high"
-  },
-  "d223366d20be": {
-    "seenAt": "2026-06-23T03:11:44.534Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Performance / SEO",
-    "action": "Identify and address the specific factors pulling the Lighthouse performance score from 75 to 100. Run a local Lighthouse audit in CI (not just against the live URL) to get a stable baseline, then target the top two or three failing metrics — typically Largest Contentful Paint and Total Blocking Time — by lazy-loading below-the-fold images, deferring non-critical scripts, and ensuring the og:image added recently is properly sized.",
-    "priority": "medium"
-  },
-  "d811732c630c": {
-    "seenAt": "2026-06-23T05:07:23.733Z",
-    "expiresAt": "2027-06-23T05:07:23.733Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "action": "Add a CHANGELOG entry and a git tag for the work done this week, then establish a lightweight release convention (e.g. CalVer or SemVer tags on main) so the project history stays navigable as it grows.",
     "dismissedByUser": true
   },
   "7d1103ac381e": {
@@ -1257,6 +1138,48 @@
     "repo": "tigro7/monitor",
     "area": "Performance",
     "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the GitHub Actions workflow. Use `treosh/lighthouse-ci-action` on a scheduled or push trigger to produce actual Core Web Vitals data (LCP, CLS, INP) rather than an estimate.",
+    "priority": "medium"
+  },
+  "2d455768ff4c": {
+    "seenAt": "2026-07-23T05:24:17.044Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Audit every route handler under the add-match flow (e.g. any POST /api/matches or related mutation endpoints) and confirm each one independently validates the NextAuth session server-side — do not rely on middleware or UI guards alone. Add a test or manual checklist entry that hits each endpoint directly with curl/Postman without a valid session cookie and confirms a 401 is returned.",
+    "priority": "high"
+  },
+  "0405f3b60a6c": {
+    "seenAt": "2026-07-23T05:24:17.044Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Add server-side input validation on the match entry API route(s) — specifically: assert that team names exist in the known set for the given league, that the match date is a valid date not in the future, and that the score fields are non-negative integers within a plausible range. Return structured 400 errors with a logged warning when validation fails.",
+    "priority": "medium"
+  },
+  "ac95e6f5de34": {
+    "seenAt": "2026-07-23T05:24:17.046Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Implement a Content Security Policy (CSP) header and harden the full security header suite via the `headers()` block in `next.config.js`. At minimum add: `Content-Security-Policy` (restrict `script-src`, `style-src`, `img-src`, `connect-src` to known origins), `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`, and `Permissions-Policy` disabling unused APIs (camera, microphone, geolocation).",
+    "priority": "high"
+  },
+  "c23844d4f3ac": {
+    "seenAt": "2026-07-23T05:24:17.048Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Add a Content Security Policy (CSP) header and a X-Content-Type-Options: nosniff header via next.config.js headers() for all routes, explicitly allowlisting only the origins actually used (Supabase, Vercel, any trailer embed domains).",
+    "priority": "medium"
+  },
+  "1bd752d5f0c0": {
+    "seenAt": "2026-07-23T05:24:17.050Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a secret token to protect the dismiss endpoint on Vercel. The endpoint that writes to `data/seen-suggestions.json` should verify a shared secret (e.g., a header like `X-Dismiss-Token` checked against a Vercel environment variable) so that arbitrary callers cannot inject entries into your seen-suggestions store or trigger unauthorized GitHub commits.",
+    "priority": "high"
+  },
+  "c502e967356c": {
+    "seenAt": "2026-07-23T05:24:17.050Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a `.env.example` file (flagged as missing) that documents all required secrets — Anthropic API key, GitHub token, Resend API key, dismiss token — with placeholder values and a note on minimum required scopes for the GitHub token.",
     "priority": "medium"
   }
 }
