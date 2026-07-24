@@ -1,101 +1,10 @@
 {
-  "0057a024e8c3": {
-    "seenAt": "2026-06-23T07:19:02.826Z",
-    "expiresAt": "2027-06-23T07:19:02.826Z",
-    "repo": "tigro7/thatswhoi-am",
-    "action": "Add a CHANGELOG-driven release tagging convention: cut a Git tag (e.g. v0.4.1) after each meaningful batch of commits and link it from the README.",
-    "dismissedByUser": true
-  },
-  "7e16a5ff03e2": {
-    "seenAt": "2026-06-23T07:15:38.486Z",
-    "expiresAt": "2027-06-23T07:15:38.486Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "action": "Add a .env.example file to the repository listing every environment variable the project needs, with placeholder values and a short comment explaining each one.",
-    "dismissedByUser": true
-  },
-  "7d1103ac381e": {
-    "seenAt": "2026-06-23T07:15:18.643Z",
-    "expiresAt": "2027-06-23T07:15:18.643Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "action": "Add a basic contributing quick-start script or Makefile target (e.g. make dev) that copies .env.example to .env.local, installs dependencies, and starts the dev server in one command.",
-    "dismissedByUser": true
-  },
-  "5e8b51aeacd6": {
-    "seenAt": "2026-06-23T07:14:27.169Z",
-    "expiresAt": "2027-06-23T07:14:27.169Z",
-    "repo": "tigro7/monitor",
-    "action": "Add a .env.example file to the repository listing every environment variable the project needs, with placeholder values and a short comment explaining each one.",
-    "dismissedByUser": true
-  },
-  "b96dd47f62ae": {
-    "seenAt": "2026-06-23T07:14:00.134Z",
-    "expiresAt": "2027-06-23T07:14:00.134Z",
-    "repo": "tigro7/monitor",
-    "action": "Investigate and fix the root cause of the '[Analysis] Could not parse suggestions' failure. Add explicit error logging that captures the raw response from the AI/analysis step so you can see exactly what malformed output triggered the parse error.",
-    "dismissedByUser": true
-  },
-  "ed5746a5be33": {
-    "seenAt": "2026-06-23T07:14:06.731Z",
-    "expiresAt": "2027-06-23T07:14:06.731Z",
-    "repo": "tigro7/monitor",
-    "action": "Deduplicate the dismiss-suggestion logic. At least five suggestions were dismissed twice each in the same day (same commit message repeated back-to-back). Find where the deduplication check happens and ensure a suggestion ID is written to the seen-suggestions store before — not after — the dismiss action is retried.",
-    "dismissedByUser": true
-  },
-  "963fd5b68950": {
-    "seenAt": "2026-06-23T07:13:44.709Z",
-    "expiresAt": "2027-06-23T07:13:44.709Z",
-    "repo": "tigro7/monitor",
-    "action": "Document what the 'addressed security issue' commit (19 Jun) actually fixed — add a short note in CHANGELOG.md or a commit body — and verify the Vercel dismiss endpoint requires authentication on every call, not just in some code paths.",
-    "dismissedByUser": true
-  },
-  "81a8820fbb17": {
-    "seenAt": "2026-06-23T07:13:41.339Z",
-    "expiresAt": "2027-06-23T07:13:41.339Z",
-    "repo": "tigro7/monitor",
-    "action": "Add a brief summary step at the end of the nightly workflow that prints a structured log line — e.g. 'Run complete: X suggestions fetched, Y new, Z dismissed, N parse errors' — and fails the job if parse errors exceed zero.",
-    "dismissedByUser": true
-  },
-  "36f01aa8410d": {
-    "seenAt": "2026-06-24T03:11:36.838Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Performance",
-    "action": "Pre-generate the sitemap at build time using `generateSitemaps` or a build script that writes a static `public/sitemap.xml`, rather than serving it via a runtime API route. Seed it with known static paths (home, league pages) so it is never empty on a cold deploy.",
-    "priority": "medium"
-  },
-  "b1d3409d1502": {
-    "seenAt": "2026-06-24T03:11:36.839Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Performance",
-    "action": "Resolve the persistent ~1347ms initial response time by verifying the homepage ISR cache is actually being hit at Vercel's edge. Check the 'x-vercel-cache' response header on the live site — if it reads MISS or BYPASS instead of HIT on repeat requests, the static/ISR output is not being served from edge cache. Confirm that no dynamic per-request logic (e.g. reading auth cookies, calling getServerSideProps, or middleware rewriting the homepage route) is forcing a full server render and invalidating the cache. The recent 'perf: cut initial response time' commit addressed this but the live response time of 1347ms suggests it has not fully resolved — the open issue tracks investigation but a concrete next step is to curl -I https://thatswhoi.am/ twice in succession and confirm the second request returns x-vercel-cache: HIT.",
-    "priority": "high"
-  },
   "e30275a62977": {
     "seenAt": "2026-06-24T05:42:00.845Z",
     "expiresAt": "2027-06-24T05:42:00.845Z",
     "repo": "tigro7/thatswhoi-am",
     "action": "The open SEO/Domain issue notes that thatswhoi.am is not yet configured as the primary domain in Vercel and no 301 redirect exists from onepagecv-theta.vercel.app to thatswhoi.am. Until this is done, Google will index both origins separately, splitting PageRank and potentially causing duplicate-content penalties. Add the canonical domain in the Vercel project dashboard under 'Domains', set onepagecv-theta.vercel.app to redirect 301 to https://thatswhoi.am, and update the canonical meta tag value (already present per recent commits) to use the thatswhoi.am URL explicitly. The og:image absolute URL should also be updated to the canonical domain so social crawlers do not follow a redirect chain when fetching the preview image.",
     "dismissedByUser": true
-  },
-  "86208f4a6ceb": {
-    "seenAt": "2026-06-24T03:11:36.841Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Performance",
-    "action": "Replace the logo fallback `/logo.png` used as `og:image` on static pages with a properly sized 1200×630 Open Graph image. The MONITOR.md explicitly flags this as a known gap. A correctly sized OG image also removes any potential CLS or render-blocking penalty that social crawlers and link-preview bots incur when they fetch and scale an unoptimised logo asset.",
-    "priority": "high"
-  },
-  "7cb1ac45d6f3": {
-    "seenAt": "2026-06-24T03:11:36.841Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Performance",
-    "action": "Audit all `<Image>` usages in the play catalogue and member grid to confirm every image has an explicit `width`, `height`, and a meaningful `sizes` attribute matching its rendered breakpoints. Also verify that hero or above-the-fold images use `priority={true}` to trigger `<link rel=preload>` in the HTML, eliminating LCP-blocking network round trips.",
-    "priority": "medium"
-  },
-  "7a35ea74a106": {
-    "seenAt": "2026-06-24T03:11:36.842Z",
-    "repo": "tigro7/monitor",
-    "area": "Performance",
-    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run integrated into the nightly GitHub Actions workflow using `treosh/lighthouse-ci-action`. Output the Core Web Vitals scores (LCP, CLS, TBT) as structured JSON artifacts so the monitor agent can consume real numbers instead of estimates.",
-    "priority": "medium"
   },
   "43972390a3ad": {
     "seenAt": "2026-06-25T03:11:56.931Z",
@@ -1180,6 +1089,62 @@
     "repo": "tigro7/monitor",
     "area": "Security",
     "action": "Add a `.env.example` file (flagged as missing) that documents all required secrets — Anthropic API key, GitHub token, Resend API key, dismiss token — with placeholder values and a note on minimum required scopes for the GitHub token.",
+    "priority": "medium"
+  },
+  "27198f31ee52": {
+    "seenAt": "2026-07-24T05:19:49.807Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Write unit tests specifically for `statsCalc.tsx` using Vitest — cover at minimum: title transfer on a win, no transfer on a draw/loss, longest reign calculation, and edge cases like the opening match of a season where no holder exists yet.",
+    "priority": "high"
+  },
+  "6736a7f41e36": {
+    "seenAt": "2026-07-24T05:19:49.807Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add inline JSDoc comments to the key functions in `statsCalc.tsx` documenting their expected inputs, outputs, and any assumptions (e.g. matches must be ordered chronologically, what happens when the title holder is not found). Also add a short `## Architecture` section to CONTRIBUTING.md describing how stat recalculation works and when it is triggered.",
+    "priority": "medium"
+  },
+  "22f535621f8c": {
+    "seenAt": "2026-07-24T05:19:49.809Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "The project has had zero commits in 32 days and zero open PRs, yet 9 open issues remain unaddressed — including a tracked Dependabot/Renovate issue (#Maintenance). Act on that specific tracked issue now: add a `.github/dependabot.yml` config file with `package-ecosystem: npm`, `schedule: interval: weekly`, and `open-pull-requests-limit: 5`. Even with no currently outdated deps flagged, the mechanism needs to be in place before drift accumulates silently. The 32-day inactivity gap is exactly the window where transitive dependency vulnerabilities and minor version skew build up unnoticed.",
+    "priority": "high"
+  },
+  "380f7c31c091": {
+    "seenAt": "2026-07-24T05:19:49.809Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "The CI workflow (as inferred from zero test stage and the open issue tracking this) is missing a smoke test stage entirely. Add a minimal Playwright test file — e.g. `tests/smoke.spec.ts` — with two assertions: (1) homepage returns 200 and contains the expected `<h1>` or brand element, and (2) the CV render page loads without a console error. Wire this into the existing GitHub Actions workflow as a `test` job that runs on every push to `main`. Do not build out a full test suite — just the two paths called out in the open issue to get the CI gate in place.",
+    "priority": "medium"
+  },
+  "0b0be50602ad": {
+    "seenAt": "2026-07-24T05:19:49.811Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file to the repository root documenting all required environment variables (at minimum `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SUPABASE_URL`, and `NEXT_PUBLIC_SUPABASE_ANON_KEY`, plus any server-side Supabase keys used in `unstable_cache` calls or server components). Each entry should have a brief inline comment explaining what it controls and where to obtain the value.",
+    "priority": "high"
+  },
+  "11bd2ac01157": {
+    "seenAt": "2026-07-24T05:19:49.811Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `dependabot.yml` (or `renovate.json`) configuration file to the repository. The open issue tracking this only asks for it to be 'pinned' — create a minimal `.github/dependabot.yml` that targets the `npm` ecosystem on a weekly schedule, groups patch and minor updates into a single PR, and pins major Next.js / Supabase / Tailwind updates to separate PRs so they can be reviewed individually.",
+    "priority": "medium"
+  },
+  "d240af960909": {
+    "seenAt": "2026-07-24T05:19:49.813Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file listing all required environment variables (e.g. ANTHROPIC_API_KEY, RESEND_API_KEY, GITHUB_TOKEN, VERCEL_DISMISS_URL) with placeholder values and brief inline comments explaining each one's purpose.",
+    "priority": "medium"
+  },
+  "be95493706ff": {
+    "seenAt": "2026-07-24T05:19:49.813Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a guard or bootstrap step in the dismiss endpoint (or a one-time setup script) that creates `data/seen-suggestions.json` with an empty array if the file does not already exist, rather than relying on it being manually pre-committed.",
     "priority": "medium"
   }
 }
