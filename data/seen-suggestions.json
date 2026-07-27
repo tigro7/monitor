@@ -1,116 +1,4 @@
 {
-  "e30275a62977": {
-    "seenAt": "2026-06-24T05:42:00.845Z",
-    "expiresAt": "2027-06-24T05:42:00.845Z",
-    "repo": "tigro7/thatswhoi-am",
-    "action": "The open SEO/Domain issue notes that thatswhoi.am is not yet configured as the primary domain in Vercel and no 301 redirect exists from onepagecv-theta.vercel.app to thatswhoi.am. Until this is done, Google will index both origins separately, splitting PageRank and potentially causing duplicate-content penalties. Add the canonical domain in the Vercel project dashboard under 'Domains', set onepagecv-theta.vercel.app to redirect 301 to https://thatswhoi.am, and update the canonical meta tag value (already present per recent commits) to use the thatswhoi.am URL explicitly. The og:image absolute URL should also be updated to the canonical domain so social crawlers do not follow a redirect chain when fetching the preview image.",
-    "dismissedByUser": true
-  },
-  "43972390a3ad": {
-    "seenAt": "2026-06-25T03:11:56.931Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Security",
-    "action": "Audit and harden the admin match-entry API routes to confirm they enforce authentication server-side on every request. Specifically, verify that all Next.js API routes or Server Actions that write match data (add, edit, recalculate stats) call `getServerSession` (or equivalent NextAuth server-side check) and return a 401/403 immediately if the session is absent or not admin — not just relying on the UI hiding the form.",
-    "priority": "high"
-  },
-  "2bb1dccbd439": {
-    "seenAt": "2026-06-25T03:11:56.931Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Security",
-    "action": "Add server-side input validation to the match-entry form handler (API route or Server Action) using a schema validation library such as Zod. At minimum, validate that team names match known league teams, the match date is a valid past date, and scores are non-negative integers within a plausible range before any DB write or statsCalc invocation.",
-    "priority": "medium"
-  },
-  "eb30d8f18852": {
-    "seenAt": "2026-06-25T03:11:56.933Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
-    "action": "Add a Content Security Policy (CSP) header and the supporting security headers (X-Frame-Options, Referrer-Policy, Permissions-Policy) via the `headers()` block in next.config.js. At minimum, set a strict-origin-when-cross-origin Referrer-Policy, DENY or SAMEORIGIN for X-Frame-Options, and a CSP that whitelists only known script/style/connect sources (Vercel Analytics endpoint, your own origin, any AI API host). Test with https://securityheaders.com after deploying.",
-    "priority": "high"
-  },
-  "19331dd58c37": {
-    "seenAt": "2026-06-25T03:11:56.933Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
-    "action": "Audit every server action and API route that accepts user-supplied string input (CV text fields, profile fields, any free-text prompt passed to the AI) and add explicit length caps and basic sanitisation before the data is persisted or forwarded. Concretely: define a shared Zod schema with `.max()` constraints that mirrors your DB column limits, apply it at the route boundary, and return a structured 400 with a safe error message on violation. This is separate from the existing Upstash rate-limiting which only throttles frequency, not payload content.",
-    "priority": "medium"
-  },
-  "0263dfa7a564": {
-    "seenAt": "2026-06-25T03:11:56.934Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Security",
-    "action": "Add a `.env.example` file to the repository documenting all required environment variables (e.g. `NEXT_PUBLIC_SITE_URL`, Supabase URL and anon key, any service-role key) with placeholder values and clear comments indicating which are public vs secret.",
-    "priority": "high"
-  },
-  "12e4043cf96b": {
-    "seenAt": "2026-06-25T03:11:56.934Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Security",
-    "action": "Audit all Supabase queries that read or write data and verify that Row-Level Security (RLS) policies are enabled and correctly scoped on every table (plays, members, dates, etc.), given that the site uses the public anon key exposed client-side via `NEXT_PUBLIC_*`.",
-    "priority": "medium"
-  },
-  "b8f01980b935": {
-    "seenAt": "2026-06-25T03:11:56.934Z",
-    "repo": "tigro7/monitor",
-    "area": "Security",
-    "action": "Add a secret-based auth check to the dismiss endpoint on Vercel. Right now any caller who can guess or observe a suggestion ID (which are short hashes visible in commit history) can dismiss suggestions on your behalf. Add a shared secret — stored as a Vercel env var — that the one-click link must include as a query param or header, and reject requests that omit or mismatch it.",
-    "priority": "high"
-  },
-  "22aca6b9ce25": {
-    "seenAt": "2026-06-25T03:11:56.934Z",
-    "repo": "tigro7/monitor",
-    "area": "Security",
-    "action": "Add `.env.example` to the repository (it is currently flagged as missing) and audit which secrets are actually required at runtime — `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `GITHUB_TOKEN`, any Vercel-side secrets. Document the minimum required scopes for each token so that a compromised key has the smallest possible blast radius, and ensure none of these values are referenced as plain strings anywhere in committed code or workflow files.",
-    "priority": "medium"
-  },
-  "0dd9a71059b5": {
-    "seenAt": "2026-06-26T03:12:09.804Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Maintenance",
-    "action": "Add a unit test suite for `statsCalc.tsx` using Vitest. Start with 3–5 tests covering the core championship-passing logic: a team winning the title from the current holder, a draw (title does not transfer), and edge cases like the first match in a new league initialising the title holder. Wire Vitest into the existing CI workflow as a `test` step alongside the current type-check, lint, and build steps.",
-    "priority": "high"
-  },
-  "0ef1569bf9f4": {
-    "seenAt": "2026-06-26T03:12:09.804Z",
-    "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Maintenance",
-    "action": "Audit and remove the `.env.example` entry from the 'Missing files' list in GitHub Analysis — the file was added in commit `chore: add .env.example` on 20/06/2026 and is confirmed present. More concretely: cross-check every variable in `.env.example` against actual usage in the codebase (e.g. with a grep/search across `process.env.*`) to identify any variables that are documented but no longer referenced, or referenced in code but missing from the example file. Remove or annotate stale entries to prevent future confusion during onboarding or environment setup.",
-    "priority": "medium"
-  },
-  "6f16708c0242": {
-    "seenAt": "2026-06-26T03:12:09.806Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Maintenance",
-    "action": "Expand the CI workflow to include a `test` stage with at minimum one Playwright smoke test covering the homepage and CV render page — assert HTTP 200 and presence of key DOM elements. The existing workflow only runs type-check and build, meaning regressions in rendered output are invisible until production.",
-    "priority": "medium"
-  },
-  "b0bee3627077": {
-    "seenAt": "2026-06-26T03:12:09.806Z",
-    "repo": "tigro7/thatswhoi-am",
-    "area": "Maintenance",
-    "action": "Audit the codebase for any remaining references to the old Vercel preview domain (`onepagecv-theta.vercel.app`) hardcoded in source files — e.g. in `next.config.js` `images.domains`, `NEXTAUTH_URL` fallback values, sitemap generation logic, or inline constants — and replace them with an environment variable or the canonical `thatswhoi.am` domain so config stays consistent as the domain migration completes.",
-    "priority": "low"
-  },
-  "42d495e7136c": {
-    "seenAt": "2026-06-26T03:12:09.807Z",
-    "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Maintenance",
-    "action": "Add a `.env.example` file to the repository documenting all required environment variables, specifically `NEXT_PUBLIC_SITE_URL`, the Supabase URL, and the Supabase anon key.",
-    "priority": "high"
-  },
-  "d3ea59629f2a": {
-    "seenAt": "2026-06-26T03:12:09.808Z",
-    "repo": "tigro7/monitor",
-    "area": "Maintenance",
-    "action": "Add a `.env.example` file listing all required environment variables (e.g. Anthropic API key, Resend key, GitHub token, Vercel endpoint URL) with placeholder values and a brief inline comment for each.",
-    "priority": "high"
-  },
-  "b64e84ca76b4": {
-    "seenAt": "2026-06-26T03:12:09.808Z",
-    "repo": "tigro7/monitor",
-    "area": "Maintenance",
-    "action": "Investigate and fix the duplicate dismiss commits: the git log shows the same suggestion hash being committed twice in rapid succession (e.g. `e30275a62977` dismissed twice on 24/06, `7d1103ac381e` three times on 23/06). Add an idempotency check in the dismiss handler so that writing to `seen-suggestions.json` is skipped — and no commit is triggered — if the hash is already present.",
-    "priority": "medium"
-  },
   "c98c9b243341": {
     "seenAt": "2026-06-29T03:13:52.955Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
@@ -1145,6 +1033,62 @@
     "repo": "tigro7/monitor",
     "area": "Maintenance",
     "action": "Add a guard or bootstrap step in the dismiss endpoint (or a one-time setup script) that creates `data/seen-suggestions.json` with an empty array if the file does not already exist, rather than relying on it being manually pre-committed.",
+    "priority": "medium"
+  },
+  "ec8d3fb821b3": {
+    "seenAt": "2026-07-27T05:49:36.538Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a dedicated league page for La Liga or Bundesliga — even as a 'coming soon' stub with a sign-up or notify prompt — to validate interest and make the multi-league roadmap tangible to visitors.",
+    "priority": "high"
+  },
+  "bf43d0d8e021": {
+    "seenAt": "2026-07-27T05:49:36.538Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a 'current champion' hero section to the homepage that prominently shows which team holds the title in each tracked league right now — club crest, how many matches defended, and the date they won it.",
+    "priority": "medium"
+  },
+  "ea80b3487f20": {
+    "seenAt": "2026-07-27T05:49:36.540Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a shareable public profile URL for each user's CV (e.g. thatswhoi.am/[username] or thatswhoi.am/cv/[slug]) that renders their one-page CV without requiring the viewer to log in.",
+    "priority": "high"
+  },
+  "de2a04f85b0c": {
+    "seenAt": "2026-07-27T05:49:36.540Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a CV completeness indicator (e.g. a progress bar or checklist on the editor page) that shows which sections are empty or thin — work experience, skills, summary, contact details — with inline prompts to fill them in.",
+    "priority": "medium"
+  },
+  "7d50795a876e": {
+    "seenAt": "2026-07-27T05:49:36.541Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Add a '/spettacoli' or archive index page that lets visitors filter plays by season/year, so users can browse the full catalogue without landing on individual play pages cold.",
+    "priority": "high"
+  },
+  "64c051677845": {
+    "seenAt": "2026-07-27T05:49:36.541Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Add a structured 'upcoming dates' landing section or dedicated '/date' page that aggregates all future show dates across all plays in one place, with direct ticket links where available.",
+    "priority": "medium"
+  },
+  "65c64442e966": {
+    "seenAt": "2026-07-27T05:49:36.543Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Populate MONITOR.md files in the three other monitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at least a minimal product context block — current status, active work, and out-of-scope items.",
+    "priority": "high"
+  },
+  "6f87de96f683": {
+    "seenAt": "2026-07-27T05:49:36.543Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add a Friday weekly summary email that aggregates the week's top suggestions across all four repos — one digest instead of the standard rotation — as a distinct template in the mailer logic.",
     "priority": "medium"
   }
 }
