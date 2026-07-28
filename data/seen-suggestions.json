@@ -1090,5 +1090,54 @@
     "area": "Features",
     "action": "Add a Friday weekly summary email that aggregates the week's top suggestions across all four repos — one digest instead of the standard rotation — as a distinct template in the mailer logic.",
     "priority": "medium"
+  },
+  "3d809ad30150": {
+    "seenAt": "2026-07-28T05:14:24.972Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an empty state with explanatory copy on each league page for when no matches have been entered yet. Currently a new league landing page likely renders a blank or broken layout. Add a short message such as 'No matches recorded yet for this league — check back soon.' with a subtle visual indicator (e.g. a trophy icon) so new visitors understand the page is intentionally sparse, not broken.",
+    "priority": "high"
+  },
+  "5ee02fa60aea": {
+    "seenAt": "2026-07-28T05:14:24.972Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add a visible 'last updated' timestamp near the current champion display on each league page (e.g. 'Title last changed on 14 Apr 2025'). Because all data is entered manually and commits have stalled for 34 days, returning visitors have no way to know whether the data is current or stale, which undermines trust in the site's accuracy.",
+    "priority": "medium"
+  },
+  "60971487814a": {
+    "seenAt": "2026-07-28T05:14:24.974Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add visible loading and empty states to the CV render/generation flow. When the AI is generating output, show a skeleton loader or progress indicator with a message like 'Building your CV…' rather than a blank or static screen. Also add an explicit empty state if the user has no CV data yet, with a clear call-to-action prompt such as 'Add your first job role to get started.'",
+    "priority": "high"
+  },
+  "1a7cc4f0d801": {
+    "seenAt": "2026-07-28T05:14:24.974Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add a minimal first-run onboarding hint for new users — specifically a short contextual tooltip or inline banner on the main input screen explaining what the product does and what happens after they submit their information (e.g. 'Fill in your details below and we'll generate a clean, one-page CV you can share or download'). This should be dismissible and not shown to returning users who have already saved data.",
+    "priority": "medium"
+  },
+  "cbca2d736bfc": {
+    "seenAt": "2026-07-28T05:14:24.976Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible placeholder state on alumni member profile pages when both bio and photo_url are null — display a short contextual message such as 'Biografia non ancora disponibile' alongside a neutral avatar, rather than rendering an empty or near-empty page with just the member's name.",
+    "priority": "high"
+  },
+  "e671aaf769d7": {
+    "seenAt": "2026-07-28T05:14:24.976Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "On the upcoming-dates section of a play page, replace the generic ticket button label (e.g. 'Biglietti') with a disabled-but-visible 'Biglietti disponibili a breve' state for dates where tickets_url is still null, instead of hiding the button entirely or showing nothing.",
+    "priority": "medium"
+  },
+  "74e3e9def974": {
+    "seenAt": "2026-07-28T05:14:24.978Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Could not parse suggestions — check agent logs",
+    "priority": "low"
   }
 }
