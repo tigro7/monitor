@@ -63,8 +63,8 @@
     "priority": "high"
   },
   "6d982e89d9e0": {
-    "seenAt": "2026-10-17T09:12:04.278Z",
-    "expiresAt": "2027-10-17T09:12:04.278Z",
+    "seenAt": "2026-10-17T09:12:05.571Z",
+    "expiresAt": "2027-10-17T09:12:05.571Z",
     "repo": "albertotiribelli/lenuoveespressioni",
     "action": "Build a minimal `/spettacoli` archive index page that lists all plays in the catalogue with cover image, year, and a one-line description, usable as a browsable entry point to the full play catalogue.",
     "dismissedByUser": true
