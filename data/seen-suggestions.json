@@ -35,11 +35,11 @@
     "dismissedByUser": true
   },
   "6b371c4e6018": {
-    "seenAt": "2026-10-17T08:40:54.901Z",
+    "seenAt": "2026-10-17T09:13:08.085Z",
+    "expiresAt": "2027-10-17T09:13:08.085Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Features",
     "action": "Add a 'longest reigns' or 'all-time records' stats section to each league page — surfacing the team with the most defences, longest reign in days, and most titles won — using data already computed in statsCalc.tsx.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "210e2b20165d": {
     "seenAt": "2026-10-17T08:40:54.902Z",
