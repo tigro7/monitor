@@ -77,10 +77,10 @@
     "priority": "high"
   },
   "e6d4ca7a302c": {
-    "seenAt": "2026-10-17T08:40:54.903Z",
+    "seenAt": "2026-10-17T09:13:44.239Z",
+    "expiresAt": "2027-10-17T09:13:44.239Z",
     "repo": "tigro7/monitor",
-    "area": "Features",
     "action": "Add MONITOR.md files to the three other monitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at minimum a 'What this project is' and 'Out of scope' section, so the agent stops making context-free suggestions for those repos.",
-    "priority": "medium"
+    "dismissedByUser": true
   }
 }
