@@ -26,5 +26,61 @@
     "area": "Monitor",
     "action": "Analysis failed — check agent logs",
     "priority": "high"
+  },
+  "0f98a401eb4c": {
+    "seenAt": "2026-10-17T08:40:54.901Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a dedicated league page for at least one new league (La Liga or Bundesliga), even as a 'coming soon' placeholder with a subscribe/notify hook — or better, accelerate adding real match data for one new league given the groundwork is already laid.",
+    "priority": "high"
+  },
+  "6b371c4e6018": {
+    "seenAt": "2026-10-17T08:40:54.901Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a 'longest reigns' or 'all-time records' stats section to each league page — surfacing the team with the most defences, longest reign in days, and most titles won — using data already computed in statsCalc.tsx.",
+    "priority": "medium"
+  },
+  "210e2b20165d": {
+    "seenAt": "2026-10-17T08:40:54.902Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a shareable public profile URL for each user's CV (e.g. thatswhoi.am/[username]) so users can link to a live, always-current version of their one-page CV without exporting a PDF.",
+    "priority": "high"
+  },
+  "fcc309ff6995": {
+    "seenAt": "2026-10-17T08:40:54.902Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a CV completeness indicator on the editor/dashboard — a simple progress bar or checklist (e.g. 'Add a summary', 'Add at least 2 roles', 'Add a skill') that guides first-time users toward a fully populated CV before they share or export.",
+    "priority": "medium"
+  },
+  "1401a07c30fb": {
+    "seenAt": "2026-10-17T08:40:54.902Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Add a structured 'Prossimi Spettacoli' (upcoming shows) section directly on the homepage that lists all future dates across all plays in a single consolidated view, with play title, date, venue, and ticket link when available.",
+    "priority": "high"
+  },
+  "6d982e89d9e0": {
+    "seenAt": "2026-10-17T08:40:54.902Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Build a minimal `/spettacoli` archive index page that lists all plays in the catalogue with cover image, year, and a one-line description, usable as a browsable entry point to the full play catalogue.",
+    "priority": "medium"
+  },
+  "8113321e4427": {
+    "seenAt": "2026-10-17T08:40:54.903Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add a Friday weekly summary email that aggregates the week's top suggestions by area, including which ones were dismissed vs acted on, instead of running the standard rotation focus.",
+    "priority": "high"
+  },
+  "e6d4ca7a302c": {
+    "seenAt": "2026-10-17T08:40:54.903Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add MONITOR.md files to the three other monitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at minimum a 'What this project is' and 'Out of scope' section, so the agent stops making context-free suggestions for those repos.",
+    "priority": "medium"
   }
 }
