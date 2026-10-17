@@ -28,11 +28,11 @@
     "priority": "high"
   },
   "0f98a401eb4c": {
-    "seenAt": "2026-10-17T08:40:54.901Z",
+    "seenAt": "2026-10-17T09:12:52.996Z",
+    "expiresAt": "2027-10-17T09:12:52.996Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Features",
     "action": "Add a dedicated league page for at least one new league (La Liga or Bundesliga), even as a 'coming soon' placeholder with a subscribe/notify hook — or better, accelerate adding real match data for one new league given the groundwork is already laid.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "6b371c4e6018": {
     "seenAt": "2026-10-17T08:40:54.901Z",
