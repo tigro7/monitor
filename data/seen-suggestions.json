@@ -56,8 +56,8 @@
     "priority": "medium"
   },
   "1401a07c30fb": {
-    "seenAt": "2026-10-17T09:12:10.041Z",
-    "expiresAt": "2027-10-17T09:12:10.041Z",
+    "seenAt": "2026-10-17T09:12:15.654Z",
+    "expiresAt": "2027-10-17T09:12:15.654Z",
     "repo": "albertotiribelli/lenuoveespressioni",
     "action": "Add a structured 'Prossimi Spettacoli' (upcoming shows) section directly on the homepage that lists all future dates across all plays in a single consolidated view, with play title, date, venue, and ticket link when available.",
     "dismissedByUser": true
