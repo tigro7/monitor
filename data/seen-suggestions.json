@@ -82,5 +82,61 @@
     "repo": "tigro7/monitor",
     "action": "Add MONITOR.md files to the three other monitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at minimum a 'What this project is' and 'Out of scope' section, so the agent stops making context-free suggestions for those repos.",
     "dismissedByUser": true
+  },
+  "28bdd0d2cb02": {
+    "seenAt": "2026-10-19T07:13:28.876Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a dedicated La Liga (or Bundesliga) league page using the groundwork already laid for multi-league support — create the league record in the database, wire up a league-specific route (e.g. `/liga`), and surface it in the main navigation alongside Serie A and Premier League.",
+    "priority": "high"
+  },
+  "2cfeb04bf276": {
+    "seenAt": "2026-10-19T07:13:28.876Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a 'longest current reign' and 'most titles held this season' stat callout to each league's homepage — a small summary stat block (2–3 numbers) shown above the match list, derived from data already computed in statsCalc.tsx.",
+    "priority": "medium"
+  },
+  "3e95345b5a8a": {
+    "seenAt": "2026-10-19T07:13:28.877Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Build the shareable public profile URL feature (thatswhoi.am/[username]) with a one-click 'Copy link' button surfaced prominently on the CV editor/dashboard, and a public-facing render page that shows the live CV without requiring the viewer to log in.",
+    "priority": "high"
+  },
+  "5e96cc26e63c": {
+    "seenAt": "2026-10-19T07:13:28.877Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Add a CV completeness indicator — a persistent progress bar or checklist on the editor/dashboard that shows specific missing sections (e.g. 'Add a summary', 'Add at least 2 roles', 'Upload a photo') and only enables the share/export action once a minimum threshold is met.",
+    "priority": "medium"
+  },
+  "a6f79ac478cc": {
+    "seenAt": "2026-10-19T07:13:28.878Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Add a structured 'Prossimi Appuntamenti' (upcoming dates) landing section or dedicated page that aggregates all upcoming show dates across every play, sorted chronologically, with title, date, venue, and ticket link in one place.",
+    "priority": "high"
+  },
+  "5dc43ac8b38c": {
+    "seenAt": "2026-10-19T07:13:28.878Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Add a .env.example file to the repository listing all required environment variables (NEXT_PUBLIC_SITE_URL, Supabase keys, etc.) with placeholder values and inline comments explaining each one.",
+    "priority": "medium"
+  },
+  "101a90725367": {
+    "seenAt": "2026-10-19T07:13:28.878Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add MONITOR.md files to the three unmonitored repos (UFNC, Thatswhoi.am, Le Nuove Espressioni) — even a minimal 10-line stub covering what the project is and what's out of scope.",
+    "priority": "high"
+  },
+  "7e7a4e8c7d1a": {
+    "seenAt": "2026-10-19T07:13:28.878Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Deduplicate dismiss commits by batching multiple dismissals into a single commit instead of one commit per dismissal — update the dismiss endpoint or a post-processing step to accumulate dismissals and write once.",
+    "priority": "medium"
   }
 }
