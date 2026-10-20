@@ -138,5 +138,61 @@
     "area": "Features",
     "action": "Deduplicate dismiss commits by batching multiple dismissals into a single commit instead of one commit per dismissal — update the dismiss endpoint or a post-processing step to accumulate dismissals and write once.",
     "priority": "medium"
+  },
+  "d6ba654c021e": {
+    "seenAt": "2026-10-20T07:02:29.659Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an empty state with explanatory copy on each league page for when no matches have been entered yet. For example: 'No matches recorded yet for this league. The championship will appear here once the first match is entered.' This should also handle the edge case where a new league is added (La Liga, Bundesliga) but has no data — right now a blank page with no context would leave visitors confused about whether the site is broken or just empty.",
+    "priority": "high"
+  },
+  "a34b7f3bc232": {
+    "seenAt": "2026-10-20T07:02:29.659Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add a short 'How it works' explainer — 2 to 3 sentences or a small visual — near the top of each league page or on the homepage, describing the boxing-title mechanic: one team holds the championship, and it passes to whoever beats them. The concept is non-obvious to first-time visitors who are not already familiar with the UFWC, and there is currently no onboarding copy to bridge that gap.",
+    "priority": "medium"
+  },
+  "c2b259273c62": {
+    "seenAt": "2026-10-20T07:02:29.660Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add an empty state with explicit guidance on the CV editor for first-time users who have no content yet — specifically, replace any blank canvas or empty form with a brief prompt such as 'Start by adding your name and a one-line summary — it takes 30 seconds' alongside a single highlighted CTA button to populate the first field. This is distinct from the open completeness-indicator issue, which tracks progress; this addresses the zero-state moment before a user has typed anything.",
+    "priority": "high"
+  },
+  "a7aa4c1a210d": {
+    "seenAt": "2026-10-20T07:02:29.660Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Audit every user-facing button and interactive control on the live site for a visible focus indicator — open the site in Chrome, tab through all interactive elements, and add an explicit focus-visible outline (e.g. 2px solid with sufficient contrast against the background) to any control that currently shows no visible focus ring. Pay particular attention to the primary export/share CTA and any modal close buttons.",
+    "priority": "medium"
+  },
+  "0078c71fa1aa": {
+    "seenAt": "2026-10-20T07:02:29.660Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible empty state with explanatory copy on alumni profile pages where bio and photo are missing. Instead of rendering a near-blank page, show a placeholder such as 'Biografia non ancora disponibile' alongside the member's name and role, so visitors understand the page is intentionally sparse rather than broken.",
+    "priority": "high"
+  },
+  "aa515c04f839": {
+    "seenAt": "2026-10-20T07:02:29.660Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible, non-interactive placeholder state for the October 2026 show date where the ticket link is not yet published. Rather than showing no button or a dead link, render a disabled 'Biglietti disponibili a breve' button (with appropriate aria-disabled and a tooltip) so users know tickets will exist but are not yet on sale.",
+    "priority": "medium"
+  },
+  "7bc79334aea9": {
+    "seenAt": "2026-10-20T07:02:29.661Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a visible feedback state to the one-click dismiss button in the email so users know the action succeeded. Right now, clicking dismiss triggers a Vercel endpoint call but the email gives no confirmation — the user has to trust it worked. Add a redirect to a minimal static 'Suggestion dismissed ✓' page on Vercel (even a single HTML response from the endpoint itself) so the dismiss action has a clear, human-readable outcome.",
+    "priority": "high"
+  },
+  "acd28b0fd2f5": {
+    "seenAt": "2026-10-20T07:02:29.661Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a plain-language explanation inside the daily email for what 'today's focus area' means and why it changes day to day. New recipients seeing '🎨 UX & Content' or '⚙️ DX' with no context won't understand the weekly rotation system or why suggestions are scoped the way they are. A single sentence in the email header — e.g. 'Today's digest focuses on UX & Content (part of a Mon–Fri rotation — each day examines a different dimension of the project)' — sets expectations without requiring them to read the README.",
+    "priority": "medium"
   }
 }
