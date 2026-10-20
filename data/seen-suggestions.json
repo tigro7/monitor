@@ -182,11 +182,11 @@
     "dismissedByUser": true
   },
   "7bc79334aea9": {
-    "seenAt": "2026-10-20T07:02:29.661Z",
+    "seenAt": "2026-10-20T07:13:58.215Z",
+    "expiresAt": "2027-10-20T07:13:58.215Z",
     "repo": "tigro7/monitor",
-    "area": "UX",
     "action": "Add a visible feedback state to the one-click dismiss button in the email so users know the action succeeded. Right now, clicking dismiss triggers a Vercel endpoint call but the email gives no confirmation — the user has to trust it worked. Add a redirect to a minimal static 'Suggestion dismissed ✓' page on Vercel (even a single HTML response from the endpoint itself) so the dismiss action has a clear, human-readable outcome.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "acd28b0fd2f5": {
     "seenAt": "2026-10-20T07:02:29.661Z",
