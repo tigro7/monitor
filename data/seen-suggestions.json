@@ -189,8 +189,8 @@
     "dismissedByUser": true
   },
   "acd28b0fd2f5": {
-    "seenAt": "2026-10-20T07:14:05.230Z",
-    "expiresAt": "2027-10-20T07:14:05.230Z",
+    "seenAt": "2026-10-20T07:14:15.811Z",
+    "expiresAt": "2027-10-20T07:14:15.811Z",
     "repo": "tigro7/monitor",
     "action": "Add a plain-language explanation inside the daily email for what 'today's focus area' means and why it changes day to day. New recipients seeing '🎨 UX & Content' or '⚙️ DX' with no context won't understand the weekly rotation system or why suggestions are scoped the way they are. A single sentence in the email header — e.g. 'Today's digest focuses on UX & Content (part of a Mon–Fri rotation — each day examines a different dimension of the project)' — sets expectations without requiring them to read the README.",
     "dismissedByUser": true
