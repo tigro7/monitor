@@ -175,11 +175,11 @@
     "dismissedByUser": true
   },
   "aa515c04f839": {
-    "seenAt": "2026-10-20T07:02:29.660Z",
+    "seenAt": "2026-10-20T07:13:54.985Z",
+    "expiresAt": "2027-10-20T07:13:54.985Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "UX",
     "action": "Add a visible, non-interactive placeholder state for the October 2026 show date where the ticket link is not yet published. Rather than showing no button or a dead link, render a disabled 'Biglietti disponibili a breve' button (with appropriate aria-disabled and a tooltip) so users know tickets will exist but are not yet on sale.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "7bc79334aea9": {
     "seenAt": "2026-10-20T07:02:29.661Z",
