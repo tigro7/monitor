@@ -168,11 +168,11 @@
     "priority": "medium"
   },
   "0078c71fa1aa": {
-    "seenAt": "2026-10-20T07:02:29.660Z",
+    "seenAt": "2026-10-20T07:13:35.930Z",
+    "expiresAt": "2027-10-20T07:13:35.930Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "UX",
     "action": "Add a visible empty state with explanatory copy on alumni profile pages where bio and photo are missing. Instead of rendering a near-blank page, show a placeholder such as 'Biografia non ancora disponibile' alongside the member's name and role, so visitors understand the page is intentionally sparse rather than broken.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "aa515c04f839": {
     "seenAt": "2026-10-20T07:02:29.660Z",
