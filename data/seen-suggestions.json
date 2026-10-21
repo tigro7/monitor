@@ -194,5 +194,47 @@
     "repo": "tigro7/monitor",
     "action": "Add a plain-language explanation inside the daily email for what 'today's focus area' means and why it changes day to day. New recipients seeing '🎨 UX & Content' or '⚙️ DX' with no context won't understand the weekly rotation system or why suggestions are scoped the way they are. A single sentence in the email header — e.g. 'Today's digest focuses on UX & Content (part of a Mon–Fri rotation — each day examines a different dimension of the project)' — sets expectations without requiring them to read the README.",
     "dismissedByUser": true
+  },
+  "e52b2228e610": {
+    "seenAt": "2026-10-21T06:55:24.393Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Fix the build-time sitemap so it is populated at deploy time rather than being empty until the app is live. Replace the runtime API-call approach in your sitemap route with a direct database query (using the same Vercel Postgres client used elsewhere in the app) executed at build time via Next.js static generation, so Vercel pre-renders a full sitemap during `next build` and search engines receive valid URLs immediately after each deployment.",
+    "priority": "medium"
+  },
+  "fb46d54d3521": {
+    "seenAt": "2026-10-21T06:55:24.395Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Investigate why the homepage response time is 1066ms and confirm ISR/edge caching is functioning — check Vercel dashboard for cache hit rate, verify the Cache-Control and x-vercel-cache response headers (should show HIT, not MISS or BYPASS), and ensure the Next.js page is not using getServerSideProps where getStaticProps with revalidate would suffice.",
+    "priority": "high"
+  },
+  "45ea184ad98f": {
+    "seenAt": "2026-10-21T06:55:24.395Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Configure a 301 redirect from onepagecv-theta.vercel.app to thatswhoi.am and set the canonical meta tag to thatswhoi.am — do this via Vercel project settings (set thatswhoi.am as the primary domain) and update the <link rel='canonical'> in the Next.js _document or layout to use the production domain.",
+    "priority": "high"
+  },
+  "2fb041d7bfed": {
+    "seenAt": "2026-10-21T06:55:24.395Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Profile and resolve the server response time gap: the live site is currently measuring 1140ms TTFB, which is high for a Vercel-hosted Next.js site with ISR. Instrument the slowest routes (likely play detail pages or the company grid) using Vercel Speed Insights or Next.js `instrumentation.ts` to identify whether cold starts, insufficient `unstable_cache` TTLs, or Supabase query latency are the bottleneck. Specifically, confirm that `unstable_cache` calls on dynamic routes have TTLs of at least 3600s for read-heavy data like play catalogues and member lists, and check whether ISR `revalidate` intervals are set aggressively enough to keep pages warm between visits.",
+    "priority": "high"
+  },
+  "b313f3c566f5": {
+    "seenAt": "2026-10-21T06:55:24.395Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Replace the logo fallback (`/logo.png`) used as the site-wide `og:image` with a properly sized 1200×630 Open Graph image using Next.js `opengraph-image.tsx` convention in the App Router. Prioritise the homepage, company page, and archive routes first. The image should be statically generated at build time (not per-request) by avoiding dynamic data fetches inside the `ImageResponse` handler, so it is cached at the edge and adds zero runtime overhead.",
+    "priority": "medium"
+  },
+  "61309d78cfff": {
+    "seenAt": "2026-10-21T06:55:24.396Z",
+    "repo": "tigro7/monitor",
+    "area": "Performance",
+    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run by adding the `treosh/lighthouse-ci-action` step to the nightly GitHub Actions workflow, outputting the score as a workflow annotation or writing it to a JSON artifact.",
+    "priority": "high"
   }
 }
