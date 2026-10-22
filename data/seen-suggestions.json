@@ -252,11 +252,11 @@
     "dismissedByUser": true
   },
   "c2bd293ae3dd": {
-    "seenAt": "2026-10-22T07:00:05.714Z",
+    "seenAt": "2026-10-22T07:19:07.081Z",
+    "expiresAt": "2027-10-22T07:19:07.081Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
     "action": "Implement CSRF protection on all mutating API routes (CV save, profile update, any POST/PUT/DELETE endpoints). Audit next.config.js and API route handlers to confirm that state-changing requests validate the Origin/Referer header or use a signed CSRF token — Next.js App Router does not add this automatically, and with cookie-based auth sessions this is an exploitable gap.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "7b7afe18ac81": {
     "seenAt": "2026-10-22T07:00:05.714Z",
