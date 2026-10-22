@@ -259,11 +259,11 @@
     "dismissedByUser": true
   },
   "7b7afe18ac81": {
-    "seenAt": "2026-10-22T07:00:05.714Z",
+    "seenAt": "2026-10-22T07:19:09.906Z",
+    "expiresAt": "2027-10-22T07:19:09.906Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
     "action": "Add structured server-side logging with a persistent sink (e.g. Vercel Log Drains forwarded to Logtail or Papertrail free tier) covering authentication events (sign-in success/failure, password reset requests, token refresh) and API errors. Currently the only open monitoring issue is Sentry for runtime exceptions, but auth-event logging is distinct — it provides the audit trail needed to detect credential-stuffing or account-takeover attempts in the absence of rate limiting on auth routes.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "7af1dfe9322d": {
     "seenAt": "2026-10-22T07:00:05.715Z",
