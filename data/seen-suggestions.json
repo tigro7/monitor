@@ -287,8 +287,8 @@
     "priority": "high"
   },
   "2b7a6f924b4c": {
-    "seenAt": "2026-10-22T07:19:30.493Z",
-    "expiresAt": "2027-10-22T07:19:30.493Z",
+    "seenAt": "2026-10-22T07:19:38.762Z",
+    "expiresAt": "2027-10-22T07:19:38.762Z",
     "repo": "tigro7/monitor",
     "action": "Add a `.env.example` file to the repository (it is listed as missing in the analysis) documenting every required secret — Anthropic API key, Resend API key, GitHub token, and any dismiss endpoint secret — with placeholder values and a note on where each is set (GitHub Actions secrets vs Vercel env vars). Without this, a misconfigured secret causes a silent runtime failure rather than a clear setup error.",
     "dismissedByUser": true
