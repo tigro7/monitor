@@ -245,11 +245,11 @@
     "priority": "high"
   },
   "f88bf45b317f": {
-    "seenAt": "2026-10-22T07:00:05.712Z",
+    "seenAt": "2026-10-22T07:19:03.148Z",
+    "expiresAt": "2027-10-22T07:19:03.148Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Security",
     "action": "Add rate limiting to the admin match-entry API routes. Since the project is on Vercel, implement this via Vercel's Edge Middleware using the `@upstash/ratelimit` package with a Redis-backed token bucket (Upstash has a free tier). Limit POST requests to `/api/matches` (or equivalent) to a low threshold — e.g. 10 requests per minute per IP — and return a 429 with a `Retry-After` header on breach.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "c2bd293ae3dd": {
     "seenAt": "2026-10-22T07:00:05.714Z",
