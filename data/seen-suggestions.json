@@ -322,11 +322,11 @@
     "dismissedByUser": true
   },
   "5b48c6172ab1": {
-    "seenAt": "2026-10-23T06:52:08.055Z",
+    "seenAt": "2026-10-23T07:03:12.378Z",
+    "expiresAt": "2027-10-23T07:03:12.378Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Maintenance",
     "action": "Add a `dependabot.yml` (or `renovate.json`) configuration file to the repository to automate dependency update proposals. The open issue tracking this already describes the need; the concrete next step is to commit a minimal `.github/dependabot.yml` with `package-ecosystem: npm`, `directory: /`, and a weekly schedule, so the issue can be closed with a real artifact rather than remaining an open reminder.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "2515891d096c": {
     "seenAt": "2026-10-23T06:52:08.055Z",
