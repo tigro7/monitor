@@ -292,5 +292,54 @@
     "repo": "tigro7/monitor",
     "action": "Add a `.env.example` file to the repository (it is listed as missing in the analysis) documenting every required secret — Anthropic API key, Resend API key, GitHub token, and any dismiss endpoint secret — with placeholder values and a note on where each is set (GitHub Actions secrets vs Vercel env vars). Without this, a misconfigured secret causes a silent runtime failure rather than a clear setup error.",
     "dismissedByUser": true
+  },
+  "f4669c1ce54a": {
+    "seenAt": "2026-10-23T06:52:08.052Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "Add a minimal unit test suite for `statsCalc.tsx` using Vitest. Write at least 3–5 tests covering the core championship-passing logic: a team correctly inherits the title after a win, a draw does not transfer the title, and stats (reign length, total defences) recalculate correctly after a match is added. Wire `vitest` into the existing CI pipeline so these run on every push.",
+    "priority": "high"
+  },
+  "7317db05301b": {
+    "seenAt": "2026-10-23T06:52:08.052Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Maintenance",
+    "action": "The `.env.example` file is listed as missing in the repo. Recreate it by auditing the environment variables actually consumed by the app (database URL, NextAuth secret, OAuth credentials, etc.) and committing a populated-with-placeholder-values `.env.example` to the repository root. Cross-reference against `CONTRIBUTING.md` and `CLAUDE.md` to ensure the onboarding docs reference it correctly.",
+    "priority": "medium"
+  },
+  "6be3767d0351": {
+    "seenAt": "2026-10-23T06:52:08.054Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Maintenance",
+    "action": "The project has been dormant for 123 days with 13 open issues and 0 open PRs. Schedule a focused triage session: close or label stale issues, pick 1-2 high-priority items (the Dependabot setup and CI test stage are already tracked), and make at least one commit to re-establish an active maintenance cadence. Set a recurring calendar reminder (e.g. fortnightly) to prevent the repo falling further into neglect.",
+    "priority": "high"
+  },
+  "dd0cf106e7d5": {
+    "seenAt": "2026-10-23T06:52:08.055Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file to the repository root listing all required environment variables (at minimum `NEXT_PUBLIC_SITE_URL`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and any service-role keys used in Server Actions), with placeholder values and a brief inline comment for each explaining where to obtain it.",
+    "priority": "high"
+  },
+  "5b48c6172ab1": {
+    "seenAt": "2026-10-23T06:52:08.055Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Maintenance",
+    "action": "Add a `dependabot.yml` (or `renovate.json`) configuration file to the repository to automate dependency update proposals. The open issue tracking this already describes the need; the concrete next step is to commit a minimal `.github/dependabot.yml` with `package-ecosystem: npm`, `directory: /`, and a weekly schedule, so the issue can be closed with a real artifact rather than remaining an open reminder.",
+    "priority": "medium"
+  },
+  "2515891d096c": {
+    "seenAt": "2026-10-23T06:52:08.055Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Add a `.env.example` file listing all required environment variables (e.g. ANTHROPIC_API_KEY, RESEND_API_KEY, GITHUB_TOKEN, and any Vercel-side vars) with placeholder values and a one-line comment explaining each.",
+    "priority": "high"
+  },
+  "a07f1fc51402": {
+    "seenAt": "2026-10-23T06:52:08.055Z",
+    "repo": "tigro7/monitor",
+    "area": "Maintenance",
+    "action": "Investigate and fix the duplicate dismiss commits: the git log shows the same suggestion ID being committed twice in a row (e.g. `2b7a6f924b4c` appears twice on 22/10, as do `71385f1b8ff9`, `c2bd293ae3dd`, `f88bf45b317f`, `0078c71fa1aa`, `acd28b0fd2f5`). Add an idempotency check in the dismiss handler — before writing to `seen-suggestions.json` and triggering a commit, verify the ID is not already present in the file.",
+    "priority": "medium"
   }
 }
