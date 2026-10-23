@@ -329,11 +329,11 @@
     "dismissedByUser": true
   },
   "2515891d096c": {
-    "seenAt": "2026-10-23T06:52:08.055Z",
+    "seenAt": "2026-10-23T07:03:14.912Z",
+    "expiresAt": "2027-10-23T07:03:14.912Z",
     "repo": "tigro7/monitor",
-    "area": "Maintenance",
     "action": "Add a `.env.example` file listing all required environment variables (e.g. ANTHROPIC_API_KEY, RESEND_API_KEY, GITHUB_TOKEN, and any Vercel-side vars) with placeholder values and a one-line comment explaining each.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "a07f1fc51402": {
     "seenAt": "2026-10-23T06:52:08.055Z",
