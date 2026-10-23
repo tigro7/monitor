@@ -308,11 +308,11 @@
     "dismissedByUser": true
   },
   "6be3767d0351": {
-    "seenAt": "2026-10-23T06:52:08.054Z",
+    "seenAt": "2026-10-23T07:03:16.463Z",
+    "expiresAt": "2027-10-23T07:03:16.463Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Maintenance",
     "action": "The project has been dormant for 123 days with 13 open issues and 0 open PRs. Schedule a focused triage session: close or label stale issues, pick 1-2 high-priority items (the Dependabot setup and CI test stage are already tracked), and make at least one commit to re-establish an active maintenance cadence. Set a recurring calendar reminder (e.g. fortnightly) to prevent the repo falling further into neglect.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "dd0cf106e7d5": {
     "seenAt": "2026-10-23T07:03:09.956Z",
