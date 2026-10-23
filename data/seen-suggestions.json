@@ -315,11 +315,11 @@
     "priority": "high"
   },
   "dd0cf106e7d5": {
-    "seenAt": "2026-10-23T06:52:08.055Z",
+    "seenAt": "2026-10-23T07:03:09.956Z",
+    "expiresAt": "2027-10-23T07:03:09.956Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Maintenance",
     "action": "Add a `.env.example` file to the repository root listing all required environment variables (at minimum `NEXT_PUBLIC_SITE_URL`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and any service-role keys used in Server Actions), with placeholder values and a brief inline comment for each explaining where to obtain it.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "5b48c6172ab1": {
     "seenAt": "2026-10-23T06:52:08.055Z",
