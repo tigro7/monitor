@@ -301,8 +301,8 @@
     "priority": "high"
   },
   "7317db05301b": {
-    "seenAt": "2026-10-23T07:03:04.956Z",
-    "expiresAt": "2027-10-23T07:03:04.956Z",
+    "seenAt": "2026-10-23T07:03:06.857Z",
+    "expiresAt": "2027-10-23T07:03:06.857Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
     "action": "The `.env.example` file is listed as missing in the repo. Recreate it by auditing the environment variables actually consumed by the app (database URL, NextAuth secret, OAuth credentials, etc.) and committing a populated-with-placeholder-values `.env.example` to the repository root. Cross-reference against `CONTRIBUTING.md` and `CLAUDE.md` to ensure the onboarding docs reference it correctly.",
     "dismissedByUser": true
