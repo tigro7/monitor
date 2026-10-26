@@ -357,11 +357,11 @@
     "priority": "medium"
   },
   "f3a92d1103a5": {
-    "seenAt": "2026-10-26T07:20:31.730Z",
+    "seenAt": "2026-10-26T08:13:15.836Z",
+    "expiresAt": "2027-10-26T08:13:15.836Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Features",
     "action": "Implement the shareable public profile URL (thatswhoi.am/[username]) with a one-click 'Copy link' button on the dashboard, and ensure the page renders the CV without requiring the viewer to log in.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "92436e1876d4": {
     "seenAt": "2026-10-26T07:20:31.730Z",
