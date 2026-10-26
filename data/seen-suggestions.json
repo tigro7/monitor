@@ -392,10 +392,10 @@
     "dismissedByUser": true
   },
   "4bac956aacc3": {
-    "seenAt": "2026-10-26T07:20:31.731Z",
+    "seenAt": "2026-10-26T08:15:27.185Z",
+    "expiresAt": "2027-10-26T08:15:27.185Z",
     "repo": "tigro7/monitor",
-    "area": "Features",
     "action": "Add `MONITOR.md` files to the three other monitored repositories (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at minimum a 'What this project is', 'Current status', and 'Out of scope' section, mirroring the structure of the existing Project Monitor `MONITOR.md`.",
-    "priority": "medium"
+    "dismissedByUser": true
   }
 }
