@@ -385,11 +385,11 @@
     "priority": "high"
   },
   "11683611de05": {
-    "seenAt": "2026-10-26T07:20:31.731Z",
+    "seenAt": "2026-10-26T08:15:24.968Z",
+    "expiresAt": "2027-10-26T08:15:24.968Z",
     "repo": "tigro7/monitor",
-    "area": "Features",
     "action": "Add idempotency protection to the dismiss endpoint so that clicking the one-click dismiss link a second time (e.g. from email re-open or double-click) is a no-op rather than triggering a duplicate commit. Check whether the suggestion ID already exists in `seen-suggestions.json` before writing and committing; if it's already present, return 200 but skip the git commit entirely.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "4bac956aacc3": {
     "seenAt": "2026-10-26T07:20:31.731Z",
