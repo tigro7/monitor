@@ -434,11 +434,11 @@
     "priority": "high"
   },
   "d47f2246ce98": {
-    "seenAt": "2026-10-27T07:12:34.074Z",
+    "seenAt": "2026-10-27T08:32:33.972Z",
+    "expiresAt": "2027-10-27T08:32:33.972Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "UX",
     "action": "Add a custom 404 page (the open issue already tracks this) that includes the site's primary navigation, a short human-readable message in Italian consistent with the company's voice (e.g. 'Questa pagina non esiste, ma il sipario è ancora aperto —'), and direct links to the play catalogue and upcoming dates, so lost visitors have an immediate path back into the site's core content.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "4f132eef6f43": {
     "seenAt": "2026-10-27T07:12:34.075Z",
