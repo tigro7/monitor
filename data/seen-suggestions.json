@@ -397,5 +397,61 @@
     "repo": "tigro7/monitor",
     "action": "Add `MONITOR.md` files to the three other monitored repositories (UFNC, Thatswhoi.am, Le Nuove Espressioni) with at minimum a 'What this project is', 'Current status', and 'Out of scope' section, mirroring the structure of the existing Project Monitor `MONITOR.md`.",
     "dismissedByUser": true
+  },
+  "c275064b6090": {
+    "seenAt": "2026-10-27T07:12:34.071Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an explanatory blurb or 'How it works' section on the homepage for first-time visitors who don't know what a boxing-style championship is. One or two sentences (e.g. 'One team holds the title. Beat them, and it's yours.') with a short description of how the title transfers would make the concept immediately clear without requiring users to infer it from the data.",
+    "priority": "high"
+  },
+  "23f8e6d35c7b": {
+    "seenAt": "2026-10-27T07:12:34.071Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an empty state message on league pages for periods where no title-changing matches have occurred recently, rather than showing a bare or sparse list. Something like 'The title hasn't changed hands this round — [Current Holder] still reigns.' gives users meaningful feedback and reinforces the narrative instead of making the page feel incomplete.",
+    "priority": "medium"
+  },
+  "4248aa513f2b": {
+    "seenAt": "2026-10-27T07:12:34.073Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add visible loading and error states to the AI-powered CV generation flow — specifically, when a user triggers any AI action (e.g. generating or improving CV content), show an inline spinner or skeleton within the affected section rather than leaving the UI silent, and display a user-friendly inline error message (e.g. 'Something went wrong generating your summary — please try again') if the request fails, rather than failing silently or showing a raw error.",
+    "priority": "high"
+  },
+  "46faadb91374": {
+    "seenAt": "2026-10-27T07:12:34.073Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Audit and improve the copy on the primary CTA and value proposition on the homepage — specifically, test whether the headline and subheading clearly communicate that the product creates a shareable one-page CV (not just a PDF export tool), and replace any passive or generic phrasing (e.g. 'Get started') with outcome-oriented copy such as 'Build your one-page CV in minutes' for the headline and 'Share a live link or export a clean PDF — always up to date' for the subhead.",
+    "priority": "medium"
+  },
+  "950e553aaa90": {
+    "seenAt": "2026-10-27T07:12:34.074Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible empty-state message on alumni member profile pages when both bio and photo are missing, instead of rendering a near-blank page. For example, display a placeholder card with copy like 'La biografia di [Nome] non è ancora disponibile' and the member's role/years active, so visitors understand the page is intentionally sparse rather than broken.",
+    "priority": "high"
+  },
+  "d47f2246ce98": {
+    "seenAt": "2026-10-27T07:12:34.074Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a custom 404 page (the open issue already tracks this) that includes the site's primary navigation, a short human-readable message in Italian consistent with the company's voice (e.g. 'Questa pagina non esiste, ma il sipario è ancora aperto —'), and direct links to the play catalogue and upcoming dates, so lost visitors have an immediate path back into the site's core content.",
+    "priority": "medium"
+  },
+  "4f132eef6f43": {
+    "seenAt": "2026-10-27T07:12:34.075Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add visible feedback in the dismiss email link/button for the duplicate-trigger case: when a suggestion is already in seen-suggestions.json, the dismiss endpoint should return a clear, human-readable response (e.g. 'Already dismissed — no action needed') rather than silently succeeding or failing. Right now the duplicate commits in the git log suggest the endpoint is being called twice with no guard, and the user clicking the link in the email gets no indication that their action was redundant or already processed.",
+    "priority": "high"
+  },
+  "4110ecf3e911": {
+    "seenAt": "2026-10-27T07:12:34.075Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a brief onboarding note to the nightly email for the case where seen-suggestions.json does not yet exist. Specifically, when the dismiss endpoint would fail due to the missing file (a known pain point in MONITOR.md), surface a one-time inline message in the email such as: 'First time using dismiss? You may need to create data/seen-suggestions.json in your repo first — see the README for the one-line setup.' This makes the known failure mode self-documenting at the moment it matters most.",
+    "priority": "medium"
   }
 }
