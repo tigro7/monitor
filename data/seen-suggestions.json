@@ -448,10 +448,10 @@
     "dismissedByUser": true
   },
   "4110ecf3e911": {
-    "seenAt": "2026-10-27T07:12:34.075Z",
+    "seenAt": "2026-10-27T08:32:42.808Z",
+    "expiresAt": "2027-10-27T08:32:42.808Z",
     "repo": "tigro7/monitor",
-    "area": "UX",
     "action": "Add a brief onboarding note to the nightly email for the case where seen-suggestions.json does not yet exist. Specifically, when the dismiss endpoint would fail due to the missing file (a known pain point in MONITOR.md), surface a one-time inline message in the email such as: 'First time using dismiss? You may need to create data/seen-suggestions.json in your repo first — see the README for the one-line setup.' This makes the known failure mode self-documenting at the moment it matters most.",
-    "priority": "medium"
+    "dismissedByUser": true
   }
 }
