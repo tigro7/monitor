@@ -420,11 +420,11 @@
     "dismissedByUser": true
   },
   "46faadb91374": {
-    "seenAt": "2026-10-27T07:12:34.073Z",
+    "seenAt": "2026-10-27T08:32:01.431Z",
+    "expiresAt": "2027-10-27T08:32:01.431Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "UX",
     "action": "Audit and improve the copy on the primary CTA and value proposition on the homepage — specifically, test whether the headline and subheading clearly communicate that the product creates a shareable one-page CV (not just a PDF export tool), and replace any passive or generic phrasing (e.g. 'Get started') with outcome-oriented copy such as 'Build your one-page CV in minutes' for the headline and 'Share a live link or export a clean PDF — always up to date' for the subhead.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "950e553aaa90": {
     "seenAt": "2026-10-27T07:12:34.074Z",
