@@ -413,11 +413,11 @@
     "priority": "medium"
   },
   "4248aa513f2b": {
-    "seenAt": "2026-10-27T07:12:34.073Z",
+    "seenAt": "2026-10-27T08:31:25.231Z",
+    "expiresAt": "2027-10-27T08:31:25.231Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "UX",
     "action": "Add visible loading and error states to the AI-powered CV generation flow — specifically, when a user triggers any AI action (e.g. generating or improving CV content), show an inline spinner or skeleton within the affected section rather than leaving the UI silent, and display a user-friendly inline error message (e.g. 'Something went wrong generating your summary — please try again') if the request fails, rather than failing silently or showing a raw error.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "46faadb91374": {
     "seenAt": "2026-10-27T07:12:34.073Z",
