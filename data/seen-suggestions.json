@@ -453,5 +453,54 @@
     "repo": "tigro7/monitor",
     "action": "Add a brief onboarding note to the nightly email for the case where seen-suggestions.json does not yet exist. Specifically, when the dismiss endpoint would fail due to the missing file (a known pain point in MONITOR.md), surface a one-time inline message in the email such as: 'First time using dismiss? You may need to create data/seen-suggestions.json in your repo first — see the README for the one-line setup.' This makes the known failure mode self-documenting at the moment it matters most.",
     "dismissedByUser": true
+  },
+  "02f20a119097": {
+    "seenAt": "2026-10-28T07:51:19.898Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Fix the empty sitemap produced at build time by switching from runtime API calls to a static sitemap generated from the database directly during the Next.js build. Use Next.js 15's `sitemap.ts` convention with a direct Vercel Postgres query (the same credentials are available at build time on Vercel) rather than fetching your own API endpoints, which are not yet live during `next build`.",
+    "priority": "high"
+  },
+  "e79f74415ca5": {
+    "seenAt": "2026-10-28T07:51:19.898Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Performance",
+    "action": "Add structured data (JSON-LD `SportsEvent` or `Table` schema) to league and match detail pages. At minimum, add a `WebSite` schema with a `SearchAction` on the homepage and a `BreadcrumbList` on league/team pages, which are currently absent from the HTML output.",
+    "priority": "medium"
+  },
+  "9a3ef7b8711f": {
+    "seenAt": "2026-10-28T07:51:19.917Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Investigate why the homepage is serving a 1179ms response time despite a 90/100 performance score — audit Vercel's edge cache hit rate by checking response headers (specifically 'x-vercel-cache') for HIT vs MISS vs BYPASS, and confirm the Next.js ISR revalidation config is set correctly so cold requests are served from edge cache rather than triggering a full server render on every hit.",
+    "priority": "high"
+  },
+  "4d93a4749b98": {
+    "seenAt": "2026-10-28T07:51:19.917Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Performance",
+    "action": "Configure thatswhoi.am as the canonical primary domain in Vercel and add a 301 redirect from onepagecv-theta.vercel.app to it, then set the canonical meta tag to https://thatswhoi.am — the live site analysis is currently running against the Vercel subdomain, meaning any SEO equity, backlinks, or indexed pages are split across two origins.",
+    "priority": "high"
+  },
+  "c4033892ddb5": {
+    "seenAt": "2026-10-28T07:51:19.956Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Configure a 301 redirect on the legacy Altervista host (lenuoveespressioni.altervista.org) to www.lenuoveespressioni.it so all inbound links and any residual search-engine index entries from the old domain consolidate their PageRank to the new one. Add an .htaccess file on the Altervista server with `RewriteEngine On` / `RewriteRule ^(.*)$ https://www.lenuoveespressioni.it/$1 [R=301,L]`.",
+    "priority": "high"
+  },
+  "126e53802345": {
+    "seenAt": "2026-10-28T07:51:19.956Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Performance",
+    "action": "Add structured data (JSON-LD) of type `TheaterEvent` (or `Event`) to individual play-date pages. At minimum include `name`, `startDate`, `location` (with `@type: PerformingArtsTheater`), `url`, and `offers` with the `tickets_url` when available. Inject this as a `<script type='application/ld+json'>` inside the page's `<head>` via Next.js `metadata` or a server component.",
+    "priority": "medium"
+  },
+  "5a130dd17f90": {
+    "seenAt": "2026-10-28T07:51:19.996Z",
+    "repo": "tigro7/monitor",
+    "area": "Performance",
+    "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run by adding the `treosh/lighthouse-ci-action` step to the nightly GitHub Actions workflow. Output the Core Web Vitals scores (LCP, CLS, FID/INP) as structured JSON and feed them into the analysis context so Claude receives real performance signals instead of estimates.",
+    "priority": "medium"
   }
 }
