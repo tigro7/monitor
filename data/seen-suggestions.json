@@ -502,5 +502,61 @@
     "area": "Performance",
     "action": "Replace the heuristic performance score in `site.js` with a real Lighthouse CI run by adding the `treosh/lighthouse-ci-action` step to the nightly GitHub Actions workflow. Output the Core Web Vitals scores (LCP, CLS, FID/INP) as structured JSON and feed them into the analysis context so Claude receives real performance signals instead of estimates.",
     "priority": "medium"
+  },
+  "af1089da75a2": {
+    "seenAt": "2026-10-29T07:56:30.127Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Audit all admin match-entry API routes to confirm they enforce authentication server-side on every request, not just via UI gating. Specifically, verify that Next.js API routes or Server Actions handling match creation, deletion, and stats recalculation call `getServerSession()` (or equivalent NextAuth guard) at the top of the handler and return 401/403 before touching the database — not just that the admin UI hides the form from unauthenticated users.",
+    "priority": "high"
+  },
+  "320dc512a405": {
+    "seenAt": "2026-10-29T07:56:30.127Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Security",
+    "action": "Add server-side input validation (schema validation with zod or equivalent) on the match-entry API route/Server Action: enforce that team names match known values from the league config, that the date is a valid ISO date not in the future, and that scores are non-negative integers. Return a structured error — not an unhandled exception — for invalid payloads, and log rejected attempts (team name, date, IP if available) to Vercel Log Drains or a lightweight logging call.",
+    "priority": "medium"
+  },
+  "3b5f0159c659": {
+    "seenAt": "2026-10-29T07:56:30.129Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Audit all server-side API routes and server actions for missing authorization checks — specifically verify that every route which reads or writes CV data, profile data, or generated outputs validates that the authenticated session's user ID matches the resource being accessed, and add explicit ownership checks (e.g. WHERE user_id = session.user.id) where they are absent.",
+    "priority": "high"
+  },
+  "29bdb796a276": {
+    "seenAt": "2026-10-29T07:56:30.129Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Security",
+    "action": "Audit all form inputs and query parameters on the CV editor and public profile routes for missing server-side validation and sanitization — specifically check that free-text fields (job titles, summaries, skill names) are length-capped and stripped of executable content before being persisted or rendered, and add a schema validation layer (e.g. Zod) on every API route or server action that accepts user input.",
+    "priority": "high"
+  },
+  "feb3e487575d": {
+    "seenAt": "2026-10-29T07:56:30.130Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Add a `.env.example` file to the repository documenting all required environment variables (e.g. `NEXT_PUBLIC_SITE_URL`, Supabase URL, Supabase anon key, Supabase service role key, any magic-link auth secrets). The GitHub analysis explicitly flags this file as missing.",
+    "priority": "high"
+  },
+  "029e198175c5": {
+    "seenAt": "2026-10-29T07:56:30.130Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Security",
+    "action": "Audit the `/admin` route and its server actions / API calls to confirm that every Supabase mutation (create, edit, delete for people, dates, plays, productions, cast, credits) re-validates the authenticated session server-side before executing, rather than relying solely on client-side route protection or RLS policies tied to the anon key.",
+    "priority": "medium"
+  },
+  "7d3172a1be9a": {
+    "seenAt": "2026-10-29T07:56:30.131Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add a `.env.example` file documenting all required secrets (e.g. `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `GITHUB_TOKEN`, `DISMISS_SECRET` once implemented) with placeholder values, and audit the nightly workflow YAML to confirm none of these values are echoed into logs or commit messages.",
+    "priority": "high"
+  },
+  "7a8df20b699f": {
+    "seenAt": "2026-10-29T07:56:30.131Z",
+    "repo": "tigro7/monitor",
+    "area": "Security",
+    "action": "Add idempotency protection to the dismiss endpoint so that a given suggestion ID can only be committed once. Concretely: read `seen-suggestions.json` before writing, check whether the ID is already present, and return a 409 (or silent 200) without triggering a new git commit if it is.",
+    "priority": "medium"
   }
 }
