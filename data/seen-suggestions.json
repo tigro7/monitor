@@ -525,11 +525,11 @@
     "dismissedByUser": true
   },
   "29bdb796a276": {
-    "seenAt": "2026-10-29T07:56:30.129Z",
+    "seenAt": "2026-10-29T08:12:33.251Z",
+    "expiresAt": "2027-10-29T08:12:33.251Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
     "action": "Audit all form inputs and query parameters on the CV editor and public profile routes for missing server-side validation and sanitization — specifically check that free-text fields (job titles, summaries, skill names) are length-capped and stripped of executable content before being persisted or rendered, and add a schema validation layer (e.g. Zod) on every API route or server action that accepts user input.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "feb3e487575d": {
     "seenAt": "2026-10-29T07:56:30.130Z",
