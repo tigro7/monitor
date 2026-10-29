@@ -504,8 +504,8 @@
     "priority": "medium"
   },
   "af1089da75a2": {
-    "seenAt": "2026-10-29T08:12:21.914Z",
-    "expiresAt": "2027-10-29T08:12:21.914Z",
+    "seenAt": "2026-10-29T08:12:24.414Z",
+    "expiresAt": "2027-10-29T08:12:24.414Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
     "action": "Audit all admin match-entry API routes to confirm they enforce authentication server-side on every request, not just via UI gating. Specifically, verify that Next.js API routes or Server Actions handling match creation, deletion, and stats recalculation call `getServerSession()` (or equivalent NextAuth guard) at the top of the handler and return 401/403 before touching the database — not just that the admin UI hides the form from unauthenticated users.",
     "dismissedByUser": true
