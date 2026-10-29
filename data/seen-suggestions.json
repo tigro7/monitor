@@ -546,11 +546,11 @@
     "dismissedByUser": true
   },
   "7d3172a1be9a": {
-    "seenAt": "2026-10-29T07:56:30.131Z",
+    "seenAt": "2026-10-29T08:12:51.488Z",
+    "expiresAt": "2027-10-29T08:12:51.488Z",
     "repo": "tigro7/monitor",
-    "area": "Security",
     "action": "Add a `.env.example` file documenting all required secrets (e.g. `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `GITHUB_TOKEN`, `DISMISS_SECRET` once implemented) with placeholder values, and audit the nightly workflow YAML to confirm none of these values are echoed into logs or commit messages.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "7a8df20b699f": {
     "seenAt": "2026-10-29T07:56:30.131Z",
