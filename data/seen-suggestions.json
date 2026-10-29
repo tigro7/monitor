@@ -539,11 +539,11 @@
     "priority": "high"
   },
   "029e198175c5": {
-    "seenAt": "2026-10-29T07:56:30.130Z",
+    "seenAt": "2026-10-29T08:12:48.441Z",
+    "expiresAt": "2027-10-29T08:12:48.441Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Security",
     "action": "Audit the `/admin` route and its server actions / API calls to confirm that every Supabase mutation (create, edit, delete for people, dates, plays, productions, cast, credits) re-validates the authenticated session server-side before executing, rather than relying solely on client-side route protection or RLS policies tied to the anon key.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "7d3172a1be9a": {
     "seenAt": "2026-10-29T07:56:30.131Z",
