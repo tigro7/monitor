@@ -553,10 +553,10 @@
     "dismissedByUser": true
   },
   "7a8df20b699f": {
-    "seenAt": "2026-10-29T07:56:30.131Z",
+    "seenAt": "2026-10-29T08:12:53.471Z",
+    "expiresAt": "2027-10-29T08:12:53.470Z",
     "repo": "tigro7/monitor",
-    "area": "Security",
     "action": "Add idempotency protection to the dismiss endpoint so that a given suggestion ID can only be committed once. Concretely: read `seen-suggestions.json` before writing, check whether the ID is already present, and return a 409 (or silent 200) without triggering a new git commit if it is.",
-    "priority": "medium"
+    "dismissedByUser": true
   }
 }
