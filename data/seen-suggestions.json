@@ -518,11 +518,11 @@
     "priority": "medium"
   },
   "3b5f0159c659": {
-    "seenAt": "2026-10-29T07:56:30.129Z",
+    "seenAt": "2026-10-29T08:12:31.365Z",
+    "expiresAt": "2027-10-29T08:12:31.365Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Security",
     "action": "Audit all server-side API routes and server actions for missing authorization checks — specifically verify that every route which reads or writes CV data, profile data, or generated outputs validates that the authenticated session's user ID matches the resource being accessed, and add explicit ownership checks (e.g. WHERE user_id = session.user.id) where they are absent.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "29bdb796a276": {
     "seenAt": "2026-10-29T07:56:30.129Z",
