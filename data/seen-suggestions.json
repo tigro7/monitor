@@ -602,11 +602,11 @@
     "priority": "medium"
   },
   "442f922bded3": {
-    "seenAt": "2026-10-30T07:59:06.892Z",
+    "seenAt": "2026-10-30T09:25:10.690Z",
+    "expiresAt": "2027-10-30T09:25:10.690Z",
     "repo": "tigro7/monitor",
-    "area": "Maintenance",
     "action": "Add idempotency guard to the dismiss endpoint to prevent duplicate commits. The git log shows the same suggestion IDs being committed twice in a row on multiple days (e.g. `7a8df20b699f`, `29bdb796a276`, `af1089da75a2`, `d47f2246ce98`, `46faadb91374`). Before writing to `data/seen-suggestions.json` and committing, the endpoint should check whether the ID already exists in the JSON array and return a 200 early without triggering a new commit if it does. This is distinct from the open issue tracking duplicate commits — that issue investigates the cause, this action is the concrete fix: a one-line existence check before the write/commit path.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "a90a3f8f193f": {
     "seenAt": "2026-10-30T07:59:06.892Z",
