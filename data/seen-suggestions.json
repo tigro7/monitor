@@ -567,11 +567,11 @@
     "dismissedByUser": true
   },
   "9d98eec6f27f": {
-    "seenAt": "2026-10-30T07:59:06.888Z",
+    "seenAt": "2026-10-30T09:24:53.360Z",
+    "expiresAt": "2027-10-30T09:24:53.360Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Maintenance",
     "action": "Add a CI step (GitHub Actions) that runs `next build` and posts the resulting sitemap output (or its absence) as a build annotation or artifact. This makes the known 'empty sitemap at build time' failure visible and auditable rather than silent, and sets the groundwork for a future fix without requiring one now.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "87d8a2900333": {
     "seenAt": "2026-10-30T09:24:52.476Z",
