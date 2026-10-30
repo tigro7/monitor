@@ -560,11 +560,11 @@
     "dismissedByUser": true
   },
   "aba15da752a6": {
-    "seenAt": "2026-10-30T07:59:06.888Z",
+    "seenAt": "2026-10-30T09:24:47.633Z",
+    "expiresAt": "2027-10-30T09:24:47.633Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Maintenance",
     "action": "Add unit tests for `statsCalc.tsx` covering at minimum: title transfer on win, no transfer on draw/loss, streak calculation, and correct behaviour when a new league has no prior champion. Use Jest or Vitest (already common in Next.js stacks). Even 6–8 focused tests would cover the highest-risk paths.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "9d98eec6f27f": {
     "seenAt": "2026-10-30T07:59:06.888Z",
