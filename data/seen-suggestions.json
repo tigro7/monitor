@@ -609,10 +609,10 @@
     "dismissedByUser": true
   },
   "a90a3f8f193f": {
-    "seenAt": "2026-10-30T07:59:06.892Z",
+    "seenAt": "2026-10-30T09:25:12.863Z",
+    "expiresAt": "2027-10-30T09:25:12.862Z",
     "repo": "tigro7/monitor",
-    "area": "Maintenance",
     "action": "Add a `.env.example` file to the repository root listing every required environment variable (e.g. `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `GITHUB_TOKEN`, `VERCEL_DISMISS_URL`, and any others referenced in the nightly script or Vercel endpoint) with placeholder values and a one-line comment describing each. The file is currently flagged as missing.",
-    "priority": "medium"
+    "dismissedByUser": true
   }
 }
