@@ -574,8 +574,8 @@
     "dismissedByUser": true
   },
   "87d8a2900333": {
-    "seenAt": "2026-10-30T09:24:52.476Z",
-    "expiresAt": "2027-10-30T09:24:52.476Z",
+    "seenAt": "2026-10-30T09:25:03.376Z",
+    "expiresAt": "2027-10-30T09:25:03.376Z",
     "repo": "tigro7/thatswhoi-am",
     "action": "The project has been dormant for 130 days with 14 open issues and 0 open PRs. Schedule a focused triage session to close or convert stale issues into a prioritised backlog — specifically: merge the three duplicate account-deletion issues (#1, #6, #13) into one, close the Dependabot issue (#9) by actually enabling it in the repo settings (add a `.github/dependabot.yml` with `package-ecosystem: npm`, `schedule: interval: weekly`, and `open-pull-requests-limit: 5`), and close the CI test issue (#10) by adding a minimal GitHub Actions workflow file at `.github/workflows/ci.yml` that runs `next build` and a single Playwright smoke test against the homepage. Doing this housekeeping now prevents the issue tracker from becoming unmaintainable as the project resumes activity.",
     "dismissedByUser": true
