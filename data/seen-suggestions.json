@@ -616,11 +616,11 @@
     "dismissedByUser": true
   },
   "a3b1aa080c32": {
-    "seenAt": "2026-11-02T08:45:41.005Z",
+    "seenAt": "2026-11-02T08:47:13.361Z",
+    "expiresAt": "2027-11-02T08:47:13.361Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Features",
     "action": "Add a 'La Liga' or 'Bundesliga' league to the tracker, completing the groundwork already laid for multi-league support",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "8d39c95450c7": {
     "seenAt": "2026-11-02T08:45:41.005Z",
