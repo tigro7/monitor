@@ -614,5 +614,61 @@
     "repo": "tigro7/monitor",
     "action": "Add a `.env.example` file to the repository root listing every required environment variable (e.g. `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `GITHUB_TOKEN`, `VERCEL_DISMISS_URL`, and any others referenced in the nightly script or Vercel endpoint) with placeholder values and a one-line comment describing each. The file is currently flagged as missing.",
     "dismissedByUser": true
+  },
+  "a3b1aa080c32": {
+    "seenAt": "2026-11-02T08:45:41.005Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a 'La Liga' or 'Bundesliga' league to the tracker, completing the groundwork already laid for multi-league support",
+    "priority": "high"
+  },
+  "8d39c95450c7": {
+    "seenAt": "2026-11-02T08:45:41.005Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "Features",
+    "action": "Add a 'Title reign timeline' visualisation to each league's page — a horizontal bar chart showing each champion's reign duration in chronological order, similar to a boxing title history graphic",
+    "priority": "medium"
+  },
+  "425d6e4b405f": {
+    "seenAt": "2026-11-02T08:45:41.008Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Implement the shareable public profile URL at thatswhoi.am/[username] — create a dynamic Next.js route `/[username]/page.tsx` that fetches and renders the user's CV data publicly, with a canonical URL, basic OG meta tags (name, title, summary), and a 'View my CV' CTA that users can copy from their dashboard.",
+    "priority": "high"
+  },
+  "068c7816dcbe": {
+    "seenAt": "2026-11-02T08:45:41.008Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "Features",
+    "action": "Build the CV completeness indicator on the editor/dashboard — a persistent checklist or progress bar (e.g. 5 items: name+summary, at least 1 role, at least 1 skill, profile photo, public URL enabled) that marks each item complete in real time as the user fills in data, and collapses once 100% is reached. Each incomplete item should be a direct link to the relevant editor section.",
+    "priority": "medium"
+  },
+  "8c32977006be": {
+    "seenAt": "2026-11-02T08:45:41.009Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Build the /admin/news screen with create, edit, and delete capabilities for news posts, including fields for title, slug, body, cover image URL, and the linked play (foreign key). The RLS policies are already in place in Supabase, so this is purely a UI build mirroring the existing admin screens for plays and people.",
+    "priority": "high"
+  },
+  "1d6476b43074": {
+    "seenAt": "2026-11-02T08:45:41.009Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "Features",
+    "action": "Add a personalised 404 page (already tracked as an open issue with no implementation yet) that includes the company name, a brief in-character message in Italian (e.g. 'Sipario calato: questa pagina non esiste'), and navigation links back to the homepage, the play catalogue, and the upcoming dates section.",
+    "priority": "medium"
+  },
+  "129c3be40ec1": {
+    "seenAt": "2026-11-02T08:45:41.010Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add idempotency protection to the dismiss endpoint so that submitting the same suggestion ID twice in one session results in a single commit. The endpoint should check whether the ID already exists in `seen-suggestions.json` before writing and committing — if it does, return 200 but skip the git commit entirely.",
+    "priority": "high"
+  },
+  "d5db9b2c7d6f": {
+    "seenAt": "2026-11-02T08:45:41.010Z",
+    "repo": "tigro7/monitor",
+    "area": "Features",
+    "action": "Add a visible confirmation state to the dismiss button in the email — after the first click, replace the button with a static 'Dismissed ✓' label (using a redirect to a minimal Vercel page) so the user knows the action succeeded and has no reason to click again.",
+    "priority": "medium"
   }
 }
