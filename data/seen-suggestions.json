@@ -665,10 +665,10 @@
     "dismissedByUser": true
   },
   "d5db9b2c7d6f": {
-    "seenAt": "2026-11-02T08:45:41.010Z",
+    "seenAt": "2026-11-02T08:49:11.448Z",
+    "expiresAt": "2027-11-02T08:49:11.448Z",
     "repo": "tigro7/monitor",
-    "area": "Features",
     "action": "Add a visible confirmation state to the dismiss button in the email — after the first click, replace the button with a static 'Dismissed ✓' label (using a redirect to a minimal Vercel page) so the user knows the action succeeded and has no reason to click again.",
-    "priority": "medium"
+    "dismissedByUser": true
   }
 }
