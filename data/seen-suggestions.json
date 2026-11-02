@@ -651,11 +651,11 @@
     "dismissedByUser": true
   },
   "1d6476b43074": {
-    "seenAt": "2026-11-02T08:45:41.009Z",
+    "seenAt": "2026-11-02T08:49:01.254Z",
+    "expiresAt": "2027-11-02T08:49:01.254Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Features",
     "action": "Add a personalised 404 page (already tracked as an open issue with no implementation yet) that includes the company name, a brief in-character message in Italian (e.g. 'Sipario calato: questa pagina non esiste'), and navigation links back to the homepage, the play catalogue, and the upcoming dates section.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "129c3be40ec1": {
     "seenAt": "2026-11-02T08:45:41.010Z",
