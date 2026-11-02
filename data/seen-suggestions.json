@@ -623,11 +623,11 @@
     "dismissedByUser": true
   },
   "8d39c95450c7": {
-    "seenAt": "2026-11-02T08:45:41.005Z",
+    "seenAt": "2026-11-02T08:48:45.428Z",
+    "expiresAt": "2027-11-02T08:48:45.428Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "Features",
     "action": "Add a 'Title reign timeline' visualisation to each league's page — a horizontal bar chart showing each champion's reign duration in chronological order, similar to a boxing title history graphic",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "425d6e4b405f": {
     "seenAt": "2026-11-02T08:45:41.008Z",
