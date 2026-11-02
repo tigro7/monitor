@@ -644,11 +644,11 @@
     "priority": "medium"
   },
   "8c32977006be": {
-    "seenAt": "2026-11-02T08:45:41.009Z",
+    "seenAt": "2026-11-02T08:48:58.351Z",
+    "expiresAt": "2027-11-02T08:48:58.351Z",
     "repo": "albertotiribelli/lenuoveespressioni",
-    "area": "Features",
     "action": "Build the /admin/news screen with create, edit, and delete capabilities for news posts, including fields for title, slug, body, cover image URL, and the linked play (foreign key). The RLS policies are already in place in Supabase, so this is purely a UI build mirroring the existing admin screens for plays and people.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "1d6476b43074": {
     "seenAt": "2026-11-02T08:45:41.009Z",
