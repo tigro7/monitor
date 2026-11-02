@@ -630,11 +630,11 @@
     "dismissedByUser": true
   },
   "425d6e4b405f": {
-    "seenAt": "2026-11-02T08:45:41.008Z",
+    "seenAt": "2026-11-02T08:48:51.436Z",
+    "expiresAt": "2027-11-02T08:48:51.436Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "Features",
     "action": "Implement the shareable public profile URL at thatswhoi.am/[username] — create a dynamic Next.js route `/[username]/page.tsx` that fetches and renders the user's CV data publicly, with a canonical URL, basic OG meta tags (name, title, summary), and a 'View my CV' CTA that users can copy from their dashboard.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "068c7816dcbe": {
     "seenAt": "2026-11-02T08:45:41.008Z",
