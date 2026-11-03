@@ -693,11 +693,11 @@
     "dismissedByUser": true
   },
   "3f9f92accc8e": {
-    "seenAt": "2026-11-03T08:56:18.137Z",
+    "seenAt": "2026-11-03T09:04:50.150Z",
+    "expiresAt": "2027-11-03T09:04:50.150Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "UX",
     "action": "Audit and sharpen the primary call-to-action copy on the homepage — replace vague labels like 'Get Started' or 'Try it free' with outcome-specific language tied to the product's value proposition, e.g. 'Build my one-page CV' or 'Create my CV in 2 minutes'. Apply the same specificity to the subtitle/hero description so a first-time visitor immediately understands what the product does and who it is for without scrolling.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "a5ba3c19fee0": {
     "seenAt": "2026-11-03T08:56:18.138Z",
