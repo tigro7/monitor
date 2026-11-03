@@ -686,11 +686,11 @@
     "dismissedByUser": true
   },
   "97aa2363ba06": {
-    "seenAt": "2026-11-03T08:56:18.137Z",
+    "seenAt": "2026-11-03T09:04:38.996Z",
+    "expiresAt": "2027-11-03T09:04:38.996Z",
     "repo": "tigro7/thatswhoi-am",
-    "area": "UX",
     "action": "Add explicit loading and error states to the AI generation flow — when a user triggers CV generation or any AI-powered action, show a visible spinner or skeleton with a message like 'Generating your CV…' and, on failure, a clear inline error such as 'Something went wrong — please try again' with a retry button. Currently there is no tracked issue covering in-flow feedback for the AI step specifically, only empty states for the editor.",
-    "priority": "high"
+    "dismissedByUser": true
   },
   "3f9f92accc8e": {
     "seenAt": "2026-11-03T08:56:18.137Z",
