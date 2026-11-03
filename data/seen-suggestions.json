@@ -672,8 +672,8 @@
     "dismissedByUser": true
   },
   "67c114c42c52": {
-    "seenAt": "2026-11-03T09:04:18.653Z",
-    "expiresAt": "2027-11-03T09:04:18.653Z",
+    "seenAt": "2026-11-03T09:04:19.720Z",
+    "expiresAt": "2027-11-03T09:04:19.720Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
     "action": "Add an empty state message on the admin add-match form when no current champion exists for a league (e.g. after a new league is bootstrapped), explaining clearly that the first match must designate the initial titleholder and what data is expected.",
     "dismissedByUser": true
