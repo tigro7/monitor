@@ -670,5 +670,61 @@
     "repo": "tigro7/monitor",
     "action": "Add a visible confirmation state to the dismiss button in the email — after the first click, replace the button with a static 'Dismissed ✓' label (using a redirect to a minimal Vercel page) so the user knows the action succeeded and has no reason to click again.",
     "dismissedByUser": true
+  },
+  "67c114c42c52": {
+    "seenAt": "2026-11-03T08:56:18.135Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add an empty state message on the admin add-match form when no current champion exists for a league (e.g. after a new league is bootstrapped), explaining clearly that the first match must designate the initial titleholder and what data is expected.",
+    "priority": "high"
+  },
+  "1ebdf7f7a98a": {
+    "seenAt": "2026-11-03T08:56:18.135Z",
+    "repo": "tigro7/Unofficial-Football-National-Championships",
+    "area": "UX",
+    "action": "Add visible feedback (a loading spinner or disabled state on the submit button) to the add-match form while the POST request and subsequent statsCalc recalculation complete, and show a clear success or error message once finished.",
+    "priority": "medium"
+  },
+  "97aa2363ba06": {
+    "seenAt": "2026-11-03T08:56:18.137Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Add explicit loading and error states to the AI generation flow — when a user triggers CV generation or any AI-powered action, show a visible spinner or skeleton with a message like 'Generating your CV…' and, on failure, a clear inline error such as 'Something went wrong — please try again' with a retry button. Currently there is no tracked issue covering in-flow feedback for the AI step specifically, only empty states for the editor.",
+    "priority": "high"
+  },
+  "3f9f92accc8e": {
+    "seenAt": "2026-11-03T08:56:18.137Z",
+    "repo": "tigro7/thatswhoi-am",
+    "area": "UX",
+    "action": "Audit and sharpen the primary call-to-action copy on the homepage — replace vague labels like 'Get Started' or 'Try it free' with outcome-specific language tied to the product's value proposition, e.g. 'Build my one-page CV' or 'Create my CV in 2 minutes'. Apply the same specificity to the subtitle/hero description so a first-time visitor immediately understands what the product does and who it is for without scrolling.",
+    "priority": "medium"
+  },
+  "a5ba3c19fee0": {
+    "seenAt": "2026-11-03T08:56:18.138Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Design and implement a custom 404 page that matches the site's visual identity and gives users a clear path forward — e.g. links to the play catalogue, upcoming dates, and the homepage — with copy in Italian such as 'Pagina non trovata. Forse cercavi uno dei nostri spettacoli?'",
+    "priority": "high"
+  },
+  "6b3aeb305bae": {
+    "seenAt": "2026-11-03T08:56:18.138Z",
+    "repo": "albertotiribelli/lenuoveespressioni",
+    "area": "UX",
+    "action": "Add a visible, styled empty-state to alumni member profile pages when both bio and photo_url are null: render a card with the member's name and role, a theatre-themed placeholder illustration or icon, and Italian copy such as 'La biografia di [Nome] non è ancora disponibile' — avoiding a near-blank page that looks broken to visitors.",
+    "priority": "medium"
+  },
+  "c5bbe381d3a4": {
+    "seenAt": "2026-11-03T08:56:18.139Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a visible confirmation or feedback state to the one-click dismiss button in the email after it is clicked. Currently the dismiss flow redirects or silently completes with no clear user-facing message confirming the suggestion was recorded. Add a simple landing response from the Vercel endpoint — even a plain HTML page saying 'Suggestion dismissed. See you tomorrow.' — so the user knows the action succeeded and isn't left staring at a blank or raw JSON response.",
+    "priority": "high"
+  },
+  "c06541b8f382": {
+    "seenAt": "2026-11-03T08:56:18.139Z",
+    "repo": "tigro7/monitor",
+    "area": "UX",
+    "action": "Add a short plain-language subject line prefix to the nightly digest email that reflects the day's focus area, e.g. '🎨 UX Review — Project Monitor' instead of a generic subject. This makes the email scannable in an inbox at a glance and sets expectations before opening.",
+    "priority": "medium"
   }
 }
