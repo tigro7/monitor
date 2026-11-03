@@ -679,11 +679,11 @@
     "dismissedByUser": true
   },
   "1ebdf7f7a98a": {
-    "seenAt": "2026-11-03T08:56:18.135Z",
+    "seenAt": "2026-11-03T09:04:29.179Z",
+    "expiresAt": "2027-11-03T09:04:29.179Z",
     "repo": "tigro7/Unofficial-Football-National-Championships",
-    "area": "UX",
     "action": "Add visible feedback (a loading spinner or disabled state on the submit button) to the add-match form while the POST request and subsequent statsCalc recalculation complete, and show a clear success or error message once finished.",
-    "priority": "medium"
+    "dismissedByUser": true
   },
   "97aa2363ba06": {
     "seenAt": "2026-11-03T08:56:18.137Z",
